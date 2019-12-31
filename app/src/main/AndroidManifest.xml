@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="cn.weiben.buildingshopping">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.Base">
+        <activity android:name=".ui.account.register.RegisterActivity"/>
+        <activity android:name=".ui.account.login.LoginActivity" />
+
+        <meta-data
+            android:name="android.webkit.WebView.EnableSafeBrowsing"
+            android:value="true" />
+
+        <activity android:name=".ui.home.goods_detail.GoodsDetailActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.category.sort_list.SortListActivity" />
+        <activity android:name=".ui.home.ad_details.CommonWebViewUrlActivity" />
+        <activity android:name=".ui.home.ad_details.CommonWebViewHtmlActivity" />
+        <activity
+            android:name=".ui.main.SplashActivity"
+            android:theme="@style/SplashActivityTheme">
+            <meta-data
+                android:name="android.notch_support"
+                android:value="true" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.test.list.RVFragmentTestActivity" />
+        <activity android:name=".ui.test.list.HttpRecyclerTestActivity" />
+        <activity android:name=".ui.test.list.RecyclerViewTestActivity" />
+        <activity android:name=".ui.test.TabTestActivity" />
+        <activity android:name=".ui.test.WebTestActivity" />
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:configChanges="screenLayout|orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".ui.test.PageStatusTestActivity" />
+        <activity android:name=".base.activity.ImagePagerActivity" />
+        <activity android:name=".crash.CrashErrorActivity" />
+
+        <provider
+            android:name=".base.GenericFileProvider"
+            android:authorities="cn.weiben.buildingshopping.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+    </application>
+
+</manifest>

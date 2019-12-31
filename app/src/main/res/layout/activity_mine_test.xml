@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="@dimen/dp_150"
+        android:layout_height="@dimen/dp_150"
+        android:scaleType="centerCrop" />
+
+    <Button
+        android:id="@+id/btnActivity"
+        android:layout_width="@dimen/dp_283"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_50"
+        android:text="BaseRecyclerViewActivity"
+        android:textAllCaps="false"
+        android:textSize="@dimen/sp_17" />
+
+    <Button
+        android:id="@+id/btnHttpActivity"
+        android:layout_width="@dimen/dp_283"
+        android:layout_height="wrap_content"
+        android:text="BaseHttpRecyclerViewActivity"
+        android:textAllCaps="false"
+        android:textSize="@dimen/sp_17" />
+
+    <Button
+        android:id="@+id/btnFragment"
+        android:layout_width="@dimen/dp_283"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_50"
+        android:text="RecyclerViewFragment"
+        android:textAllCaps="false"
+        android:textSize="@dimen/sp_17" />
+
+</LinearLayout>

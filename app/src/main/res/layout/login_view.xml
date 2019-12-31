@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <Button
+        android:layout_marginTop="@dimen/dp_50"
+        android:id="@+id/btnGetCode"
+        android:textAllCaps="false"
+        android:layout_width="@dimen/dp_233"
+        android:layout_height="wrap_content"
+        android:text="BaseWebViewActivity\n加载网页"
+        android:textSize="@dimen/sp_17" />
+
+    <Button
+        android:id="@+id/btnGetCode1"
+        android:textAllCaps="false"
+        android:layout_width="@dimen/dp_233"
+        android:layout_height="wrap_content"
+        android:text="BaseWebViewActivity\n加载富文本"
+        android:textSize="@dimen/sp_17" />
+
+
+    <Button
+        android:layout_marginTop="@dimen/dp_50"
+        android:id="@+id/btnTest"
+        android:layout_width="@dimen/dp_233"
+        android:layout_height="wrap_content"
+        android:text="跳转页面时\n自定义dialog显示"
+        android:textSize="@dimen/sp_17" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="@dimen/dp_233"
+        android:layout_height="wrap_content"
+        android:text="网络请求(10s)\n自定义dialog显示"
+        android:textSize="@dimen/sp_17" />
+
+</LinearLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <Button
+        android:layout_marginTop="@dimen/dp_50"
+        android:id="@+id/btnZip"
+        android:layout_width="@dimen/dp_233"
+        android:layout_height="wrap_content"
+        android:text="多个请求合并执行"
+        android:textAllCaps="false"
+        android:textSize="@dimen/sp_17" />
+
+    <Button
+        android:layout_marginTop="@dimen/dp_50"
+        android:id="@+id/btnUpdate"
+        android:layout_width="@dimen/dp_233"
+        android:layout_height="wrap_content"
+        android:text="最简版本更新"
+        android:textAllCaps="false"
+        android:textSize="@dimen/sp_17" />
+
+    <Button
+        android:layout_marginTop="@dimen/dp_50"
+        android:id="@+id/btnTest"
+        android:layout_width="@dimen/dp_233"
+        android:layout_height="wrap_content"
+        android:text="BaseTabActivity 使用"
+        android:textAllCaps="false"
+        android:textSize="@dimen/sp_17" />
+
+
+    <Button
+        android:layout_marginTop="@dimen/dp_50"
+        android:id="@+id/btnCrash"
+        android:layout_width="@dimen/dp_233"
+        android:layout_height="wrap_content"
+        android:text="崩溃日志 抓取"
+        android:textAllCaps="false"
+        android:textSize="@dimen/sp_17" />
+
+</LinearLayout>

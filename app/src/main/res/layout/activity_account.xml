@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="页面显示,详细使用请搜索Gloading\n加载失败状态分为两种情况：\n断网情况下与请求异常"
+        android:textSize="@dimen/dp_18" />
+
+
+
+    <LinearLayout
+        android:layout_margin="@dimen/dp_10"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnSuccess"
+            android:text="加载成功"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnFail"
+            android:text="加载失败"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+       <Button
+           android:id="@+id/btnEmpty"
+           android:textAllCaps="false"
+           android:text="Empty页面"
+           android:layout_width="0dp"
+           android:layout_weight="1"
+           android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
