@@ -1,39 +1,37 @@
 package cn.weiben.buildingshopping.ui.home.goods_detail
 
+import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
 import cn.weiben.buildingshopping.R
 import cn.weiben.buildingshopping.base.activity.BaseMVPActivity
 import cn.weiben.buildingshopping.model.GoodsDetail
-import kotlinx.android.synthetic.main.activity_goods_detail.*
-import net.lucode.hackware.magicindicator.MagicIndicator
-import net.lucode.hackware.magicindicator.buildins.commonnavigator.indicators.LinePagerIndicator
-import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerIndicator
-import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.ColorTransitionPagerTitleView
-import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerTitleView
-import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.CommonNavigatorAdapter
-import net.lucode.hackware.magicindicator.buildins.commonnavigator.CommonNavigator
-import android.content.Context
-import android.content.Intent
-import android.graphics.Color
-import android.text.Html
-import android.webkit.WebChromeClient
-import android.webkit.WebView
-import android.webkit.WebViewClient
-import android.widget.TextView
-import androidx.recyclerview.widget.LinearLayoutManager
 import cn.weiben.buildingshopping.ui.adapter.GoodsDetailAdapter
 import cn.weiben.buildingshopping.ui.home.goods_detail.test.GoodsDetailContract
 import cn.weiben.buildingshopping.ui.home.goods_detail.test.GoodsDetailPresenter
 import cn.weiben.buildingshopping.utils.BannerGlideImageLoader
 import cn.weiben.buildingshopping.utils.HtmlTask
 import cn.weiben.buildingshopping.utils.HtmlUtils
-import cn.weiben.buildingshopping.widget.ItemWebView
+import cn.weiben.buildingshopping.widget.CustomGoodsParamPopup
+import cn.weiben.buildingshopping.widget.CustomGoodsTypePopup
+import com.blankj.utilcode.util.SpanUtils
 import com.blankj.utilcode.util.ToastUtils
+import com.lxj.xpopup.XPopup
 import com.youth.banner.Banner
 import com.youth.banner.BannerConfig
 import com.youth.banner.listener.OnBannerListener
+import kotlinx.android.synthetic.main.activity_goods_detail.*
 import net.lucode.hackware.magicindicator.FragmentContainerHelper
+import net.lucode.hackware.magicindicator.MagicIndicator
+import net.lucode.hackware.magicindicator.buildins.commonnavigator.CommonNavigator
+import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.CommonNavigatorAdapter
+import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerIndicator
+import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerTitleView
+import net.lucode.hackware.magicindicator.buildins.commonnavigator.indicators.LinePagerIndicator
+import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.ColorTransitionPagerTitleView
 
 
 class GoodsDetailActivity : BaseMVPActivity<GoodsDetailPresenter>(), GoodsDetailContract.View {
@@ -48,7 +46,9 @@ class GoodsDetailActivity : BaseMVPActivity<GoodsDetailPresenter>(), GoodsDetail
     }
 
     private val mFragmentContainerHelper = FragmentContainerHelper()
+    private var goodsId = ""
     override fun initView(savedInstanceState: Bundle?) {
+        goodsId = intent.getStringExtra("id")
         val centerView = View.inflate(this, R.layout.titlebar_custom_center_layout, null)
         commonTitleBar.setCenterView(centerView)
 
@@ -85,12 +85,12 @@ class GoodsDetailActivity : BaseMVPActivity<GoodsDetailPresenter>(), GoodsDetail
         mFragmentContainerHelper.attachMagicIndicator(magicIndicator)
 
 
-        mPresenter.getGoodsDetail("2335")
+        mPresenter.getGoodsDetail(goodsId)
     }
 
     override fun onRetry() {
         super.onRetry()
-        mPresenter.getGoodsDetail("2335")
+        mPresenter.getGoodsDetail(goodsId)
     }
 
     override fun setGoodsDetail(bean: GoodsDetail) {
@@ -112,7 +112,96 @@ class GoodsDetailActivity : BaseMVPActivity<GoodsDetailPresenter>(), GoodsDetail
         initBanner(banner, bean.pictures)
 
         val tvGoodsName = view.findViewById<TextView>(R.id.tvGoodsName)
+        val tvPrice = view.findViewById<TextView>(R.id.tvPrice)
+        val tvOldPrice = view.findViewById<TextView>(R.id.tvOldPrice)
+        val tvZheKouNum = view.findViewById<TextView>(R.id.tvZheKouNum)
+        val tvCommentNum = view.findViewById<TextView>(R.id.tvCommentNum)
+        val tvBuyNum = view.findViewById<TextView>(R.id.tvBuyNum)
+        val tvPromoteTag = view.findViewById<TextView>(R.id.tvPromoteTag)
+        val tvPointMsg = view.findViewById<TextView>(R.id.tvPointMsg)
+        val btnGoodsTypeView = view.findViewById<TextView>(R.id.btnGoodsTypeView)
+        val btnGoodsParamView = view.findViewById<TextView>(R.id.btnGoodsParamView)
+        val btnRankPriceView = view.findViewById<TextView>(R.id.btnRankPriceView)
+
         tvGoodsName.text = bean.goods_name
+        if (bean.goods.is_promote) {
+            tvPrice.text = bean.goods.promote_price
+            tvPromoteTag.visibility = View.VISIBLE
+            tvPointMsg.text = "赠送积分：${bean.goods.promote_price}"
+        } else {
+            tvPrice.text = bean.goods.shop_price
+            tvPromoteTag.visibility = View.GONE
+            tvPointMsg.text = "赠送积分：${bean.goods.shop_price}"
+        }
+
+        SpanUtils.with(tvOldPrice).append(bean.goods.market_price).setStrikethrough().create()
+
+        tvZheKouNum.text = "折扣：${bean.zhekou}折"
+        tvCommentNum.text = "${bean.pinglun}人评论"
+        tvBuyNum.text = "${bean.order_num}人已购"
+
+        btnRankPriceView.setOnClickListener {
+            XPopup.Builder(this)
+                    .asCustom(CustomGoodsParamPopup(this, bean.rank_prices))
+                    .show()
+        }
+
+        val paramsList = ArrayList<GoodsDetail.RankPricesBean>()
+        val bean1 = GoodsDetail.RankPricesBean()
+        bean1.rank_name = "商品名称"
+        bean1.price = bean.goods_name
+        paramsList.add(bean1)
+
+        val bean2 = GoodsDetail.RankPricesBean()
+        bean2.rank_name = "商品编号"
+        bean2.price = bean.goods.goods_sn
+        paramsList.add(bean2)
+
+        val bean3 = GoodsDetail.RankPricesBean()
+        bean3.rank_name = "上架时间"
+        bean3.price = bean.goods.add_time
+        paramsList.add(bean3)
+
+        val bean4 = GoodsDetail.RankPricesBean()
+        bean4.rank_name = "商品重量"
+        bean4.price = bean.goods.goods_weight
+        paramsList.add(bean4)
+
+        val bean5 = GoodsDetail.RankPricesBean()
+        bean5.rank_name = "商品库存"
+        bean5.price = bean.goods.goods_number + " " + bean.goods.measure_unit
+        paramsList.add(bean5)
+
+        btnGoodsParamView.setOnClickListener {
+            XPopup.Builder(this)
+                    .asCustom(CustomGoodsParamPopup(this, paramsList, 2))
+                    .show()
+        }
+
+        val goodsTypePopup = CustomGoodsTypePopup(this, bean)
+        if (!bean.specification.isNullOrEmpty()) {
+            if (!bean.specification[0].values.isNullOrEmpty()) {
+                val it = bean.specification[0].values[0]
+                tvPrice.text = it.format_price
+                btnGoodsTypeView.text = "产品规格显示窗口：规格：" + it.label
+            }
+        }
+
+        goodsTypePopup.setIOnItemSelectedListener(object : CustomGoodsTypePopup.IOnItemSelectedListener {
+            override fun itemSubmit(bean: GoodsDetail.SpecificationBean.ValuesBean, number: Int) {
+                ToastUtils.showShort("加入购物车接口")
+            }
+
+            override fun itemSelected(bean: GoodsDetail.SpecificationBean.ValuesBean) {
+                tvPrice.text = bean.format_price
+                btnGoodsTypeView.text = "产品规格显示窗口：规格：" + bean.label
+            }
+
+        })
+        val xpopup = XPopup.Builder(this).asCustom(goodsTypePopup)
+        btnGoodsTypeView.setOnClickListener {
+            xpopup.show()
+        }
 
         adapter.addHeaderView(view)
     }

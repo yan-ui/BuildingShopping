@@ -16,6 +16,7 @@ import android.widget.ImageView
 
 import androidx.annotation.ColorInt
 import androidx.annotation.DrawableRes
+import cn.weiben.buildingshopping.R
 
 import com.bumptech.glide.Glide
 import com.bumptech.glide.Priority
@@ -51,7 +52,7 @@ object GlideManager {
      * 优先显示此占位图，若此资源无效则默认使用以下资源
      * @see sCommonPlaceholderDrawable
      */
-    private const val DEFAULT_COMMON_PLACEHOLDER = -1
+    private const val DEFAULT_COMMON_PLACEHOLDER = R.mipmap.touxiang2
     private var sCommonPlaceholderDrawable: Drawable? = null
 
     /**
@@ -59,7 +60,7 @@ object GlideManager {
      * 优先显示此占位图，若此资源无效则默认使用以下资源
      * @see sCirclePlaceholderDrawable
      */
-    private const val DEFAULT_CIRCLE_PLACEHOLDER = -1
+    private const val DEFAULT_CIRCLE_PLACEHOLDER = R.mipmap.touxiang2
     private var sCirclePlaceholderDrawable: Drawable? = null
 
     /**
@@ -67,7 +68,7 @@ object GlideManager {
      * 优先显示此占位图，若此资源无效则默认使用以下资源
      * @see sRoundPlaceholderDrawable
      */
-    private const val DEFAULT_ROUND_PLACEHOLDER = -1
+    private const val DEFAULT_ROUND_PLACEHOLDER = R.mipmap.touxiang2
     private var sRoundPlaceholderDrawable: Drawable? = null
 
 

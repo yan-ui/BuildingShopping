@@ -1,6 +1,8 @@
 package cn.weiben.buildingshopping.ui.home
 
 import android.content.Intent
+import android.os.Handler
+import android.os.Message
 import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,9 +18,11 @@ import cn.weiben.buildingshopping.ui.adapter.HomePromoteGoodsRvAdapter
 import cn.weiben.buildingshopping.ui.adapter.HomeMenuRvAdapter
 import cn.weiben.buildingshopping.ui.home.ad_details.CommonWebViewHtmlActivity
 import cn.weiben.buildingshopping.ui.home.ad_details.CommonWebViewUrlActivity
+import cn.weiben.buildingshopping.ui.home.goods_detail.GoodsDetailActivity
 import cn.weiben.buildingshopping.utils.BannerGlideImageLoader
 import cn.weiben.buildingshopping.widget.ViewFilpers
 import com.blankj.utilcode.util.ToastUtils
+import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 import com.youth.banner.Banner
 import com.youth.banner.BannerConfig
@@ -41,28 +45,27 @@ class HomeFragment : BaseHttpRecyclerMVPFragment<HomePresenter, GoodsBean, BaseV
 
     private lateinit var homeBean: HomeBean
     private var isFlush = false
+    private lateinit var headerView: View
+
     override fun initView() {
         initSmartRefreshLayout(mSmartRefreshLayout)
         initRecyclerView(mRecyclerView)
         mRecyclerView.layoutManager = GridLayoutManager(mActivity, 2)
-        isFlush = true
+        headerView = View.inflate(mActivity, R.layout.item_home_header_view, null)
+
         mPresenter.getHomePage()
     }
 
     override fun onRetry() {
         super.onRetry()
-        isFlush = true
         mPresenter.getHomePage()
     }
 
 
     override fun getListAsync(page: Int) {
-        ToastUtils.showShort("page:"+page)
         if (page == 0) {
-            isFlush = true
             mPresenter.getHomePage()
         } else {
-            isFlush = false
             mPresenter.getHomeGoodsList(page, page * 10, 10)
         }
     }
@@ -71,18 +74,18 @@ class HomeFragment : BaseHttpRecyclerMVPFragment<HomePresenter, GoodsBean, BaseV
         if (bean == null) {
             return
         }
-
+        isFlush = true
         homeBean = bean
+
         mPresenter.getHomeGoodsList(0, 10, 10)
 
     }
 
     override fun setList(list: MutableList<GoodsBean>?) {
         setList(object : AdapterCallBack<HomeGoodsGridRvAdapter> {
-
             override fun createAdapter(): HomeGoodsGridRvAdapter {
+                isFlush = false
                 val adapter = HomeGoodsGridRvAdapter(list)
-                val headerView = View.inflate(mActivity, R.layout.item_home_header_view, null)
                 initBanner(headerView, homeBean.wap_index_ad)
 
                 initViewFilp(headerView, homeBean.new_articles)
@@ -100,26 +103,19 @@ class HomeFragment : BaseHttpRecyclerMVPFragment<HomePresenter, GoodsBean, BaseV
             }
 
             override fun refreshAdapter() {
-                if(isFlush){
-                    adapter.removeAllHeaderView()
-                    val headerView = View.inflate(mActivity, R.layout.item_home_header_view, null)
-                    initBanner(headerView, homeBean.wap_index_ad)
-
-                    initViewFilp(headerView, homeBean.new_articles)
-
-                    initMenuRecyclerView(headerView, homeBean.menu_list)
-
+                if (isFlush) {
+                    isFlush = false
                     initPromotionRecyclerView(headerView, homeBean.promotion_goods)
 
                     initNewGoodsRecyclerView(headerView, homeBean.new_goods)
 
                     initHotGoodsRecyclerView(headerView, homeBean.hot_goods)
-
-                    adapter.addHeaderView(headerView)
                 }
                 adapter.setNewData(list)
             }
         })
+
+
     }
 
     override fun setHomeGoodsList(page: Int, list: MutableList<GoodsBean>?) {
@@ -137,6 +133,12 @@ class HomeFragment : BaseHttpRecyclerMVPFragment<HomePresenter, GoodsBean, BaseV
         val adapter = HomeCommonGoodsRvAdapter(hotGoods)
         adapter.bindToRecyclerView(hotGoodsRecyclerView)
         hotGoodsRecyclerView.adapter = adapter
+        adapter.setOnItemClickListener { adapter, view, position ->
+            val bean = adapter.data[position] as HomeBean.NewGoodsBean
+            val intent = Intent(mActivity, GoodsDetailActivity::class.java)
+            intent.putExtra("id", bean.id)
+            startActivity(intent)
+        }
     }
 
     private fun initNewGoodsRecyclerView(view: View, newGoods: MutableList<HomeBean.NewGoodsBean>) {
@@ -145,6 +147,12 @@ class HomeFragment : BaseHttpRecyclerMVPFragment<HomePresenter, GoodsBean, BaseV
         val adapter = HomeCommonGoodsRvAdapter(newGoods)
         adapter.bindToRecyclerView(newGoodsRecyclerView)
         newGoodsRecyclerView.adapter = adapter
+        adapter.setOnItemClickListener { adapter, view, position ->
+            val bean = adapter.data[position] as HomeBean.NewGoodsBean
+            val intent = Intent(mActivity, GoodsDetailActivity::class.java)
+            intent.putExtra("id", bean.id)
+            startActivity(intent)
+        }
     }
 
     private fun initPromotionRecyclerView(view: View, promotionGoods: MutableList<HomeBean.PromotionGoodsBean>) {
@@ -153,6 +161,12 @@ class HomeFragment : BaseHttpRecyclerMVPFragment<HomePresenter, GoodsBean, BaseV
         val adapter = HomePromoteGoodsRvAdapter(promotionGoods)
         adapter.bindToRecyclerView(promotionGoodsRecyclerView)
         promotionGoodsRecyclerView.adapter = adapter
+        adapter.setOnItemClickListener { adapter, view, position ->
+            val bean = adapter.data[position] as HomeBean.PromotionGoodsBean
+            val intent = Intent(mActivity, GoodsDetailActivity::class.java)
+            intent.putExtra("id", bean.id)
+            startActivity(intent)
+        }
     }
 
 
@@ -224,6 +238,21 @@ class HomeFragment : BaseHttpRecyclerMVPFragment<HomePresenter, GoodsBean, BaseV
             })
             //banner设置方法全部调用完毕时最后调用
             banner.start()
+        }
+
+    }
+
+    override fun onItemClick(adapter: BaseQuickAdapter<*, *>?, view: View?, position: Int) {
+        super.onItemClick(adapter, view, position)
+        if (adapter == null) {
+            return
+        }
+
+        adapter.setOnItemClickListener { adapter, view, position ->
+            val bean = adapter.data[position] as GoodsBean
+            val intent = Intent(mActivity, GoodsDetailActivity::class.java)
+            intent.putExtra("id", bean.id)
+            startActivity(intent)
         }
 
     }

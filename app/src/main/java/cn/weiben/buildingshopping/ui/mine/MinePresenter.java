@@ -20,7 +20,7 @@ public class MinePresenter extends BasePresenter<MineContract.View> implements M
                 .subscribe(result -> {
                     mView.showSuccess(result.getErrmsg());
                     if (result.getCode() == 1) {
-
+                        mView.setUser(result.getData());
                     }
                 }, throwable -> {
                     mView.showSuccess(throwable.getMessage());

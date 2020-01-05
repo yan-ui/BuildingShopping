@@ -13,6 +13,8 @@ import cn.weiben.buildingshopping.model.LoginBean;
 import cn.weiben.buildingshopping.model.NewDetails;
 import cn.weiben.buildingshopping.model.NewsBean;
 import cn.weiben.buildingshopping.model.ShopBean;
+import cn.weiben.buildingshopping.model.UserBean;
+import cn.weiben.buildingshopping.model.UserEditBean;
 import io.reactivex.Observable;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -67,7 +69,38 @@ public interface ApiService {
      * @return
      */
     @GET("mobileapi/user.php?act=default")
-    Observable<BaseResult> getUser();
+    Observable<BaseResult<UserBean>> getUser();
+
+    /**
+     * 获取用户设置详情
+     *
+     * @return
+     */
+    @GET("mobileapi/user.php?act=profile")
+    Observable<BaseResult<UserEditBean>> getUserProfile();
+
+    /**
+     * 修改用户信息
+     *
+     * @return
+     */
+    @FormUrlEncoded
+    @POST("mobileapi/user.php?act=act_edit_profile")
+    Observable<BaseResult> setUserProfile(@Field("headimg") String headimg, @Field("user_name") String user_name,
+                                                        @Field("birthday") String birthday, @Field("sex") int sex,
+                                                        @Field("email") String email);
+
+
+    /**
+     * 修改用户密码
+     *
+     * @return
+     */
+    @FormUrlEncoded
+    @POST("mobileapi/user.php?act=act_edit_password")
+    Observable<BaseResult> setUserPassword(@Field("old_password") String old_password, @Field("new_password") String new_password,
+                                          @Field("comfirm_password") String comfirm_password);
+
 
 
     /**

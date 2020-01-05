@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:divider="@drawable/divider_horizontal"
+    android:background="@drawable/addsubutils_add_sub_bg"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/ic_minus"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="match_parent"
+        android:background="@drawable/addsubutils_left_selector"
+        android:clickable="true"
+        android:padding="@dimen/dp_2"
+        android:textColor="@color/red"
+        android:gravity="center"
+        android:scaleType="centerInside"
+        android:text="—"/>
+
+    <TextView
+        android:textSize="@dimen/sp_15"
+        android:text="+"
+        android:textColor="@color/red"
+        android:id="@+id/ic_plus"
+        android:gravity="center"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="match_parent"
+        android:background="@drawable/addsubutils_right_selector"
+        android:clickable="true"
+        android:padding="@dimen/dp_2"
+        android:scaleType="centerInside" />
+
+    <EditText
+        android:id="@+id/et_input"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:cursorVisible="true"
+        android:digits="0123456789"
+        android:gravity="center"
+        android:singleLine="true"
+        android:inputType="number"
+        android:minWidth="@dimen/addsubutils_et_minwidth"
+        android:text="1"
+        android:textColor="@color/black"
+        android:textCursorDrawable="@null"
+        android:textSize="@dimen/sp_16"/>
+</LinearLayout>

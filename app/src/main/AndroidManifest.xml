@@ -20,21 +20,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Base">
-        <activity android:name=".ui.account.register.RegisterActivity"/>
+        <activity android:name=".ui.mine.setting.UserSettingActivity"></activity>
+        <activity android:name=".ui.account.register.RegisterActivity" />
         <activity android:name=".ui.account.login.LoginActivity" />
 
         <meta-data
             android:name="android.webkit.WebView.EnableSafeBrowsing"
             android:value="true" />
 
-        <activity android:name=".ui.home.goods_detail.GoodsDetailActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".ui.home.goods_detail.GoodsDetailActivity"></activity>
         <activity android:name=".ui.category.sort_list.SortListActivity" />
         <activity android:name=".ui.home.ad_details.CommonWebViewUrlActivity" />
         <activity android:name=".ui.home.ad_details.CommonWebViewHtmlActivity" />

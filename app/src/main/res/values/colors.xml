@@ -14,6 +14,7 @@
     <color name="white">#ffffffff</color>
     <color name="red">#e02b4d</color>
     <color name="gray">#666666</color>
+    <color name="gray999999">#999999</color>
     <color name="black">#333333</color>
     <color name="colorGray">#d0d0d0</color>
 

@@ -1,6 +1,8 @@
 package cn.weiben.buildingshopping.ui.category.sort_list
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import cn.weiben.buildingshopping.R
@@ -8,6 +10,8 @@ import cn.weiben.buildingshopping.base.activity.BaseHttpRecyclerMVPActivity
 import cn.weiben.buildingshopping.base.interfaces.AdapterCallBack
 import cn.weiben.buildingshopping.model.GoodsBean
 import cn.weiben.buildingshopping.ui.adapter.SortListGoodsGridRvAdapter
+import cn.weiben.buildingshopping.ui.home.goods_detail.GoodsDetailActivity
+import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 import kotlinx.android.synthetic.main.activity_sort_list.*
 
@@ -122,6 +126,20 @@ class SortListActivity : BaseHttpRecyclerMVPActivity<SortListPresenter, GoodsBea
                 adapter.setNewData(list)
             }
         })
+    }
+    override fun onItemClick(adapter: BaseQuickAdapter<*, *>?, view: View?, position: Int) {
+        super.onItemClick(adapter, view, position)
+        if (adapter == null) {
+            return
+        }
+
+        adapter.setOnItemClickListener { adapter, view, position ->
+            val bean = adapter.data[position] as GoodsBean
+            val intent = Intent(this, GoodsDetailActivity::class.java)
+            intent.putExtra("id", bean.goods_id)
+            startActivity(intent)
+        }
+
     }
 
 

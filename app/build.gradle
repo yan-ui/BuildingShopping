@@ -97,4 +97,9 @@ dependencies {
 
     implementation 'com.gxz.pagerslidingtabstrip:library:1.3'
     implementation 'com.alibaba:fastjson:1.2.54'
+
+    implementation 'com.lxj:xpopup:1.8.10-x'
+    implementation 'com.github.1002326270xc:LayoutManager-FlowLayout:v1.6'
+
+    implementation 'com.github.gzu-liyujiang.AndroidPicker:WheelPicker:1.5.6.20181018'
 }

@@ -27,6 +27,7 @@ public class GoodsBean {
      * final_price : 140.00
      */
 
+    private String id;
     private String watermark_img;
     private String goods_id;
     private String goods_name;
@@ -49,6 +50,14 @@ public class GoodsBean {
     private String wap_pingjia;
     private boolean is_exclusive;
     private String final_price;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getThumb() {
         return thumb;

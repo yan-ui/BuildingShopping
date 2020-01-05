@@ -22,8 +22,8 @@
 
 #-------------------------------------------定制化区域----------------------------------------------
 #---------------------------------1.实体类---------------------------------
--keep class cn.tklvyou.base.model.** { *; }
--keep class cn.tklvyou.base.api.model.** { *; }
+-keep class cn.weiben.buildingshopping.model.** { *; }
+-keep class cn.weiben.buildingshopping.api.model.** { *; }
 #-------------------------------------------------------------------------
 
 
@@ -44,10 +44,20 @@
 -keep public class com.google.android.material.bottomnavigation.BottomNavigationPresenter { *; }
 -keep public class com.google.android.material.bottomnavigation.BottomNavigationItemView { *; }
 
+
+#Android picker
+-keepattributes InnerClasses,Signature
+-keepattributes *Annotation*
+
+-keep class cn.qqtheme.framework.entity.** { *;}
+
 # loading
 -keep class com.wang.avi.** { *; }
 -keep class com.wang.avi.indicators.** { *; }
 
+#xpopup
+-dontwarn com.lxj.xpopup.widget.**
+-keep class com.lxj.xpopup.widget.**{*;}
 
 # Agentweb
 -keep class com.just.agentweb.** {

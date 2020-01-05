@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color_gray"
+    tools:context=".ui.mine.setting.UserSettingActivity">
+
+    <LinearLayout
+        android:paddingBottom="@dimen/dp_30"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/dp_15"
+            android:paddingRight="@dimen/dp_15"
+            android:weightSum="3">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="用户头像"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/sp_14" />
+
+            <View
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+
+            <ImageView
+                android:id="@+id/ivAvatar"
+                android:src="@mipmap/touxiang2"
+                android:layout_gravity="center"
+                android:layout_width="@dimen/dp_45"
+                android:layout_height="@dimen/dp_45" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="@color/white"
+            android:layout_marginTop="@dimen/dp_1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/dp_15"
+            android:paddingRight="@dimen/dp_15"
+            android:weightSum="3">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="用户名"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/sp_14" />
+
+            <EditText
+                android:id="@+id/etNickName"
+                android:textSize="@dimen/sp_14"
+                android:background="@null"
+                android:layout_gravity="center"
+                android:layout_width="0dp"
+                android:hint="*用户名"
+                android:layout_weight="2"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="@color/white"
+            android:layout_marginTop="@dimen/dp_1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/dp_15"
+            android:paddingRight="@dimen/dp_15"
+            android:weightSum="3">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="出生日期"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/sp_14" />
+
+            <TextView
+                android:id="@+id/tvBirthDay"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:hint="*选择出生日期"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/sp_14" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="@color/white"
+            android:layout_marginTop="@dimen/dp_1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/dp_15"
+            android:paddingRight="@dimen/dp_15"
+            android:weightSum="3">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="性别"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/sp_14" />
+
+            <RadioGroup
+                android:id="@+id/rgSex"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_height="match_parent" >
+
+                <RadioButton
+                    android:id="@+id/rbSex0"
+                    android:checked="true"
+                    android:text="保密"
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="#989da2"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/rbSex1"
+                    android:checked="false"
+                    android:text="男"
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="#989da2"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/rbSex2"
+                    android:checked="false"
+                    android:text="女"
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="#989da2"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="@color/white"
+            android:layout_marginTop="@dimen/dp_1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/dp_15"
+            android:paddingRight="@dimen/dp_15"
+            android:weightSum="3">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="邮箱"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/sp_14" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:inputType="textEmailAddress"
+                android:textSize="@dimen/sp_14"
+                android:background="@null"
+                android:layout_gravity="center"
+                android:layout_width="0dp"
+                android:hint="*电子邮件地址"
+                android:layout_weight="2"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_marginTop="@dimen/dp_1"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/btnSubmitUserInfo"
+                android:text="确认修改"
+                android:textSize="@dimen/sp_14"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:layout_margin="@dimen/dp_15"
+                android:background="@drawable/shape_color_accent_radius_5_bg"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:gravity="center_vertical"
+            android:text="密码修改"
+            android:background="@color/white"
+            android:paddingLeft="@dimen/dp_15"
+            android:textStyle="bold"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/sp_16" />
+
+        <LinearLayout
+            android:paddingLeft="@dimen/dp_40"
+            android:paddingRight="@dimen/dp_40"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/etOldPass"
+                android:paddingLeft="@dimen/dp_15"
+                android:textSize="@dimen/sp_14"
+                android:inputType="textPassword"
+                android:background="@drawable/shape_stroke_gray_bg"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:hint="原密码"
+                android:layout_height="@dimen/dp_40" />
+
+            <EditText
+                android:inputType="textPassword"
+                android:id="@+id/etNewPass"
+                android:paddingLeft="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:textSize="@dimen/sp_14"
+                android:background="@drawable/shape_stroke_gray_bg"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:hint="新密码"
+                android:layout_height="@dimen/dp_40" />
+
+            <EditText
+                android:inputType="textPassword"
+                android:id="@+id/etConfirmPass"
+                android:paddingLeft="@dimen/dp_15"
+                android:textSize="@dimen/sp_14"
+                android:background="@drawable/shape_stroke_gray_bg"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:hint="确认密码"
+                android:layout_height="@dimen/dp_40" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/btnSubmitPass"
+                android:text="确认修改"
+                android:textSize="@dimen/sp_14"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:layout_margin="@dimen/dp_15"
+                android:background="@drawable/shape_color_accent_radius_5_bg"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>

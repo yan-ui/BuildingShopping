@@ -429,5 +429,6 @@
     <dimen name="sp_40">40sp</dimen>
     <dimen name="sp_42">42sp</dimen>
     <dimen name="sp_48">48sp</dimen>
+    <dimen name="addsubutils_et_minwidth">50dp</dimen>
 
 </resources>

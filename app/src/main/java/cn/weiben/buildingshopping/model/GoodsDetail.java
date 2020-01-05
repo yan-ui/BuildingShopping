@@ -63,7 +63,7 @@ public class GoodsDetail {
     private GoodsBean goods;
     private String goods_id;
     private String promote_end_time;
-    private int zhekou;
+    private String zhekou;
     private String keywords;
     private String description;
     private int goods_rank;
@@ -191,11 +191,11 @@ public class GoodsDetail {
         this.promote_end_time = promote_end_time;
     }
 
-    public int getZhekou() {
+    public String getZhekou() {
         return zhekou;
     }
 
-    public void setZhekou(int zhekou) {
+    public void setZhekou(String zhekou) {
         this.zhekou = zhekou;
     }
 
@@ -555,7 +555,7 @@ public class GoodsDetail {
         private String is_best;
         private String is_new;
         private String is_hot;
-        private String is_promote;
+        private boolean is_promote;
         private String zhekou;
         private String bonus_type_id;
         private String last_update;
@@ -908,11 +908,11 @@ public class GoodsDetail {
             this.is_hot = is_hot;
         }
 
-        public String getIs_promote() {
+        public boolean getIs_promote() {
             return is_promote;
         }
 
-        public void setIs_promote(String is_promote) {
+        public void setIs_promote(boolean is_promote) {
             this.is_promote = is_promote;
         }
 
@@ -1266,12 +1266,21 @@ public class GoodsDetail {
              * selected_key_ecshop68 : 1
              */
 
+            private boolean isSelect;
             private String label;
             private String price;
             private String format_price;
             private String id;
             private String goods_attr_thumb;
             private String selected_key_ecshop68;
+
+            public boolean isSelect() {
+                return isSelect;
+            }
+
+            public void setSelect(boolean select) {
+                isSelect = select;
+            }
 
             public String getLabel() {
                 return label;

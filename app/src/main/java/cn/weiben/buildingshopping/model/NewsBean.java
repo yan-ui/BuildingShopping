@@ -13,7 +13,6 @@ public class NewsBean implements Serializable {
      * module_second :
      * name : 回家啊
      * image : null
-     * images : ["http://medium.tklvyou.cn/uploads/20190726/84ad33b65603c7386b5a1c1629cbde3c.jpeg","http://medium.tklvyou.cn/uploads/20190726/72991283ebf4272eb4afa8fdcc1c2eeb.jpeg","http://medium.tklvyou.cn/uploads/20190726/763cdbdb0b7a634055ed7462bf528b21.jpeg"]
      * video : null
      * audio :
      * content : null
