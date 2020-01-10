@@ -1,5 +1,7 @@
 package cn.weiben.buildingshopping.ui.adapter;
 
+import android.content.Intent;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -16,8 +18,10 @@ import java.util.List;
 
 import cn.weiben.buildingshopping.R;
 import cn.weiben.buildingshopping.manager.GlideManager;
+import cn.weiben.buildingshopping.model.GoodsBean;
 import cn.weiben.buildingshopping.model.HomeBean;
 import cn.weiben.buildingshopping.model.ShopBean;
+import cn.weiben.buildingshopping.ui.home.goods_detail.GoodsDetailActivity;
 
 
 public class ShopBeanRvAdapter extends BaseQuickAdapter<ShopBean.SupplierListBean, BaseViewHolder> {
@@ -37,8 +41,17 @@ public class ShopBeanRvAdapter extends BaseQuickAdapter<ShopBean.SupplierListBea
         ShopChildGoodsRvAdapter adapter = new ShopChildGoodsRvAdapter(item.getGoods_list());
         adapter.bindToRecyclerView(recyclerView);
         recyclerView.setAdapter(adapter);
+        adapter.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                GoodsBean bean = (GoodsBean) adapter.getData().get(position);
+                Intent intent = new Intent(mContext, GoodsDetailActivity.class);
+                intent.putExtra("id",bean.getGoods_id());
+                mContext.startActivity(intent);
+            }
+        });
 
-
+        helper.addOnClickListener(R.id.btnCall,R.id.btnMap);
 
     }
 

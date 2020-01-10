@@ -1,13 +1,16 @@
 package cn.weiben.buildingshopping.ui.home.goods_detail
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import cn.weiben.buildingshopping.R
 import cn.weiben.buildingshopping.base.activity.BaseMVPActivity
+import cn.weiben.buildingshopping.model.BuyGoods
 import cn.weiben.buildingshopping.model.GoodsDetail
 import cn.weiben.buildingshopping.ui.adapter.GoodsDetailAdapter
 import cn.weiben.buildingshopping.ui.home.goods_detail.test.GoodsDetailContract
@@ -103,6 +106,25 @@ class GoodsDetailActivity : BaseMVPActivity<GoodsDetailPresenter>(), GoodsDetail
         initDetails(bean, adapter)
         initCommnet(bean, adapter)
 
+
+        btnCall.setOnClickListener {
+            val intent = Intent()
+            intent.action = Intent.ACTION_DIAL
+            intent.data = Uri.parse("tel:" + bean.dianpu.servicephone)
+            startActivity(intent)
+        }
+
+
+        if (bean.goods.supplier_id != "0") {
+            btnAddShopCart.text = "产品展示推广"
+            btnAddShopCart.setOnClickListener { }
+            btnBuy.visibility = View.GONE
+        }
+
+        btnCollect.setOnClickListener {
+            mPresenter.collectGoods(goodsId)
+        }
+
     }
 
 
@@ -183,23 +205,42 @@ class GoodsDetailActivity : BaseMVPActivity<GoodsDetailPresenter>(), GoodsDetail
             if (!bean.specification[0].values.isNullOrEmpty()) {
                 val it = bean.specification[0].values[0]
                 tvPrice.text = it.format_price
+                tvPointMsg.text = "赠送积分：" + it.result_jf
                 btnGoodsTypeView.text = "产品规格显示窗口：规格：" + it.label
             }
         }
 
         goodsTypePopup.setIOnItemSelectedListener(object : CustomGoodsTypePopup.IOnItemSelectedListener {
-            override fun itemSubmit(bean: GoodsDetail.SpecificationBean.ValuesBean, number: Int) {
-                ToastUtils.showShort("加入购物车接口")
+            override fun itemSubmit(bea: GoodsDetail.SpecificationBean.ValuesBean, number: Int) {
+                if (bean.goods.supplier_id == "0") {
+                    val buyGoods = BuyGoods()
+                    buyGoods.parent = 0
+                    buyGoods.quick = 0
+                    buyGoods.goods_id = goodsId
+                    buyGoods.number = "" + number
+                    val spec = ArrayList<String>()
+                    spec.add(bea.id)
+                    buyGoods.spec = spec
+                    mPresenter.addShopCart(buyGoods)
+                }else{
+                    ToastUtils.showShort("产品展示推广")
+                }
+
             }
 
             override fun itemSelected(bean: GoodsDetail.SpecificationBean.ValuesBean) {
                 tvPrice.text = bean.format_price
+                tvPointMsg.text = "赠送积分：" + bean.result_jf
                 btnGoodsTypeView.text = "产品规格显示窗口：规格：" + bean.label
             }
 
         })
         val xpopup = XPopup.Builder(this).asCustom(goodsTypePopup)
         btnGoodsTypeView.setOnClickListener {
+            xpopup.show()
+        }
+
+        btnAddShopCart.setOnClickListener {
             xpopup.show()
         }
 

@@ -51,6 +51,7 @@ public class GoodsBean {
     private boolean is_exclusive;
     private String final_price;
 
+
     public String getId() {
         return id;
     }

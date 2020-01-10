@@ -58,7 +58,7 @@ public class CustomGoodsTypePopup extends BottomPopupView {
                 }
                 GlideManager.INSTANCE.loadRoundImg(bean.getGoods_attr_thumb(),ivImage);
                 tvPrice.setText("价格："+bean.getFormat_price());
-                tvStoreNum.setText("库存："+bean.getSelected_key_ecshop68());
+                tvStoreNum.setText("库存："+bean.getGoods_attr_number());
                 tvGoodsType.setText("规格："+bean.getLabel());
             }
         });

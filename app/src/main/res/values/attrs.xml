@@ -16,7 +16,7 @@
     </declare-styleable>
 
     <declare-styleable name="SlideDetailsLayout">
-        <!-- float value for indicate the moment of switch panel-->
+        <!-- float region_id for indicate the moment of switch panel-->
         <attr name="percent" format="float"/>
         <!-- how long the animation keep-->
         <attr name="duration" format="integer"/>

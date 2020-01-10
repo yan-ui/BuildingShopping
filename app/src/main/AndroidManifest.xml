@@ -20,7 +20,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Base">
-        <activity android:name=".ui.mine.setting.UserSettingActivity"></activity>
+        <activity android:name=".ui.order.OrderPayActivity"></activity>
+        <activity android:name=".ui.mine.application_list.ApplyListActivity" />
+        <activity android:name=".ui.mine.account_detail.AccountDetailActivity" />
+        <activity android:name=".ui.mine.all_money.AllMoneyActivity" />
+        <activity android:name=".ui.mine.withdraw.WithdrawActivity" />
+        <activity android:name=".ui.mine.recharge.RechargeActivity" />
+        <activity android:name=".ui.main.CommonWebviewActivity" />
+        <activity android:name=".ui.mine.returns_list.ReturnsGoodListActivity" />
+        <activity android:name=".ui.mine.address_manager.add_address.AddAddressActivity" />
+        <activity android:name=".ui.mine.address_manager.AddressManagerActivity" />
+        <activity android:name=".ui.mine.leave_message.add_message.AddMessageActivity" />
+        <activity android:name=".ui.mine.leave_message.LeaveMessageListActivity" />
+        <activity android:name=".ui.mine.bonus.BonusActivity" />
+        <activity android:name=".ui.mine.comment.CommentActivity" />
+        <activity android:name=".ui.mine.collect.MyCollectActivity" />
+        <activity android:name=".ui.mine.order_list.OrderListActivity" />
+        <activity android:name=".ui.shop.shop_details.ShopDetailsActivity" />
+        <activity android:name=".ui.search.shop_list.ShopListActivity" />
+        <activity android:name=".ui.search.SearchActivity" />
+        <activity android:name=".ui.mine.setting.UserSettingActivity" />
         <activity android:name=".ui.account.register.RegisterActivity" />
         <activity android:name=".ui.account.login.LoginActivity" />
 
@@ -28,7 +47,8 @@
             android:name="android.webkit.WebView.EnableSafeBrowsing"
             android:value="true" />
 
-        <activity android:name=".ui.home.goods_detail.GoodsDetailActivity"></activity>
+        <activity android:name=".ui.home.goods_detail.GoodsDetailActivity" />
+        <activity android:name=".ui.search.sort_list.SortListActivity" />
         <activity android:name=".ui.category.sort_list.SortListActivity" />
         <activity android:name=".ui.home.ad_details.CommonWebViewUrlActivity" />
         <activity android:name=".ui.home.ad_details.CommonWebViewHtmlActivity" />

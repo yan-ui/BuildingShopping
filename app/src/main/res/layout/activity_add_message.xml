@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_10"
+    tools:context=".ui.mine.leave_message.add_message.AddMessageActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:gravity="center_vertical"
+        android:text="留言类型："
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_16" />
+
+    <RadioGroup
+        android:id="@+id/rgGroup"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbType1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="留言"
+            android:textSize="@dimen/sp_14" />
+
+
+        <RadioButton
+            android:id="@+id/rbType2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="投诉"
+            android:textSize="@dimen/sp_14" />
+
+
+        <RadioButton
+            android:id="@+id/rbType3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="询问"
+            android:textSize="@dimen/sp_14" />
+
+
+        <RadioButton
+            android:id="@+id/rbType4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="售后"
+            android:textSize="@dimen/sp_14" />
+
+        <RadioButton
+            android:id="@+id/rbType5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="求购"
+            android:textSize="@dimen/sp_14" />
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_40"
+            android:gravity="center_vertical"
+            android:text="留言主题："
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16" />
+
+        <EditText
+            android:id="@+id/etTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_stroke_gray_bg"
+            android:hint="*主题"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_10" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_40"
+            android:gravity="center_vertical"
+            android:text="留言内容："
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16" />
+
+        <EditText
+            android:id="@+id/etContent"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_100"
+            android:background="@drawable/shape_stroke_gray_bg"
+            android:gravity="top"
+            android:hint="*内容"
+            android:padding="@dimen/dp_10" />
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/btnSubmit"
+        android:layout_marginTop="@dimen/dp_25"
+        android:background="@drawable/shape_color_accent_radius_5_bg"
+        android:text="提交留言"
+        android:gravity="center"
+        android:textSize="@dimen/sp_16"
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"/>
+
+</LinearLayout>

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/background_color_gray"
     android:orientation="vertical"
-    tools:context=".ui.category.sort_list.SortListActivity">
+    tools:context=".ui.search.sort_list.SortListActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

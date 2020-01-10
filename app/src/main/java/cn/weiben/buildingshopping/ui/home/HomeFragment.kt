@@ -4,12 +4,14 @@ import android.content.Intent
 import android.os.Handler
 import android.os.Message
 import android.view.View
+import android.widget.ImageView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import cn.weiben.buildingshopping.R
 import cn.weiben.buildingshopping.base.fragment.BaseHttpRecyclerMVPFragment
 import cn.weiben.buildingshopping.base.interfaces.AdapterCallBack
+import cn.weiben.buildingshopping.manager.GlideManager
 import cn.weiben.buildingshopping.model.GoodsBean
 import cn.weiben.buildingshopping.model.HomeBean
 import cn.weiben.buildingshopping.ui.adapter.HomeCommonGoodsRvAdapter
@@ -19,6 +21,8 @@ import cn.weiben.buildingshopping.ui.adapter.HomeMenuRvAdapter
 import cn.weiben.buildingshopping.ui.home.ad_details.CommonWebViewHtmlActivity
 import cn.weiben.buildingshopping.ui.home.ad_details.CommonWebViewUrlActivity
 import cn.weiben.buildingshopping.ui.home.goods_detail.GoodsDetailActivity
+import cn.weiben.buildingshopping.ui.main.CommonWebviewActivity
+import cn.weiben.buildingshopping.ui.search.SearchActivity
 import cn.weiben.buildingshopping.utils.BannerGlideImageLoader
 import cn.weiben.buildingshopping.widget.ViewFilpers
 import com.blankj.utilcode.util.ToastUtils
@@ -44,10 +48,13 @@ class HomeFragment : BaseHttpRecyclerMVPFragment<HomePresenter, GoodsBean, BaseV
     }
 
     private lateinit var homeBean: HomeBean
-    private var isFlush = false
     private lateinit var headerView: View
 
     override fun initView() {
+        homeTitleBar.setListener { v, action, extra ->
+            startActivity(Intent(mActivity, SearchActivity::class.java))
+        }
+
         initSmartRefreshLayout(mSmartRefreshLayout)
         initRecyclerView(mRecyclerView)
         mRecyclerView.layoutManager = GridLayoutManager(mActivity, 2)
@@ -63,18 +70,13 @@ class HomeFragment : BaseHttpRecyclerMVPFragment<HomePresenter, GoodsBean, BaseV
 
 
     override fun getListAsync(page: Int) {
-        if (page == 0) {
-            mPresenter.getHomePage()
-        } else {
-            mPresenter.getHomeGoodsList(page, page * 10, 10)
-        }
+        mPresenter.getHomeGoodsList(page, page * 10, 10)
     }
 
     override fun setHomePage(bean: HomeBean?) {
         if (bean == null) {
             return
         }
-        isFlush = true
         homeBean = bean
 
         mPresenter.getHomeGoodsList(0, 10, 10)
@@ -84,7 +86,6 @@ class HomeFragment : BaseHttpRecyclerMVPFragment<HomePresenter, GoodsBean, BaseV
     override fun setList(list: MutableList<GoodsBean>?) {
         setList(object : AdapterCallBack<HomeGoodsGridRvAdapter> {
             override fun createAdapter(): HomeGoodsGridRvAdapter {
-                isFlush = false
                 val adapter = HomeGoodsGridRvAdapter(list)
                 initBanner(headerView, homeBean.wap_index_ad)
 
@@ -98,22 +99,109 @@ class HomeFragment : BaseHttpRecyclerMVPFragment<HomePresenter, GoodsBean, BaseV
 
                 initHotGoodsRecyclerView(headerView, homeBean.hot_goods)
 
+                initHomeAdView(headerView, homeBean)
+
                 adapter.addHeaderView(headerView)
                 return adapter
             }
 
             override fun refreshAdapter() {
-                if (isFlush) {
-                    isFlush = false
-                    initPromotionRecyclerView(headerView, homeBean.promotion_goods)
-
-                    initNewGoodsRecyclerView(headerView, homeBean.new_goods)
-
-                    initHotGoodsRecyclerView(headerView, homeBean.hot_goods)
-                }
                 adapter.setNewData(list)
             }
         })
+
+
+    }
+
+    private fun initHomeAdView(headerView: View, homeBean: HomeBean) {
+        val iv1 = headerView.findViewById<ImageView>(R.id.iv1)
+        val iv2 = headerView.findViewById<ImageView>(R.id.iv2)
+        val iv3 = headerView.findViewById<ImageView>(R.id.iv3)
+        val iv4 = headerView.findViewById<ImageView>(R.id.iv4)
+        val iv5 = headerView.findViewById<ImageView>(R.id.iv5)
+        val iv6 = headerView.findViewById<ImageView>(R.id.iv6)
+        val iv7 = headerView.findViewById<ImageView>(R.id.iv7)
+        val iv8 = headerView.findViewById<ImageView>(R.id.iv8)
+        val iv9 = headerView.findViewById<ImageView>(R.id.iv9)
+        val iv10 = headerView.findViewById<ImageView>(R.id.iv10)
+        val iv11 = headerView.findViewById<ImageView>(R.id.iv11)
+
+        GlideManager.loadImgAuto(homeBean.ad1.ad_code, iv1)
+        GlideManager.loadImgAuto(homeBean.ad2.ad_code, iv2)
+        GlideManager.loadImgAuto(homeBean.ad3.ad_code, iv3)
+        GlideManager.loadImgAuto(homeBean.ad4.ad_code, iv4)
+        GlideManager.loadImgAuto(homeBean.ad5.ad_code, iv5)
+        GlideManager.loadImgAuto(homeBean.ad6.ad_code, iv6)
+        GlideManager.loadImgAuto(homeBean.ad7.ad_code, iv7)
+        GlideManager.loadImgAuto(homeBean.ad8.ad_code, iv8)
+        GlideManager.loadImgAuto(homeBean.ad9.ad_code, iv9)
+        GlideManager.loadImgAuto(homeBean.ad10.ad_code, iv10)
+        GlideManager.loadImgAuto(homeBean.ad11.ad_code, iv11)
+
+        iv1.setOnClickListener {
+            val intent = Intent(mActivity, CommonWebviewActivity::class.java)
+            intent.putExtra("url", homeBean.ad1.ad_link)
+            startActivity(intent)
+        }
+
+        iv2.setOnClickListener {
+            val intent = Intent(mActivity, CommonWebviewActivity::class.java)
+            intent.putExtra("url", homeBean.ad2.ad_link)
+            startActivity(intent)
+        }
+
+        iv3.setOnClickListener {
+            val intent = Intent(mActivity, CommonWebviewActivity::class.java)
+            intent.putExtra("url", homeBean.ad3.ad_link)
+            startActivity(intent)
+        }
+
+        iv4.setOnClickListener {
+            val intent = Intent(mActivity, CommonWebviewActivity::class.java)
+            intent.putExtra("url", homeBean.ad4.ad_link)
+            startActivity(intent)
+        }
+
+        iv5.setOnClickListener {
+            val intent = Intent(mActivity, CommonWebviewActivity::class.java)
+            intent.putExtra("url", homeBean.ad5.ad_link)
+            startActivity(intent)
+        }
+        iv6.setOnClickListener {
+            val intent = Intent(mActivity, CommonWebviewActivity::class.java)
+            intent.putExtra("url", homeBean.ad6.ad_link)
+            startActivity(intent)
+        }
+
+        iv7.setOnClickListener {
+            val intent = Intent(mActivity, CommonWebviewActivity::class.java)
+            intent.putExtra("url", homeBean.ad7.ad_link)
+            startActivity(intent)
+        }
+
+        iv8.setOnClickListener {
+            val intent = Intent(mActivity, CommonWebviewActivity::class.java)
+            intent.putExtra("url", homeBean.ad8.ad_link)
+            startActivity(intent)
+        }
+
+        iv9.setOnClickListener {
+            val intent = Intent(mActivity, CommonWebviewActivity::class.java)
+            intent.putExtra("url", homeBean.ad9.ad_link)
+            startActivity(intent)
+        }
+
+        iv10.setOnClickListener {
+            val intent = Intent(mActivity, CommonWebviewActivity::class.java)
+            intent.putExtra("url", homeBean.ad10.ad_link)
+            startActivity(intent)
+        }
+
+        iv11.setOnClickListener {
+            val intent = Intent(mActivity, CommonWebviewActivity::class.java)
+            intent.putExtra("url", homeBean.ad11.ad_link)
+            startActivity(intent)
+        }
 
 
     }
@@ -176,6 +264,57 @@ class HomeFragment : BaseHttpRecyclerMVPFragment<HomePresenter, GoodsBean, BaseV
         val adapter = HomeMenuRvAdapter(menuList)
         adapter.bindToRecyclerView(menuRecyclerView)
         menuRecyclerView.adapter = adapter
+        adapter.setOnItemClickListener { adapter, view, position ->
+            var url = ""
+            when (position) {
+                0 -> {
+                    url = "https://www.chinajcscw.com/mobile/message.php"
+                }
+
+                1 -> {
+                    url = "https://www.chinajcscw.com/mobile/pro_search.php?encode=YToxOntzOjE4OiJzZWFyY2hfZW5jb2RlX3RpbWUiO2k6MTU3ODY2Mzc2NTt9"
+                }
+
+                2 -> {
+                    url = "https://www.168hw.cn/index.php"
+                }
+
+                3 -> {
+                    url = "https://www.chinajcscw.com/mobile/search.php?encode=YToyOntzOjU6ImludHJvIjtzOjM6Im5ldyI7czoxODoic2VhcmNoX2VuY29kZV90aW1lIjtpOjE1Nzg2NjM3ODM7fQ=="
+                }
+
+                4 -> {
+                    url = "https://www.chinajcscw.com/mobile/supplier_near.php"
+                }
+
+                5 -> {
+                    url = "https://www.chinajcscw.com/mobile/exchange.php"
+                }
+
+                6 -> {
+                    url = "https://www.chinajcscw.com/mobile/category.php?u=1801&id=752"
+                }
+
+                7 -> {
+                    url = "https://www.chinajcscw.com/mobile/stores.php"
+                }
+
+                8 -> {
+                    url = "https://www.chinajcscw.com/mobile/article_cat.php?id=13"
+                }
+
+                9 -> {
+                    url = "https://www.chinajcscw.com/mobile/article_cat.php?id=16"
+                }
+
+            }
+
+            val intent = Intent(mActivity, CommonWebviewActivity::class.java)
+            intent.putExtra("url", url)
+            startActivity(intent)
+
+        }
+
     }
 
 

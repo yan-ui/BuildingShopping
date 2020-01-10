@@ -1,5 +1,6 @@
 package cn.weiben.buildingshopping.ui.mine.setting
 
+import android.content.Intent
 import android.os.Bundle
 import cn.qqtheme.framework.picker.DatePicker
 import cn.qqtheme.framework.util.ConvertUtils
@@ -9,7 +10,13 @@ import cn.weiben.buildingshopping.manager.GlideManager
 import cn.weiben.buildingshopping.model.UserEditBean
 import kotlinx.android.synthetic.main.activity_user_setting.*
 import com.blankj.utilcode.util.ToastUtils
+import com.luck.picture.lib.PictureSelector
+import com.luck.picture.lib.config.PictureConfig
+import com.luck.picture.lib.config.PictureMimeType
+import com.luck.picture.lib.entity.LocalMedia
 import kotlinx.android.synthetic.main.activity_login.*
+import java.io.File
+import java.util.ArrayList
 
 
 class UserSettingActivity : BaseMVPActivity<UserSettingPresenter>(), UserSettingContract.View {
@@ -35,7 +42,7 @@ class UserSettingActivity : BaseMVPActivity<UserSettingPresenter>(), UserSetting
     override fun setUser(data: UserEditBean) {
         GlideManager.loadCircleImg(data.profile.headimg, ivAvatar)
         ivAvatar.setOnClickListener {
-
+            selectPic()
         }
 
 
@@ -87,7 +94,13 @@ class UserSettingActivity : BaseMVPActivity<UserSettingPresenter>(), UserSetting
                 return@setOnClickListener
             }
 
-            mPresenter.setUserProfile(data.profile.headimg,username,birthday,sex,email)
+            val file:File? = if(selectFileList.isNotEmpty()){
+                File(selectFileList[0].path)
+            }else{
+                null
+            }
+
+            mPresenter.setUserProfile(selectFileList,username,birthday,sex,email)
 
         }
 
@@ -120,6 +133,69 @@ class UserSettingActivity : BaseMVPActivity<UserSettingPresenter>(), UserSetting
 
         }
 
+    }
+
+    private var selectFileList: List<LocalMedia> = ArrayList<LocalMedia>()
+    private fun selectPic() {
+        PictureSelector.create(mContext)
+                .openGallery(PictureMimeType.ofImage())
+                .theme(R.style.picture_default_style)
+                // 最大图片选择数量
+                .maxSelectNum(1)
+                // 最小选择数量
+                .minSelectNum(1)
+                // 每行显示个数
+                .imageSpanCount(4)
+                // 多选 or 单选
+                .selectionMode(PictureConfig.SINGLE)
+                // 是否可预览图片
+                .previewImage(true)
+                // 是否可播放音频
+                .enablePreviewAudio(false)
+                // 是否显示拍照按钮
+                .isCamera(true)
+                // 图片列表点击 缩放效果 默认true
+                .isZoomAnim(true)
+                //.imageFormat(PictureMimeType.PNG)// 拍照保存图片格式后缀,默认jpeg
+                //.setOutputCameraPath("/CustomPath")// 自定义拍照保存路径
+                // 是否裁剪
+                .enableCrop(true)
+                // 是否压缩
+                .compress(true)
+                //同步true或异步false 压缩 默认同步
+                .synOrAsy(true)
+                //.compressSavePath(getPath())//压缩图片保存地址
+                //.sizeMultiplier(0.5f)// glide 加载图片大小 0~1之间 如设置 .glideOverride()无效
+                // glide 加载宽高，越小图片列表越流畅，但会影响列表图片浏览的清晰度
+                .glideOverride(160, 160)
+                // 是否显示uCrop工具栏，默认不显示
+                .hideBottomControls(false)
+                // 是否显示gif图片
+                .isGif(false)
+                // 裁剪框是否可拖拽
+                .freeStyleCropEnabled(false)
+                // 是否传入已选图片
+                .selectionMedia(selectFileList)
+                // 小于100kb的图片不压缩
+                .minimumCompressSize(100)
+                //结果回调onActivityResult code
+                .forResult(PictureConfig.CHOOSE_REQUEST)
+    }
+
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == RESULT_OK) {
+            when (requestCode) {
+                PictureConfig.CHOOSE_REQUEST -> {
+                    // 图片选择结果回调
+                    selectFileList = PictureSelector.obtainMultipleResult(data)
+                    GlideManager.loadCircleImg(selectFileList[0].path, ivAvatar)
+                }
+                else -> {
+                }
+            }
+        }
     }
 
 

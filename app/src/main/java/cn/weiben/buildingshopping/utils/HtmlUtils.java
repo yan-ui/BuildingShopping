@@ -47,6 +47,7 @@ public class HtmlUtils {
 
     /**
      * 找到html中所有的图片url
+     *
      * @param htmlCode
      * @return
      */
@@ -68,21 +69,23 @@ public class HtmlUtils {
     }
 
 
-
     /**
      * 设置网页中图片的点击事件
      * 与 AndroidInterface 配合使用,获取点击回调事件
+     *
      * @param view
      */
     public static void setWebImageClick(WebView view, String method) {
-        String jsCode="javascript:(function(){" +
+        String jsCode = "javascript:(function(){" +
                 "var imgs=document.getElementsByTagName(\"img\");" +
                 "for(var i=0;i<imgs.length;i++){" +
-                "imgs[i].pos = i;"+
+                "imgs[i].pos = i;" +
                 "imgs[i].onclick=function(){" +
-                "window."+method+".openImage(this.src,this.pos);" +
+                "window." + method + ".openImage(this.src,this.pos);" +
                 "}}})()";
         view.loadUrl(jsCode);
     }
+
+
 }
 

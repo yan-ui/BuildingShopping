@@ -98,6 +98,7 @@ public class RetrofitHelper {
     private class RqInterceptor implements Interceptor {
         @Override
         public Response intercept(Interceptor.Chain chain) throws IOException {
+            LogUtils.d(DeviceUtils.getMacAddress());
             Request request = chain.request()
                     .newBuilder()
                     .addHeader("uuid", DeviceUtils.getMacAddress())

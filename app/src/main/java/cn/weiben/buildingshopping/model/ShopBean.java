@@ -190,7 +190,79 @@ public class ShopBean {
         private String shop_city;
         private String shop_address;
         private String service_phone;
+        private String c_rank;
+        private String serv_rank;
+        private String shipp_rank;
+        private String c_rank_text;
+        private String serv_rank_text;
+        private String shipp_rank_text;
+        private String goods_number;
         private List<GoodsBean> goods_list;
+        private String mapUrl;
+
+        public String getMapUrl() {
+            return mapUrl;
+        }
+
+        public void setMapUrl(String mapUrl) {
+            this.mapUrl = mapUrl;
+        }
+
+        public String getC_rank() {
+            return c_rank;
+        }
+
+        public void setC_rank(String c_rank) {
+            this.c_rank = c_rank;
+        }
+
+        public String getServ_rank() {
+            return serv_rank;
+        }
+
+        public void setServ_rank(String serv_rank) {
+            this.serv_rank = serv_rank;
+        }
+
+        public String getShipp_rank() {
+            return shipp_rank;
+        }
+
+        public void setShipp_rank(String shipp_rank) {
+            this.shipp_rank = shipp_rank;
+        }
+
+        public String getC_rank_text() {
+            return c_rank_text;
+        }
+
+        public void setC_rank_text(String c_rank_text) {
+            this.c_rank_text = c_rank_text;
+        }
+
+        public String getServ_rank_text() {
+            return serv_rank_text;
+        }
+
+        public void setServ_rank_text(String serv_rank_text) {
+            this.serv_rank_text = serv_rank_text;
+        }
+
+        public String getShipp_rank_text() {
+            return shipp_rank_text;
+        }
+
+        public void setShipp_rank_text(String shipp_rank_text) {
+            this.shipp_rank_text = shipp_rank_text;
+        }
+
+        public String getGoods_number() {
+            return goods_number;
+        }
+
+        public void setGoods_number(String goods_number) {
+            this.goods_number = goods_number;
+        }
 
         public String getSupplier_id() {
             return supplier_id;

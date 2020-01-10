@@ -58,6 +58,7 @@ public class GoodsDetail {
     private String shop_country;
     private String city_id;
     private String district_id;
+    private DianpuBean dianpu;
     private String pups;
     private String ppts;
     private GoodsBean goods;
@@ -94,6 +95,14 @@ public class GoodsDetail {
     private List package_goods_list;
     private List package_goods_list_120;
     private List volume_price_list;
+
+    public DianpuBean getDianpu() {
+        return dianpu;
+    }
+
+    public void setDianpu(DianpuBean dianpu) {
+        this.dianpu = dianpu;
+    }
 
     public int getImage_width() {
         return image_width;
@@ -1271,8 +1280,26 @@ public class GoodsDetail {
             private String price;
             private String format_price;
             private String id;
+            private String result_jf;
             private String goods_attr_thumb;
+            private String goods_attr_number;
             private String selected_key_ecshop68;
+
+            public String getResult_jf() {
+                return result_jf;
+            }
+
+            public void setResult_jf(String result_jf) {
+                this.result_jf = result_jf;
+            }
+
+            public String getGoods_attr_number() {
+                return goods_attr_number;
+            }
+
+            public void setGoods_attr_number(String goods_attr_number) {
+                this.goods_attr_number = goods_attr_number;
+            }
 
             public boolean isSelect() {
                 return isSelect;

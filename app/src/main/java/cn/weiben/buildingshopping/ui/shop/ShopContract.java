@@ -18,3 +18,4 @@ public interface ShopContract {
         void getShopBean(int page);
     }
 }
+

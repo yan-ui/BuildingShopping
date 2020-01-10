@@ -21,9 +21,12 @@ public class MinePresenter extends BasePresenter<MineContract.View> implements M
                     mView.showSuccess(result.getErrmsg());
                     if (result.getCode() == 1) {
                         mView.setUser(result.getData());
+                    }else {
+                        mView.setUser(null);
                     }
                 }, throwable -> {
-                    mView.showSuccess(throwable.getMessage());
+                    mView.setUser(null);
+                    mView.showSuccess("");
                 });
     }
 }

@@ -71,7 +71,7 @@ public abstract class BaseRecyclerMVPFragment<P extends BaseContract.BasePresent
     /**
      * 列表首页页码。有些服务器设置为0，即列表页码从0开始
      */
-    public static final int PAGE_NUM_1 = 0;
+    public static final int PAGE_NUM_1 = 1;
 
     /**
      * 数据列表

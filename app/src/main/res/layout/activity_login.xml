@@ -57,6 +57,7 @@
             android:layout_height="match_parent"
             android:background="@null"
             android:hint="密码"
+            android:inputType="textPassword"
             android:textSize="@dimen/sp_16" />
 
     </LinearLayout>

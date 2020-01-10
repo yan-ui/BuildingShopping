@@ -1,14 +1,12 @@
 package cn.weiben.buildingshopping.ui.adapter;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.blankj.utilcode.util.ToastUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 

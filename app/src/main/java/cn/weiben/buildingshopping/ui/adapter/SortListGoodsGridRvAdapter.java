@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.blankj.utilcode.util.SpanUtils;
+import com.blankj.utilcode.util.StringUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 
@@ -36,10 +37,15 @@ public class SortListGoodsGridRvAdapter extends BaseQuickAdapter<GoodsBean, Base
             helper.setGone(R.id.llGridLayout, true);
             helper.setGone(R.id.llListLayout, false);
 
-            helper.setVisible(R.id.tvSupplierStatus,item.getSupplier_status().equals("0"));
+            helper.setVisible(R.id.tvSupplierStatus, item.getSupplier_status().equals("0"));
 
             GlideManager.INSTANCE.loadImgCenterInside(item.getGoods_thumb(), helper.getView(R.id.ivImage));
-            helper.setText(R.id.tvName, item.getName());
+            if (StringUtils.isEmpty(item.getName())) {
+                helper.setText(R.id.tvName, item.getGoods_name());
+            } else {
+                helper.setText(R.id.tvName, item.getName());
+            }
+
             helper.setText(R.id.tvPromotePrice, item.getShop_price());
             TextView tvFinalPrice = helper.getView(R.id.tvFinalPrice);
             SpanUtils.with(tvFinalPrice)
@@ -50,7 +56,7 @@ public class SortListGoodsGridRvAdapter extends BaseQuickAdapter<GoodsBean, Base
             helper.setGone(R.id.llGridLayout, false);
             helper.setGone(R.id.llListLayout, true);
 
-            helper.setVisible(R.id.tvSupplierStatus1,item.getSupplier_status().equals("0"));
+            helper.setVisible(R.id.tvSupplierStatus1, item.getSupplier_status().equals("0"));
 
             GlideManager.INSTANCE.loadImgCenterInside(item.getGoods_thumb(), helper.getView(R.id.ivImage1));
             helper.setText(R.id.tvName1, item.getName());
