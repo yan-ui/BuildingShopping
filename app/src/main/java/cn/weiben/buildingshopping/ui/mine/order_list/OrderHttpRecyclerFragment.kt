@@ -16,6 +16,7 @@ import kotlinx.android.synthetic.main.activity_http_recycler_test.*
 
 class OrderHttpRecyclerFragment : BaseHttpRecyclerMVPFragment<OrderListPresenter, OrderResultBean.OrderListBean, BaseViewHolder, OrderHttpRecyclerAdapter>(), OrderListContract.View {
 
+
     override fun initPresenter(): OrderListPresenter {
         return OrderListPresenter()
     }
@@ -80,9 +81,19 @@ class OrderHttpRecyclerFragment : BaseHttpRecyclerMVPFragment<OrderListPresenter
                 intent.data = Uri.parse("tel:" + bean.tel)
                 startActivity(intent)
             }
+
+            R.id.btnCancelOrder ->{
+                mPresenter.cancelOrder(bean.order_id)
+            }
+
+
         }
 
 
+    }
+
+    override fun cancelOrderSuccess() {
+        mSmartRefreshLayout.autoRefresh()
     }
 
 }

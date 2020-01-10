@@ -8,11 +8,12 @@ import cn.weiben.buildingshopping.model.OrderResultBean;
 
 public interface OrderListContract {
     interface View extends BaseContract.BaseView{
-
+        void cancelOrderSuccess();
         void setData(int page, List<OrderResultBean.OrderListBean> order_list);
     }
     interface Presenter extends BaseContract.BasePresenter<View>{
        void getOrderList(int page,int composite_status);
+       void cancelOrder(String order_id);
     }
 
 }

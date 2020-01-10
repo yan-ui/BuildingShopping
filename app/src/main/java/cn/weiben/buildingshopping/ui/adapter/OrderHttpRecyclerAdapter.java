@@ -25,7 +25,7 @@ public class OrderHttpRecyclerAdapter extends BaseQuickAdapter<OrderResultBean.O
                 .setText(R.id.tvStatus, bean.getOrder_status())
                 .setText(R.id.tvTotalPrice, bean.getTotal_fee())
                 .setText(R.id.tvGoodsCount, "共" + bean.getCount() + "件商品 实付：");
-        helper.addOnClickListener(R.id.btnCall);
+        helper.addOnClickListener(R.id.btnCall,R.id.btnCancelOrder);
         RecyclerView recyclerView = helper.getView(R.id.childRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(mContext));
         OrderChildGoodsRvAdapter adapter = new OrderChildGoodsRvAdapter(bean.getGoods_list());

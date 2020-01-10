@@ -31,6 +31,8 @@ public class ShopDetailsBean {
     private String page_title;
     private boolean is_guanzhu;
     private String data_dir;
+    private String shop_logo;
+    private String guanzhu_num;
     private String goods_number;
     private String comment_rand;
     private String server;
@@ -46,6 +48,22 @@ public class ShopDetailsBean {
     private List<CategoryGoodsBean> category_goods;
     private List<?> customers;
     private List<?> playerdb;
+
+    public String getShop_logo() {
+        return shop_logo;
+    }
+
+    public void setShop_logo(String shop_logo) {
+        this.shop_logo = shop_logo;
+    }
+
+    public String getGuanzhu_num() {
+        return guanzhu_num;
+    }
+
+    public void setGuanzhu_num(String guanzhu_num) {
+        this.guanzhu_num = guanzhu_num;
+    }
 
     public String getPage_title() {
         return page_title;

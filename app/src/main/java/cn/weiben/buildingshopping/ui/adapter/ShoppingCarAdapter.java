@@ -250,9 +250,23 @@ public class ShoppingCarAdapter extends BaseExpandableListAdapter {
                      * 实际开发中，如果有被选中的商品，
                      * 则跳转到确认订单页面，完成后续订单流程。
                      */
-                    ToastUtils.showShort("跳转到确认订单页面，完成后续订单流程");
+                    if (mBuyListener != null) {
+                        List<String> idList = new ArrayList<>();
+
+                        for (int i = 0; i < tempStores.size(); i++) {
+                            List<CartBean.GoodsListBeanX.GoodsListBean> goods = data.get(i).getGoods_list();
+
+                            for (int j = 0; j < goods.size(); j++) {
+                                if (goods.get(j).getIsSelect()) {
+                                    idList.add(goods.get(j).getRec_id());
+                                }
+                            }
+                        }
+
+                        mBuyListener.onBuyGoods(idList);
+                    }
                 } else {
-                    ToastUtils.showShort( "请选择要购买的商品");
+                    ToastUtils.showShort("请选择要购买的商品");
                 }
             }
         });
@@ -338,7 +352,7 @@ public class ShoppingCarAdapter extends BaseExpandableListAdapter {
         String goods_spec_value = goodsBean.getGoods_attr();
         //商品数量
         //todo:商品数量
-        String goods_num = ""+goodsBean.getGoods_number();
+        String goods_num = "" + goodsBean.getGoods_number();
         //商品是否被选中
         final boolean isSelect = goodsBean.getIsSelect();
 
@@ -397,10 +411,10 @@ public class ShoppingCarAdapter extends BaseExpandableListAdapter {
             public void onClick(View v) {
                 //模拟加号操作
                 //todo:商品数量
-                String num = ""+goodsBean.getGoods_number();
+                String num = "" + goodsBean.getGoods_number();
                 Integer integer = Integer.valueOf(num);
                 integer++;
-                goodsBean.setGoods_number(integer+"");
+                goodsBean.setGoods_number(integer + "");
                 notifyDataSetChanged();
 
                 /**
@@ -416,11 +430,11 @@ public class ShoppingCarAdapter extends BaseExpandableListAdapter {
             @Override
             public void onClick(View v) {
                 //模拟减号操作
-                String num = ""+goodsBean.getGoods_number();
+                String num = "" + goodsBean.getGoods_number();
                 Integer integer = Integer.valueOf(num);
                 if (integer > 1) {
                     integer--;
-                    goodsBean.setGoods_number(integer+"" );
+                    goodsBean.setGoods_number(integer + "");
 
                     /**
                      * 实际开发中，通过回调请求后台接口实现数量的加减
@@ -510,4 +524,16 @@ public class ShoppingCarAdapter extends BaseExpandableListAdapter {
     }
 
     private OnChangeCountListener mChangeCountListener;
+
+
+    //结算的回调
+    public interface OnBuyListener {
+        void onBuyGoods(List<String> idList);
+    }
+
+    public void setOnBuyListener(OnBuyListener listener) {
+        mBuyListener = listener;
+    }
+
+    private OnBuyListener mBuyListener;
 }

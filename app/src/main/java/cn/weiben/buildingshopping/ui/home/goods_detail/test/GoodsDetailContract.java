@@ -11,6 +11,7 @@ import cn.weiben.buildingshopping.model.HomeBean;
 public interface GoodsDetailContract {
     interface View extends BaseContract.BaseView{
         void setGoodsDetail(GoodsDetail bean);
+
     }
 
     interface Presenter extends BaseContract.BasePresenter<View>{

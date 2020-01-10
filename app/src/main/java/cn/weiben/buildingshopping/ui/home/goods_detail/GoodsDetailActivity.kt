@@ -15,6 +15,7 @@ import cn.weiben.buildingshopping.model.GoodsDetail
 import cn.weiben.buildingshopping.ui.adapter.GoodsDetailAdapter
 import cn.weiben.buildingshopping.ui.home.goods_detail.test.GoodsDetailContract
 import cn.weiben.buildingshopping.ui.home.goods_detail.test.GoodsDetailPresenter
+import cn.weiben.buildingshopping.ui.order.OrderPayActivity
 import cn.weiben.buildingshopping.utils.BannerGlideImageLoader
 import cn.weiben.buildingshopping.utils.HtmlTask
 import cn.weiben.buildingshopping.utils.HtmlUtils
@@ -22,6 +23,7 @@ import cn.weiben.buildingshopping.widget.CustomGoodsParamPopup
 import cn.weiben.buildingshopping.widget.CustomGoodsTypePopup
 import com.blankj.utilcode.util.SpanUtils
 import com.blankj.utilcode.util.ToastUtils
+import com.google.gson.Gson
 import com.lxj.xpopup.XPopup
 import com.youth.banner.Banner
 import com.youth.banner.BannerConfig
@@ -119,6 +121,7 @@ class GoodsDetailActivity : BaseMVPActivity<GoodsDetailPresenter>(), GoodsDetail
             btnAddShopCart.text = "产品展示推广"
             btnAddShopCart.setOnClickListener { }
             btnBuy.visibility = View.GONE
+            btnBuy.setOnClickListener { }
         }
 
         btnCollect.setOnClickListener {
@@ -127,7 +130,7 @@ class GoodsDetailActivity : BaseMVPActivity<GoodsDetailPresenter>(), GoodsDetail
 
     }
 
-
+    private var isBuy = false
     private fun initGoods(bean: GoodsDetail, adapter: GoodsDetailAdapter) {
         val view = View.inflate(this, R.layout.item_goods_details_top_view, null)
         val banner = view.findViewById<Banner>(R.id.banner)
@@ -221,8 +224,15 @@ class GoodsDetailActivity : BaseMVPActivity<GoodsDetailPresenter>(), GoodsDetail
                     val spec = ArrayList<String>()
                     spec.add(bea.id)
                     buyGoods.spec = spec
-                    mPresenter.addShopCart(buyGoods)
-                }else{
+                    if (isBuy) {
+                        val intent = Intent(this@GoodsDetailActivity,OrderPayActivity::class.java)
+                        intent.putExtra("is_buy",true)
+                        intent.putExtra("goods",Gson().toJson(buyGoods))
+                        startActivity(intent)
+                    } else {
+                        mPresenter.addShopCart(buyGoods)
+                    }
+                } else {
                     ToastUtils.showShort("产品展示推广")
                 }
 
@@ -237,10 +247,17 @@ class GoodsDetailActivity : BaseMVPActivity<GoodsDetailPresenter>(), GoodsDetail
         })
         val xpopup = XPopup.Builder(this).asCustom(goodsTypePopup)
         btnGoodsTypeView.setOnClickListener {
+            isBuy = false
             xpopup.show()
         }
 
         btnAddShopCart.setOnClickListener {
+            isBuy = false
+            xpopup.show()
+        }
+
+        btnBuy.setOnClickListener {
+            isBuy = true
             xpopup.show()
         }
 

@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.blankj.utilcode.util.StringUtils;
 import com.lxj.xpopup.animator.PopupAnimator;
 import com.lxj.xpopup.core.BottomPopupView;
 import com.lxj.xpopup.util.XPopupUtils;
@@ -24,15 +25,24 @@ import cn.weiben.buildingshopping.utils.RecycleViewDivider;
 public class CustomGoodsParamPopup extends BottomPopupView {
     //注意：自定义弹窗本质是一个自定义View，但是只需重写一个参数的构造，其他的不要重写，所有的自定义弹窗都是这样。
     private List<GoodsDetail.RankPricesBean> rankPricesBeanList;
+
     public CustomGoodsParamPopup(@NonNull Context context, List<GoodsDetail.RankPricesBean> data) {
-        this(context,data,1);
+        this(context, data, 1);
     }
 
 
     private int type = 1;
+    private String typeStr = "";
+
     public CustomGoodsParamPopup(@NonNull Context context, List<GoodsDetail.RankPricesBean> data, int type) {
         super(context);
         this.type = type;
+        this.rankPricesBeanList = data;
+    }
+
+    public CustomGoodsParamPopup(@NonNull Context context, List<GoodsDetail.RankPricesBean> data, String type) {
+        super(context);
+        this.typeStr = type;
         this.rankPricesBeanList = data;
     }
 
@@ -43,6 +53,7 @@ public class CustomGoodsParamPopup extends BottomPopupView {
     }
 
     private RecyclerView recyclerView;
+
     // 执行初始化操作，比如：findView，设置点击，或者任何你弹窗内的业务逻辑
     @Override
     protected void onCreate() {
@@ -51,21 +62,30 @@ public class CustomGoodsParamPopup extends BottomPopupView {
 
         TextView tvTitle = findViewById(R.id.tvTitle);
 
+        if (!StringUtils.isEmpty(typeStr)) {
+            tvTitle.setText(typeStr);
+            CustomGoodsParamPopupAdapter adapter = new CustomGoodsParamPopupAdapter(rankPricesBeanList);
+            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+            adapter.bindToRecyclerView(recyclerView);
+            recyclerView.addItemDecoration(new RecycleViewDivider(getContext(), LinearLayout.VERTICAL));
+            recyclerView.setAdapter(adapter);
+        } else {
+            if (type == 1) {
+                tvTitle.setText("会员专享价");
+                CustomRankPricePopupAdapter adapter = new CustomRankPricePopupAdapter(rankPricesBeanList);
+                recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+                adapter.bindToRecyclerView(recyclerView);
+                recyclerView.addItemDecoration(new RecycleViewDivider(getContext(), LinearLayout.VERTICAL));
+                recyclerView.setAdapter(adapter);
+            } else {
+                tvTitle.setText("商品信息");
+                CustomGoodsParamPopupAdapter adapter = new CustomGoodsParamPopupAdapter(rankPricesBeanList);
+                recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+                adapter.bindToRecyclerView(recyclerView);
+                recyclerView.addItemDecoration(new RecycleViewDivider(getContext(), LinearLayout.VERTICAL));
+                recyclerView.setAdapter(adapter);
+            }
 
-        if(type == 1){
-            tvTitle.setText("会员专享价");
-            CustomRankPricePopupAdapter adapter =new CustomRankPricePopupAdapter(rankPricesBeanList);
-            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-            adapter.bindToRecyclerView(recyclerView);
-            recyclerView.addItemDecoration(new RecycleViewDivider(getContext(), LinearLayout.VERTICAL));
-            recyclerView.setAdapter(adapter);
-        }else {
-            tvTitle.setText("商品信息");
-            CustomGoodsParamPopupAdapter adapter =new CustomGoodsParamPopupAdapter(rankPricesBeanList);
-            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-            adapter.bindToRecyclerView(recyclerView);
-            recyclerView.addItemDecoration(new RecycleViewDivider(getContext(), LinearLayout.VERTICAL));
-            recyclerView.setAdapter(adapter);
         }
 
 

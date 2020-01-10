@@ -9,6 +9,7 @@ import cn.weiben.buildingshopping.model.AddressModel;
 import cn.weiben.buildingshopping.model.BonusBean;
 import cn.weiben.buildingshopping.model.BuyGoods;
 import cn.weiben.buildingshopping.model.CartBean;
+import cn.weiben.buildingshopping.model.CartPayBean;
 import cn.weiben.buildingshopping.model.CategoryBean;
 import cn.weiben.buildingshopping.model.CollectGoodsBean;
 import cn.weiben.buildingshopping.model.CollectShopBean;
@@ -347,6 +348,34 @@ public interface ApiService {
     @GET("mobileapi/flow.php?step=drop_goods")
     Observable<BaseResult> deleteCartGoods(@Query("id") String ids);
 
+    /**
+     * 购物车结算接口
+     *
+     * @return
+     */
+    @FormUrlEncoded
+    @POST("mobileapi/flow.php?step=done")
+    Observable<BaseResult> payOrder(@Field("bonus[]") String bonus, @Field("bonus_sn[]") String bonus_sn,
+                                    @Field("pay_ship[]") String pay_ship, @Field("best_time") String best_time,
+                                    @Field("how_oos") int how_oos, @Field("postscript") String postscript,
+                                    @Field("integral") String integral, @Field("payment") int payment,
+                                    @Field("addreess_id") String addreess_id);
+
+    /**
+     * 购物车结算接口
+     *
+     * @return
+     */
+    @GET("mobileapi/flow.php?step=checkout&suppid=0")
+    Observable<BaseResult<CartPayBean>> payCartGoods(@Query("one_step") String one_step,@Query("goods") String goods);
+
+    /**
+     * 取消订单接口
+     *
+     * @return
+     */
+    @GET("mobileapi/user.php?act=cancel_order")
+    Observable<BaseResult> cancelOrder(@Query("order_id") String order_id);
 
     /**
      * 请求文章详情接口

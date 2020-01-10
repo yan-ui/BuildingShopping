@@ -1,5 +1,6 @@
 package cn.weiben.buildingshopping.ui.mine.address_manager
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -39,8 +40,9 @@ class AddressManagerActivity : BaseRecyclerMVPActivity<AddressManagerPresenter, 
         mPresenter.getAddressList()
     }
 
+    private var type = 0
     override fun initView(savedInstanceState: Bundle?) {
-        val type = intent.getIntExtra("type", 0)
+        type = intent.getIntExtra("type", 0)
         if (type != 0) {
             setTitle("选择收货地址")
         } else {
@@ -96,6 +98,22 @@ class AddressManagerActivity : BaseRecyclerMVPActivity<AddressManagerPresenter, 
 
     override fun setDefaultSuccess() {
         mSmartRefreshLayout.autoRefresh()
+    }
+
+
+    override fun onItemClick(adapter: BaseQuickAdapter<*, *>, view: View, position: Int) {
+        super.onItemClick(adapter, view, position)
+        val bean = adapter.data[position] as AddressModel
+        if(type != 0){
+            val intent = Intent()
+            intent.putExtra("id", bean.address_id)
+            intent.putExtra("name", bean.consignee)
+            intent.putExtra("mobile", bean.tel)
+            intent.putExtra("address", bean.province_name + bean.city + bean.district_name + bean.address)
+            setResult(Activity.RESULT_OK, intent)
+            finish()
+        }
+
     }
 
 

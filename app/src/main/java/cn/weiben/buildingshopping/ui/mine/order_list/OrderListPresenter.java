@@ -31,4 +31,21 @@ public class OrderListPresenter extends BasePresenter<OrderListContract.View> im
                     mView.setData(page,null);
                 });
     }
+
+    @Override
+    public void cancelOrder(String order_id) {
+        mView.showLoading();
+        RetrofitHelper.getInstance().getServer()
+                .cancelOrder(order_id)
+                .compose(RxSchedulers.applySchedulers())
+                .compose(mView.bindUntilEvent())
+                .subscribe(result ->{
+                    mView.showSuccess(result.getErrmsg());
+                    if(result.getCode() == 1){
+                        mView.cancelOrderSuccess();
+                    }
+                }, throwable -> {
+                    mView.showSuccess(throwable.getMessage());
+                });
+    }
 }

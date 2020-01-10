@@ -1,6 +1,7 @@
 package cn.weiben.buildingshopping.ui.cart
 
 import android.content.DialogInterface
+import android.content.Intent
 import android.view.KeyEvent
 import android.view.View
 import android.widget.ExpandableListView
@@ -8,11 +9,14 @@ import cn.weiben.buildingshopping.R
 import cn.weiben.buildingshopping.base.fragment.BaseMVPFragment
 import cn.weiben.buildingshopping.model.CartBean
 import cn.weiben.buildingshopping.ui.adapter.ShoppingCarAdapter
+import cn.weiben.buildingshopping.ui.order.OrderPayActivity
 import com.blankj.utilcode.util.ToastUtils
 import kotlinx.android.synthetic.main.fragment_cart.*
+import java.lang.StringBuilder
 
 
-class CartFragment : BaseMVPFragment<CartPresenter>(),CartContract.View {
+class CartFragment : BaseMVPFragment<CartPresenter>(), CartContract.View {
+
 
     override fun initPresenter(): CartPresenter {
         return CartPresenter()
@@ -118,13 +122,6 @@ class CartFragment : BaseMVPFragment<CartPresenter>(),CartContract.View {
              * GoodsBean的isSelect属性，判断商品是否被选中，
              * （true为选中，false为未选中）
              */
-            /**
-             * 实际开发中，在此请求删除接口，删除成功后，
-             * 通过initExpandableListViewData（）方法刷新购物车数据。
-             * 注：通过bean类中的DatasBean的isSelect_shop属性，判断店铺是否被选中；
-             * GoodsBean的isSelect属性，判断商品是否被选中，
-             * （true为选中，false为未选中）
-             */
         })
 
         //修改商品数量的回调
@@ -138,6 +135,11 @@ class CartFragment : BaseMVPFragment<CartPresenter>(),CartContract.View {
                      * 通过initExpandableListViewData（）方法刷新购物车数据。
                      */
                 })
+
+        shoppingCarAdapter.setOnBuyListener {
+            startActivity(Intent(mActivity,OrderPayActivity::class.java))
+        }
+
     }
 
     /**
@@ -152,6 +154,25 @@ class CartFragment : BaseMVPFragment<CartPresenter>(),CartContract.View {
         var hasSelect = false
         //创建临时的List，用于存储没有被选中的购物车数据
         val datasTemp = ArrayList<CartBean.GoodsListBeanX>()
+        val datasSelectTemp = ArrayList<CartBean.GoodsListBeanX.GoodsListBean>()
+
+        for (i in datas!!.indices) {
+            val goods = datas!!.get(i).goods_list
+            val isSelect_shop = datas!!.get(i).isSelect_shop
+            if (isSelect_shop) {
+                datasSelectTemp.addAll(goods)
+                continue
+            }
+
+            for (y in goods.indices) {
+                val goodsBean = goods.get(y)
+                val isSelect = goodsBean.getIsSelect()
+                if (isSelect) {
+                    datasSelectTemp.add(goodsBean)
+                }
+            }
+
+        }
 
         for (i in datas!!.indices) {
             val goods = datas!!.get(i).goods_list
@@ -179,7 +200,7 @@ class CartFragment : BaseMVPFragment<CartPresenter>(),CartContract.View {
         }
 
         if (hasSelect) {
-            showDeleteDialog(datasTemp)
+            showDeleteDialog(datasTemp, datasSelectTemp)
         } else {
             ToastUtils.showShort("请选择要删除的商品")
         }
@@ -190,19 +211,28 @@ class CartFragment : BaseMVPFragment<CartPresenter>(),CartContract.View {
      *
      * @param datasTemp
      */
-    private fun showDeleteDialog(datasTemp: List<CartBean.GoodsListBeanX>) {
+    private fun showDeleteDialog(datasTemp: List<CartBean.GoodsListBeanX>, datasSelectTemp: ArrayList<CartBean.GoodsListBeanX.GoodsListBean>) {
         androidx.appcompat.app.AlertDialog.Builder(mActivity)
                 .setMessage("确定要删除商品吗？")
                 .setNegativeButton("取消") { dialog, which ->
                     dialog.dismiss()
                 }
                 .setPositiveButton("确定") { dialog, which ->
-                    datas = datasTemp
-                    initExpandableListViewData(datas)
+                    val sb = StringBuilder()
+                    datasSelectTemp.forEach {
+                        sb.append(it.rec_id + ",")
+                    }
+
+                    mPresenter.deleteGoods(sb.toString(), datasTemp)
                     dialog?.dismiss()
                 }.create()
                 .show()
 
+    }
+
+    override fun deleteSuccess(datasTemp: List<CartBean.GoodsListBeanX>) {
+        datas = datasTemp
+        initExpandableListViewData(datas)
     }
 
     var keylistener: DialogInterface.OnKeyListener = object : DialogInterface.OnKeyListener {
