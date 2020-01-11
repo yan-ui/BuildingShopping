@@ -5,6 +5,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,10 +18,12 @@ import cn.weiben.buildingshopping.ui.home.goods_detail.test.GoodsDetailContract
 import cn.weiben.buildingshopping.ui.home.goods_detail.test.GoodsDetailPresenter
 import cn.weiben.buildingshopping.ui.order.OrderPayActivity
 import cn.weiben.buildingshopping.utils.BannerGlideImageLoader
+import cn.weiben.buildingshopping.utils.DateUtils
 import cn.weiben.buildingshopping.utils.HtmlTask
 import cn.weiben.buildingshopping.utils.HtmlUtils
 import cn.weiben.buildingshopping.widget.CustomGoodsParamPopup
 import cn.weiben.buildingshopping.widget.CustomGoodsTypePopup
+import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.SpanUtils
 import com.blankj.utilcode.util.ToastUtils
 import com.google.gson.Gson
@@ -37,6 +40,10 @@ import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerInd
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerTitleView
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.indicators.LinePagerIndicator
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.ColorTransitionPagerTitleView
+import java.text.ParseException
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 class GoodsDetailActivity : BaseMVPActivity<GoodsDetailPresenter>(), GoodsDetailContract.View {
@@ -75,7 +82,23 @@ class GoodsDetailActivity : BaseMVPActivity<GoodsDetailPresenter>(), GoodsDetail
                 simplePagerTitleView.selectedColor = Color.parseColor("#ff0000")
                 simplePagerTitleView.setOnClickListener {
                     mFragmentContainerHelper.handlePageSelected(index)
-                    ToastUtils.showShort("测试")
+                    if (adapter == null) {
+                        return@setOnClickListener
+                    }
+                    when (index) {
+                        0 -> {
+                            mRecyclerView.scrollToPosition(0)
+                        }
+
+                        1 -> {
+                            mRecyclerView.smoothScrollBy(0, 1600)
+                        }
+
+                        2 -> {
+                            mRecyclerView.smoothScrollBy(0, 2000)
+                        }
+                    }
+
                 }
                 return simplePagerTitleView
             }
@@ -98,15 +121,16 @@ class GoodsDetailActivity : BaseMVPActivity<GoodsDetailPresenter>(), GoodsDetail
         mPresenter.getGoodsDetail(goodsId)
     }
 
+    private var adapter: GoodsDetailAdapter? = null
     override fun setGoodsDetail(bean: GoodsDetail) {
-        val adapter = GoodsDetailAdapter(ArrayList<String>())
+        adapter = GoodsDetailAdapter(ArrayList<String>())
         mRecyclerView.layoutManager = LinearLayoutManager(mContext)
-        adapter.bindToRecyclerView(mRecyclerView)
+        adapter!!.bindToRecyclerView(mRecyclerView)
         mRecyclerView.adapter = adapter
 
-        initGoods(bean, adapter)
-        initDetails(bean, adapter)
-        initCommnet(bean, adapter)
+        initGoods(bean, adapter!!)
+        initDetails(bean, adapter!!)
+        initCommnet(bean, adapter!!)
 
 
         btnCall.setOnClickListener {
@@ -131,6 +155,7 @@ class GoodsDetailActivity : BaseMVPActivity<GoodsDetailPresenter>(), GoodsDetail
     }
 
     private var isBuy = false
+    private var timer: CustomCountDown? = null
     private fun initGoods(bean: GoodsDetail, adapter: GoodsDetailAdapter) {
         val view = View.inflate(this, R.layout.item_goods_details_top_view, null)
         val banner = view.findViewById<Banner>(R.id.banner)
@@ -143,6 +168,7 @@ class GoodsDetailActivity : BaseMVPActivity<GoodsDetailPresenter>(), GoodsDetail
         val tvCommentNum = view.findViewById<TextView>(R.id.tvCommentNum)
         val tvBuyNum = view.findViewById<TextView>(R.id.tvBuyNum)
         val tvPromoteTag = view.findViewById<TextView>(R.id.tvPromoteTag)
+        val tvEndTime = view.findViewById<TextView>(R.id.tvEndTime)
         val tvPointMsg = view.findViewById<TextView>(R.id.tvPointMsg)
         val btnGoodsTypeView = view.findViewById<TextView>(R.id.btnGoodsTypeView)
         val btnGoodsParamView = view.findViewById<TextView>(R.id.btnGoodsParamView)
@@ -152,10 +178,23 @@ class GoodsDetailActivity : BaseMVPActivity<GoodsDetailPresenter>(), GoodsDetail
         if (bean.goods.is_promote) {
             tvPrice.text = bean.goods.promote_price
             tvPromoteTag.visibility = View.VISIBLE
+            tvEndTime.visibility = View.VISIBLE
             tvPointMsg.text = "赠送积分：${bean.goods.promote_price}"
+
+            val left = bean.promote_end_time.toLong() * 1000 - System.currentTimeMillis()
+            if (left <= 0) {
+                timer = null
+                tvEndTime.text = "倒计时结束"
+            } else {
+                tvEndTime.text = "剩余：" + DateUtils.secToTime((left / 1000 + if (left % 1000 == 0L) 0 else 1).toInt())
+                timer = CustomCountDown(left, 1000, tvEndTime)
+                timer?.start()
+            }
+
         } else {
             tvPrice.text = bean.goods.shop_price
             tvPromoteTag.visibility = View.GONE
+            tvEndTime.visibility = View.GONE
             tvPointMsg.text = "赠送积分：${bean.goods.shop_price}"
         }
 
@@ -225,9 +264,9 @@ class GoodsDetailActivity : BaseMVPActivity<GoodsDetailPresenter>(), GoodsDetail
                     spec.add(bea.id)
                     buyGoods.spec = spec
                     if (isBuy) {
-                        val intent = Intent(this@GoodsDetailActivity,OrderPayActivity::class.java)
-                        intent.putExtra("is_buy",true)
-                        intent.putExtra("goods",Gson().toJson(buyGoods))
+                        val intent = Intent(this@GoodsDetailActivity, OrderPayActivity::class.java)
+                        intent.putExtra("is_buy", true)
+                        intent.putExtra("goods", Gson().toJson(buyGoods))
                         startActivity(intent)
                     } else {
                         mPresenter.addShopCart(buyGoods)
@@ -313,6 +352,22 @@ class GoodsDetailActivity : BaseMVPActivity<GoodsDetailPresenter>(), GoodsDetail
             banner.start()
         }
 
+    }
+
+    private inner class CustomCountDown(millisInFuture: Long, countDownInterval: Long, private val time: TextView?) : CountDownTimer(millisInFuture, countDownInterval) {
+
+        override fun onTick(left: Long) {
+            time?.text = "剩余：" + DateUtils.secToTime((left / 1000 + if (left % 1000 == 0L) 0 else 1).toInt())
+        }
+
+        override fun onFinish() {
+            time?.text = "倒计时结束"
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        timer?.cancel()
     }
 
 }

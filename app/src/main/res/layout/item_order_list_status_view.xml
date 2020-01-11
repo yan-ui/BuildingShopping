@@ -105,8 +105,57 @@
             android:layout_height="@dimen/dp_35"
             android:gravity="center"
             android:text="立即付款"
+            android:visibility="gone"
             android:background="@color/red"
             android:textColor="@color/white"
+            android:textSize="@dimen/sp_12" />
+
+        <TextView
+            android:id="@+id/btnSeeLogistic"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_35"
+            android:gravity="center"
+            android:text="查看物流"
+            android:visibility="gone"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:background="@drawable/shape_stroke_gray_bg"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/sp_12" />
+
+        <TextView
+            android:id="@+id/btnConfirmGoods"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_35"
+            android:gravity="center"
+            android:visibility="gone"
+            android:text="确认收货"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:background="@drawable/shape_stroke_gray_bg"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/sp_12" />
+
+        <TextView
+            android:id="@+id/btnComment"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_35"
+            android:gravity="center"
+            android:text="评价晒单"
+            android:visibility="gone"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:background="@drawable/shape_stroke_gray_bg"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/sp_12" />
+
+        <TextView
+            android:id="@+id/btnFinish"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_35"
+            android:gravity="center"
+            android:text="已完成"
+            android:visibility="gone"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:background="@drawable/shape_stroke_gray_bg"
+            android:textColor="@color/gray"
             android:textSize="@dimen/sp_12" />
 
         <TextView

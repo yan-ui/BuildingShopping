@@ -71,6 +71,22 @@
             android:textSize="@dimen/sp_10"
             android:layout_height="wrap_content" />
 
+        <TextView
+            android:id="@+id/tvEndTime"
+            android:background="@color/red"
+            android:text="剩余"
+            android:visibility="gone"
+            android:paddingTop="@dimen/dp_2"
+            android:paddingBottom="@dimen/dp_2"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_width="wrap_content"
+            android:paddingLeft="@dimen/dp_5"
+            android:paddingRight="@dimen/dp_5"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_10"
+            android:layout_height="wrap_content" />
+
+
     </LinearLayout>
 
     <LinearLayout

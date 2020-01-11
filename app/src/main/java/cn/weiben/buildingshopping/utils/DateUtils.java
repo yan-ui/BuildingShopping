@@ -21,9 +21,9 @@ import java.util.Date;
 public class DateUtils {
 
     //缓存时间
-    public static int TIME_YEAR =15552000; //60 * 60 * 24 *180 单位(秒)
-    public static int TIME_HOUR =3600; //60 * 60 * 1 单位(秒)
-    public static int TIME_DAY =86400; //60 * 60 * 24 单位(秒)   /1440
+    public static int TIME_YEAR = 15552000; //60 * 60 * 24 *180 单位(秒)
+    public static int TIME_HOUR = 3600; //60 * 60 * 1 单位(秒)
+    public static int TIME_DAY = 86400; //60 * 60 * 24 单位(秒)   /1440
     /**
      * 指定日期格式 yyyyMMddHHmmss
      */
@@ -1063,4 +1063,34 @@ public class DateUtils {
         }
 
     }
+
+
+    // a integer to xx:xx:xx
+    public static String secToTime(int time) {
+        String timeStr = null;
+        int day = 0;
+        int hour = 0;
+        int minute = 0;
+        int second = 0;
+        if (time <= 0)
+            return "00:00:00:00";
+        else {
+            day = time / (60 * 60 * 24);
+            hour = (time - (60 * 60 * 24 * day)) / 3600;
+            minute = (time - 60 * 60 * 24 * day - 3600 * hour) / 60;
+            second = time - 60 * 60 * 24 * day - 3600 * hour - 60 * minute;
+            timeStr = unitFormat(day) + ":" + unitFormat(hour) + ":" + unitFormat(minute) + ":" + unitFormat(second);
+        }
+        return timeStr;
+    }
+
+    private static String unitFormat(int i) {
+        String retStr = null;
+        if (i >= 0 && i < 10)
+            retStr = "0" + Integer.toString(i);
+        else
+            retStr = "" + i;
+        return retStr;
+    }
+
 }
