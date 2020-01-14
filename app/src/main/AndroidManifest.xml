@@ -20,7 +20,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Base">
-        <activity android:name=".ui.order.OrderPayActivity"></activity>
+        <activity android:name=".ui.shop.category.ShopCategoryRvActivity"></activity>
+        <activity android:name=".ui.order.OrderPayActivity" />
         <activity android:name=".ui.mine.application_list.ApplyListActivity" />
         <activity android:name=".ui.mine.account_detail.AccountDetailActivity" />
         <activity android:name=".ui.mine.all_money.AllMoneyActivity" />
@@ -50,6 +51,7 @@
         <activity android:name=".ui.home.goods_detail.GoodsDetailActivity" />
         <activity android:name=".ui.search.sort_list.SortListActivity" />
         <activity android:name=".ui.category.sort_list.SortListActivity" />
+        <activity android:name=".ui.shop.sort_list.SortListActivity" />
         <activity android:name=".ui.home.ad_details.CommonWebViewUrlActivity" />
         <activity android:name=".ui.home.ad_details.CommonWebViewHtmlActivity" />
         <activity

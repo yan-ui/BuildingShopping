@@ -42,9 +42,9 @@ public class ShopDetailsBean {
     private String supplier_bond;
     private CatRecBean cat_rec;
     private List<CategoriesBean> categories;
-    private List<BestGoodsBean> best_goods;
-    private List<NewGoodsBean> new_goods;
-    private List<HotGoodsBean> hot_goods;
+    private List<HomeBean.NewGoodsBean> best_goods;
+    private List<HomeBean.NewGoodsBean> new_goods;
+    private List<HomeBean.NewGoodsBean> hot_goods;
     private List<CategoryGoodsBean> category_goods;
     private List<?> customers;
     private List<?> playerdb;
@@ -161,27 +161,27 @@ public class ShopDetailsBean {
         this.categories = categories;
     }
 
-    public List<BestGoodsBean> getBest_goods() {
+    public List<HomeBean.NewGoodsBean> getBest_goods() {
         return best_goods;
     }
 
-    public void setBest_goods(List<BestGoodsBean> best_goods) {
+    public void setBest_goods(List<HomeBean.NewGoodsBean> best_goods) {
         this.best_goods = best_goods;
     }
 
-    public List<NewGoodsBean> getNew_goods() {
+    public List<HomeBean.NewGoodsBean> getNew_goods() {
         return new_goods;
     }
 
-    public void setNew_goods(List<NewGoodsBean> new_goods) {
+    public void setNew_goods(List<HomeBean.NewGoodsBean> new_goods) {
         this.new_goods = new_goods;
     }
 
-    public List<HotGoodsBean> getHot_goods() {
+    public List<HomeBean.NewGoodsBean> getHot_goods() {
         return hot_goods;
     }
 
-    public void setHot_goods(List<HotGoodsBean> hot_goods) {
+    public void setHot_goods(List<HomeBean.NewGoodsBean> hot_goods) {
         this.hot_goods = hot_goods;
     }
 
@@ -956,81 +956,7 @@ public class ShopDetailsBean {
         }
     }
 
-    public static class CategoriesBean {
-        /**
-         * id : 34
-         * name : 电动工具
-         * go : category
-         * suppid : 13
-         * cid : 34
-         * url : supplier.php?go=category&amp;suppId=13&amp;id=34
-         * cat_id : []
-         */
 
-        private String id;
-        private String name;
-        private String go;
-        private int suppid;
-        private String cid;
-        private String url;
-        private List<?> cat_id;
-
-        public String getId() {
-            return id;
-        }
-
-        public void setId(String id) {
-            this.id = id;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getGo() {
-            return go;
-        }
-
-        public void setGo(String go) {
-            this.go = go;
-        }
-
-        public int getSuppid() {
-            return suppid;
-        }
-
-        public void setSuppid(int suppid) {
-            this.suppid = suppid;
-        }
-
-        public String getCid() {
-            return cid;
-        }
-
-        public void setCid(String cid) {
-            this.cid = cid;
-        }
-
-        public String getUrl() {
-            return url;
-        }
-
-        public void setUrl(String url) {
-            this.url = url;
-        }
-
-        public List<?> getCat_id() {
-            return cat_id;
-        }
-
-        public void setCat_id(List<?> cat_id) {
-            this.cat_id = cat_id;
-        }
-    }
 
     public static class BestGoodsBean {
         /**

@@ -3,6 +3,7 @@ package cn.weiben.buildingshopping.ui.adapter;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.view.View;
+import android.widget.BaseExpandableListAdapter;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -19,6 +20,7 @@ import cn.weiben.buildingshopping.model.OrderResultBean;
 
 
 public class OrderHttpRecyclerAdapter extends BaseQuickAdapter<OrderResultBean.OrderListBean, BaseViewHolder> {
+
 
     public OrderHttpRecyclerAdapter(List<OrderResultBean.OrderListBean> data) {
         super(R.layout.item_order_list_status_view, data);

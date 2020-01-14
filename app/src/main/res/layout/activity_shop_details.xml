@@ -1,123 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/background_color_gray"
-    android:orientation="vertical"
-    tools:context=".ui.shop.shop_details.ShopDetailsActivity">
+    android:layout_height="match_parent">
 
-
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_100"
-        android:background="@drawable/shop_bg">
+        android:layout_height="match_parent"
+        android:background="@color/background_color_gray"
+        android:orientation="vertical"
+        tools:context=".ui.shop.shop_details.ShopDetailsActivity">
 
-        <TextView
-            android:id="@+id/tvDangerMoney"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_5"
-            android:text="保证金（10000.00元）"
-            android:textColor="@color/white" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_100"
+            android:background="@drawable/shop_bg">
+
+            <TextView
+                android:id="@+id/tvDangerMoney"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_5"
+                android:text="保证金（10000.00元）"
+                android:textColor="@color/white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ivAvatar"
+                    android:layout_width="@dimen/dp_45"
+                    android:layout_height="@dimen/dp_45" />
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:text="名称"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_16" />
+
+                <TextView
+                    android:id="@+id/btnCollect"
+                    android:layout_width="@dimen/dp_60"
+                    android:layout_height="@dimen/dp_45"
+                    android:background="@color/red"
+                    android:gravity="center"
+                    android:text="收藏"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_14" />
+
+                <TextView
+                    android:id="@+id/tvFensi"
+                    android:layout_width="@dimen/dp_60"
+                    android:layout_height="@dimen/dp_45"
+                    android:background="#b10f0a"
+                    android:gravity="center"
+                    android:text="16\n粉丝"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_12" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:gravity="center_vertical"
+            android:layout_height="@dimen/dp_50"
             android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/ivAvatar"
-                android:layout_width="@dimen/dp_45"
-                android:layout_height="@dimen/dp_45" />
-
             <TextView
-                android:id="@+id/tvName"
+                android:id="@+id/btnCategory"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:ellipsize="end"
-                android:text="名称"
-                android:textColor="@color/white"
-                android:textSize="@dimen/sp_16" />
+                android:background="@color/white"
+                android:gravity="center"
+                android:text="分类"
+                android:textSize="@dimen/sp_14" />
+
 
             <TextView
-                android:id="@+id/btnCollect"
-                android:layout_width="@dimen/dp_60"
-                android:layout_height="@dimen/dp_45"
-                android:background="@color/red"
+                android:id="@+id/btnAllGoods"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_1"
+                android:layout_weight="1"
+                android:background="@color/white"
                 android:gravity="center"
-                android:text="收藏"
-                android:textColor="@color/white"
+                android:text="全部商品"
                 android:textSize="@dimen/sp_14" />
 
             <TextView
-                android:id="@+id/tvFensi"
-                android:layout_width="@dimen/dp_60"
-                android:layout_height="@dimen/dp_45"
-                android:background="#b10f0a"
+                android:id="@+id/btnActivity"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_1"
+                android:layout_marginRight="@dimen/dp_1"
+                android:layout_weight="1"
+                android:background="@color/white"
                 android:gravity="center"
-                android:text="16\n粉丝"
-                android:textColor="@color/white"
-                android:textSize="@dimen/sp_12" />
+                android:text="店铺活动"
+                android:textSize="@dimen/sp_14" />
 
+            <TextView
+                android:id="@+id/btnDetails"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:gravity="center"
+                android:text="店铺介绍"
+                android:textSize="@dimen/sp_14" />
 
         </LinearLayout>
 
 
-    </RelativeLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
-        android:orientation="horizontal">
-
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:layout_marginTop="@dimen/dp_15"
             android:background="@color/white"
-            android:gravity="center"
-            android:text="分类"
+            android:gravity="center_vertical"
+            android:text="热卖单品，精挑细选"
+            android:textColor="@color/gray"
             android:textSize="@dimen/sp_14" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mBestRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white" />
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/dp_1"
-            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:layout_marginTop="@dimen/dp_15"
             android:background="@color/white"
-            android:gravity="center"
-            android:text="全部商品"
+            android:gravity="center_vertical"
+            android:text="新品上市 尝鲜价"
+            android:textColor="@color/gray"
             android:textSize="@dimen/sp_14" />
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/dp_1"
-            android:layout_marginRight="@dimen/dp_1"
-            android:layout_weight="1"
-            android:background="@color/white"
-            android:gravity="center"
-            android:text="店铺活动"
-            android:textSize="@dimen/sp_14" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mNewRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white" />
 
-        <TextView
-            android:id="@+id/btnDetails"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/white"
-            android:gravity="center"
-            android:text="店铺介绍"
-            android:textSize="@dimen/sp_14" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="@dimen/dp_15"
+            android:id="@+id/mGoodsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white" />
+
 
     </LinearLayout>
 
-
-</LinearLayout>
+</androidx.core.widget.NestedScrollView>

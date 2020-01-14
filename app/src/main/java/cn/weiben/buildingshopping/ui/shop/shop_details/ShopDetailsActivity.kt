@@ -1,19 +1,32 @@
 package cn.weiben.buildingshopping.ui.shop.shop_details
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import cn.weiben.buildingshopping.R
 import cn.weiben.buildingshopping.base.NullPresenter
 import cn.weiben.buildingshopping.base.activity.BaseMVPActivity
 import cn.weiben.buildingshopping.manager.GlideManager
-import cn.weiben.buildingshopping.model.GoodsDetail
-import cn.weiben.buildingshopping.model.ShopDetailsBean
+import cn.weiben.buildingshopping.model.*
+import cn.weiben.buildingshopping.ui.adapter.ExpandableItemAdapter
+import cn.weiben.buildingshopping.ui.adapter.HomeCommonGoodsRvAdapter
+import cn.weiben.buildingshopping.ui.home.goods_detail.GoodsDetailActivity
+import cn.weiben.buildingshopping.ui.main.CommonWebviewActivity
+import cn.weiben.buildingshopping.ui.shop.category.ShopCategoryRvActivity
 import cn.weiben.buildingshopping.widget.CustomGoodsParamPopup
 import com.bumptech.glide.Glide
+import com.chad.library.adapter.base.entity.MultiItemEntity
 import com.lxj.xpopup.XPopup
 import kotlinx.android.synthetic.main.activity_shop_details.*
 
 class ShopDetailsActivity : BaseMVPActivity<ShopDetailsPresenter>(), ShopDetailsContract.View {
+
+    companion object {
+        var categoryList: List<CategoriesBean> = ArrayList()
+    }
 
     override fun getActivityLayoutID(): Int {
         return R.layout.activity_shop_details
@@ -31,6 +44,69 @@ class ShopDetailsActivity : BaseMVPActivity<ShopDetailsPresenter>(), ShopDetails
 
 
     override fun setShopDetails(data: ShopDetailsBean) {
+        categoryList = data.categories
+
+        mBestRecyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)
+        val best_adapter = HomeCommonGoodsRvAdapter(data.best_goods)
+        best_adapter.bindToRecyclerView(mBestRecyclerView)
+        mBestRecyclerView.adapter = best_adapter
+        best_adapter.setOnItemClickListener { adapter, view, position ->
+            val bean = adapter.data[position] as HomeBean.NewGoodsBean
+            val intent = Intent(this, GoodsDetailActivity::class.java)
+            intent.putExtra("id", bean.id)
+            startActivity(intent)
+        }
+
+
+        mNewRecyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)
+        val new_adapter = HomeCommonGoodsRvAdapter(data.new_goods)
+        new_adapter.bindToRecyclerView(mNewRecyclerView)
+        mNewRecyclerView.adapter = new_adapter
+        new_adapter.setOnItemClickListener { adapter, view, position ->
+            val bean = adapter.data[position] as HomeBean.NewGoodsBean
+            val intent = Intent(this, GoodsDetailActivity::class.java)
+            intent.putExtra("id", bean.id)
+            startActivity(intent)
+        }
+
+
+//        val goods_data = ArrayList<MultiItemEntity>()
+//        data.category_goods.forEach {
+//            val bean = GoodsLevelItem(it.cat_name, it.cat_pic_url)
+//            bean.subItems = it.goods
+//            datas.add(bean)
+//        }
+//
+//        val expand_adapter = ExpandableItemAdapter(datas)
+//        val manager = GridLayoutManager(this, 2)
+//        mGoodsRecyclerView.layoutManager = manager
+//        mGoodsRecyclerView.adapter = expand_adapter
+//        manager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+//            override fun getSpanSize(position: Int): Int {
+//                return if (expand_adapter.getItemViewType(position) == ExpandableItemAdapter.TYPE_PERSON) 1 else manager.spanCount
+//            }
+//        }
+//
+//        expand_adapter.expandAll()
+
+
+        btnAllGoods.setOnClickListener {
+            val intent = Intent(mContext, CommonWebviewActivity::class.java)
+            intent.putExtra("url", "https://www.chinajcscw.com/mobile/supplier.php?go=search&suppId=${data.suppinfo.supplier_id}&keywords=")
+            startActivity(intent)
+
+        }
+
+        btnActivity.setOnClickListener {
+            val intent = Intent(mContext, CommonWebviewActivity::class.java)
+            intent.putExtra("url", "https://www.chinajcscw.com/mobile/supplier.php?go=activity&suppId=${data.suppinfo.supplier_id}&keywords=")
+            startActivity(intent)
+
+        }
+
+        btnCategory.setOnClickListener {
+            startActivity(Intent(this, ShopCategoryRvActivity::class.java))
+        }
 
         GlideManager.loadCircleImg(data.shop_logo, ivAvatar)
         tvFensi.text = "${data.guanzhu_num}\n粉丝"
