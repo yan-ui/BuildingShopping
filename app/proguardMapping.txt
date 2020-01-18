@@ -20911,22 +20911,22 @@ cn.weiben.buildingshopping.R$interpolator -> cn.weiben.buildingshopping.R$interp
 cn.weiben.buildingshopping.R$layout -> cn.weiben.buildingshopping.R$layout:
     10392:10392:void <init>() -> <init>
 cn.weiben.buildingshopping.R$menu -> cn.weiben.buildingshopping.R$menu:
-    10663:10663:void <init>() -> <init>
+    10665:10665:void <init>() -> <init>
 cn.weiben.buildingshopping.R$mipmap -> cn.weiben.buildingshopping.R$mipmap:
-    10667:10667:void <init>() -> <init>
+    10669:10669:void <init>() -> <init>
 cn.weiben.buildingshopping.R$plurals -> cn.weiben.buildingshopping.R$plurals:
-    10703:10703:void <init>() -> <init>
+    10705:10705:void <init>() -> <init>
 cn.weiben.buildingshopping.R$raw -> cn.weiben.buildingshopping.R$raw:
-    10706:10706:void <init>() -> <init>
+    10708:10708:void <init>() -> <init>
 cn.weiben.buildingshopping.R$string -> cn.weiben.buildingshopping.R$string:
-    10709:10709:void <init>() -> <init>
+    10711:10711:void <init>() -> <init>
 cn.weiben.buildingshopping.R$style -> cn.weiben.buildingshopping.R$style:
-    10970:10970:void <init>() -> <init>
+    10972:10972:void <init>() -> <init>
 cn.weiben.buildingshopping.R$styleable -> cn.weiben.buildingshopping.R$styleable:
-    11712:32619:void <clinit>() -> <clinit>
-    11690:11690:void <init>() -> <init>
+    11714:32621:void <clinit>() -> <clinit>
+    11692:11692:void <init>() -> <init>
 cn.weiben.buildingshopping.R$xml -> cn.weiben.buildingshopping.R$xml:
-    32763:32763:void <init>() -> <init>
+    32765:32765:void <init>() -> <init>
 cn.weiben.buildingshopping.api.ApiService -> cn.weiben.buildingshopping.a.a:
     io.reactivex.Observable addAddressArea(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> a
     io.reactivex.Observable addMessage(int,java.lang.String,java.lang.String) -> a
@@ -23399,138 +23399,144 @@ cn.weiben.buildingshopping.model.OrderResultBean$OrderCountBean -> cn.weiben.bui
     144:145:void setUnconfirmed(java.lang.String) -> setUnconfirmed
 cn.weiben.buildingshopping.model.OrderResultBean$OrderListBean -> cn.weiben.buildingshopping.model.OrderResultBean$OrderListBean:
     148:148:void <init>() -> <init>
-    264:264:int getBack_can_a() -> getBack_can_a
-    272:272:java.lang.String getComment_s() -> getComment_s
-    400:400:int getCount() -> getCount
-    416:416:java.util.List getCustomers() -> getCustomers
-    232:232:java.lang.String getExtension_code() -> getExtension_code
-    408:408:java.util.List getGoods_list() -> getGoods_list
-    328:328:java.lang.String getHandler() -> getHandler
-    368:368:java.lang.String getInvoice_no() -> getInvoice_no
-    312:312:java.lang.String getIs_suborder() -> getIs_suborder
-    208:208:java.lang.String getOrder_id() -> getOrder_id
-    216:216:java.lang.String getOrder_sn() -> getOrder_sn
-    248:248:java.lang.String getOrder_status() -> getOrder_status
-    256:256:java.lang.String getOrder_status1() -> getOrder_status1
-    240:240:java.lang.String getOrder_time() -> getOrder_time
-    360:360:java.lang.String getPay_id() -> getPay_id
-    304:304:java.lang.Object getPay_online() -> getPay_online
-    320:320:java.lang.String getPay_status() -> getPay_status
-    280:280:java.lang.String getShaidan_s() -> getShaidan_s
-    336:336:java.lang.String getShipping_id() -> getShipping_id
-    344:344:java.lang.String getShipping_name() -> getShipping_name
-    352:352:java.lang.String getShipping_status() -> getShipping_status
-    224:224:java.lang.String getShopname() -> getShopname
-    384:384:java.lang.String getSupplier_id() -> getSupplier_id
-    392:392:java.lang.String getTel() -> getTel
-    288:288:java.lang.Object getTk() -> getTk
-    296:296:java.lang.String getTotal_fee() -> getTotal_fee
-    376:376:int getWeixiu_time() -> getWeixiu_time
-    268:269:void setBack_can_a(int) -> setBack_can_a
-    276:277:void setComment_s(java.lang.String) -> setComment_s
-    404:405:void setCount(int) -> setCount
-    420:421:void setCustomers(java.util.List) -> setCustomers
-    236:237:void setExtension_code(java.lang.String) -> setExtension_code
-    412:413:void setGoods_list(java.util.List) -> setGoods_list
-    332:333:void setHandler(java.lang.String) -> setHandler
-    372:373:void setInvoice_no(java.lang.String) -> setInvoice_no
-    316:317:void setIs_suborder(java.lang.String) -> setIs_suborder
-    212:213:void setOrder_id(java.lang.String) -> setOrder_id
-    220:221:void setOrder_sn(java.lang.String) -> setOrder_sn
-    252:253:void setOrder_status(java.lang.String) -> setOrder_status
-    260:261:void setOrder_status1(java.lang.String) -> setOrder_status1
-    244:245:void setOrder_time(java.lang.String) -> setOrder_time
-    364:365:void setPay_id(java.lang.String) -> setPay_id
-    308:309:void setPay_online(java.lang.Object) -> setPay_online
-    324:325:void setPay_status(java.lang.String) -> setPay_status
-    284:285:void setShaidan_s(java.lang.String) -> setShaidan_s
-    340:341:void setShipping_id(java.lang.String) -> setShipping_id
-    348:349:void setShipping_name(java.lang.String) -> setShipping_name
-    356:357:void setShipping_status(java.lang.String) -> setShipping_status
-    228:229:void setShopname(java.lang.String) -> setShopname
-    388:389:void setSupplier_id(java.lang.String) -> setSupplier_id
-    396:397:void setTel(java.lang.String) -> setTel
-    292:293:void setTk(java.lang.Object) -> setTk
-    300:301:void setTotal_fee(java.lang.String) -> setTotal_fee
-    380:381:void setWeixiu_time(int) -> setWeixiu_time
+    291:291:int getBack_can_a() -> getBack_can_a
+    299:299:java.lang.String getComment_s() -> getComment_s
+    427:427:int getCount() -> getCount
+    443:443:java.util.List getCustomers() -> getCustomers
+    259:259:java.lang.String getExtension_code() -> getExtension_code
+    435:435:java.util.List getGoods_list() -> getGoods_list
+    355:355:java.lang.String getHandler() -> getHandler
+    395:395:java.lang.String getInvoice_no() -> getInvoice_no
+    339:339:java.lang.String getIs_suborder() -> getIs_suborder
+    235:235:java.lang.String getOrder_id() -> getOrder_id
+    243:243:java.lang.String getOrder_sn() -> getOrder_sn
+    275:275:java.lang.String getOrder_status() -> getOrder_status
+    283:283:java.lang.String getOrder_status1() -> getOrder_status1
+    267:267:java.lang.String getOrder_time() -> getOrder_time
+    387:387:java.lang.String getPay_id() -> getPay_id
+    331:331:java.lang.Object getPay_online() -> getPay_online
+    347:347:java.lang.String getPay_status() -> getPay_status
+    307:307:java.lang.String getShaidan_s() -> getShaidan_s
+    363:363:java.lang.String getShipping_id() -> getShipping_id
+    371:371:java.lang.String getShipping_name() -> getShipping_name
+    379:379:java.lang.String getShipping_status() -> getShipping_status
+    251:251:java.lang.String getShopname() -> getShopname
+    411:411:java.lang.String getSupplier_id() -> getSupplier_id
+    419:419:java.lang.String getTel() -> getTel
+    315:315:java.lang.Object getTk() -> getTk
+    323:323:java.lang.String getTotal_fee() -> getTotal_fee
+    403:403:int getWeixiu_time() -> getWeixiu_time
+    227:227:boolean isIs_back() -> isIs_back
+    211:211:boolean isIs_send_buy() -> isIs_send_buy
+    219:219:boolean isNeed_buy() -> isNeed_buy
+    295:296:void setBack_can_a(int) -> setBack_can_a
+    303:304:void setComment_s(java.lang.String) -> setComment_s
+    431:432:void setCount(int) -> setCount
+    447:448:void setCustomers(java.util.List) -> setCustomers
+    263:264:void setExtension_code(java.lang.String) -> setExtension_code
+    439:440:void setGoods_list(java.util.List) -> setGoods_list
+    359:360:void setHandler(java.lang.String) -> setHandler
+    399:400:void setInvoice_no(java.lang.String) -> setInvoice_no
+    231:232:void setIs_back(boolean) -> setIs_back
+    215:216:void setIs_send_buy(boolean) -> setIs_send_buy
+    343:344:void setIs_suborder(java.lang.String) -> setIs_suborder
+    223:224:void setNeed_buy(boolean) -> setNeed_buy
+    239:240:void setOrder_id(java.lang.String) -> setOrder_id
+    247:248:void setOrder_sn(java.lang.String) -> setOrder_sn
+    279:280:void setOrder_status(java.lang.String) -> setOrder_status
+    287:288:void setOrder_status1(java.lang.String) -> setOrder_status1
+    271:272:void setOrder_time(java.lang.String) -> setOrder_time
+    391:392:void setPay_id(java.lang.String) -> setPay_id
+    335:336:void setPay_online(java.lang.Object) -> setPay_online
+    351:352:void setPay_status(java.lang.String) -> setPay_status
+    311:312:void setShaidan_s(java.lang.String) -> setShaidan_s
+    367:368:void setShipping_id(java.lang.String) -> setShipping_id
+    375:376:void setShipping_name(java.lang.String) -> setShipping_name
+    383:384:void setShipping_status(java.lang.String) -> setShipping_status
+    255:256:void setShopname(java.lang.String) -> setShopname
+    415:416:void setSupplier_id(java.lang.String) -> setSupplier_id
+    423:424:void setTel(java.lang.String) -> setTel
+    319:320:void setTk(java.lang.Object) -> setTk
+    327:328:void setTotal_fee(java.lang.String) -> setTotal_fee
+    407:408:void setWeixiu_time(int) -> setWeixiu_time
 cn.weiben.buildingshopping.model.OrderResultBean$OrderListBean$GoodsListBean -> cn.weiben.buildingshopping.model.OrderResultBean$OrderListBean$GoodsListBean:
-    423:423:void <init>() -> <init>
-    745:745:java.lang.String getAttr_value() -> getAttr_value
-    785:785:java.lang.String getBack_can() -> getBack_can
-    801:801:java.lang.String getBack_can_no() -> getBack_can_no
-    793:793:java.lang.Object getBack_id() -> getBack_id
-    729:729:java.lang.String getBrand_name() -> getBrand_name
-    641:641:java.lang.String getComment_state() -> getComment_state
-    673:673:java.lang.String getCost_price() -> getCost_price
-    689:689:java.lang.String getExclusive() -> getExclusive
-    609:609:java.lang.String getExtension_code() -> getExtension_code
-    769:769:java.lang.String getFormated_goods_price() -> getFormated_goods_price
-    761:761:java.lang.String getFormated_subtotal() -> getFormated_subtotal
-    585:585:java.lang.String getGoods_attr() -> getGoods_attr
-    633:633:java.lang.String getGoods_attr_id() -> getGoods_attr_id
-    521:521:java.lang.String getGoods_id() -> getGoods_id
-    529:529:java.lang.String getGoods_name() -> getGoods_name
-    553:553:java.lang.String getGoods_number() -> getGoods_number
-    569:569:java.lang.String getGoods_price() -> getGoods_price
-    537:537:java.lang.String getGoods_sn() -> getGoods_sn
-    753:753:java.lang.String getGoods_thumb() -> getGoods_thumb
-    665:665:java.lang.String getIs_back() -> getIs_back
-    625:625:java.lang.String getIs_gift() -> getIs_gift
-    601:601:java.lang.String getIs_real() -> getIs_real
-    561:561:java.lang.String getMarket_price() -> getMarket_price
-    513:513:java.lang.String getOrder_id() -> getOrder_id
-    657:657:java.lang.String getPackage_attr_id() -> getPackage_attr_id
-    617:617:java.lang.String getParent_id() -> getParent_id
-    545:545:java.lang.String getProduct_id() -> getProduct_id
-    737:737:java.lang.String getProduct_sn() -> getProduct_sn
-    681:681:java.lang.String getPromote_price() -> getPromote_price
-    505:505:java.lang.String getRec_id() -> getRec_id
-    593:593:java.lang.String getSend_number() -> getSend_number
-    705:705:java.lang.String getSend_store_id() -> getSend_store_id
-    697:697:java.lang.String getSend_store_number() -> getSend_store_number
-    649:649:java.lang.String getShaidan_state() -> getShaidan_state
-    577:577:java.lang.String getSplit_money() -> getSplit_money
-    713:713:java.lang.String getStorage() -> getStorage
-    721:721:java.lang.String getSuppliers_id() -> getSuppliers_id
-    777:777:java.lang.String getUrl() -> getUrl
-    749:750:void setAttr_value(java.lang.String) -> setAttr_value
-    789:790:void setBack_can(java.lang.String) -> setBack_can
-    805:806:void setBack_can_no(java.lang.String) -> setBack_can_no
-    797:798:void setBack_id(java.lang.Object) -> setBack_id
-    733:734:void setBrand_name(java.lang.String) -> setBrand_name
-    645:646:void setComment_state(java.lang.String) -> setComment_state
-    677:678:void setCost_price(java.lang.String) -> setCost_price
-    693:694:void setExclusive(java.lang.String) -> setExclusive
-    613:614:void setExtension_code(java.lang.String) -> setExtension_code
-    773:774:void setFormated_goods_price(java.lang.String) -> setFormated_goods_price
-    765:766:void setFormated_subtotal(java.lang.String) -> setFormated_subtotal
-    589:590:void setGoods_attr(java.lang.String) -> setGoods_attr
-    637:638:void setGoods_attr_id(java.lang.String) -> setGoods_attr_id
-    525:526:void setGoods_id(java.lang.String) -> setGoods_id
-    533:534:void setGoods_name(java.lang.String) -> setGoods_name
-    557:558:void setGoods_number(java.lang.String) -> setGoods_number
-    573:574:void setGoods_price(java.lang.String) -> setGoods_price
-    541:542:void setGoods_sn(java.lang.String) -> setGoods_sn
-    757:758:void setGoods_thumb(java.lang.String) -> setGoods_thumb
-    669:670:void setIs_back(java.lang.String) -> setIs_back
-    629:630:void setIs_gift(java.lang.String) -> setIs_gift
-    605:606:void setIs_real(java.lang.String) -> setIs_real
-    565:566:void setMarket_price(java.lang.String) -> setMarket_price
-    517:518:void setOrder_id(java.lang.String) -> setOrder_id
-    661:662:void setPackage_attr_id(java.lang.String) -> setPackage_attr_id
-    621:622:void setParent_id(java.lang.String) -> setParent_id
-    549:550:void setProduct_id(java.lang.String) -> setProduct_id
-    741:742:void setProduct_sn(java.lang.String) -> setProduct_sn
-    685:686:void setPromote_price(java.lang.String) -> setPromote_price
-    509:510:void setRec_id(java.lang.String) -> setRec_id
-    597:598:void setSend_number(java.lang.String) -> setSend_number
-    709:710:void setSend_store_id(java.lang.String) -> setSend_store_id
-    701:702:void setSend_store_number(java.lang.String) -> setSend_store_number
-    653:654:void setShaidan_state(java.lang.String) -> setShaidan_state
-    581:582:void setSplit_money(java.lang.String) -> setSplit_money
-    717:718:void setStorage(java.lang.String) -> setStorage
-    725:726:void setSuppliers_id(java.lang.String) -> setSuppliers_id
-    781:782:void setUrl(java.lang.String) -> setUrl
+    450:450:void <init>() -> <init>
+    772:772:java.lang.String getAttr_value() -> getAttr_value
+    812:812:java.lang.String getBack_can() -> getBack_can
+    828:828:java.lang.String getBack_can_no() -> getBack_can_no
+    820:820:java.lang.Object getBack_id() -> getBack_id
+    756:756:java.lang.String getBrand_name() -> getBrand_name
+    668:668:java.lang.String getComment_state() -> getComment_state
+    700:700:java.lang.String getCost_price() -> getCost_price
+    716:716:java.lang.String getExclusive() -> getExclusive
+    636:636:java.lang.String getExtension_code() -> getExtension_code
+    796:796:java.lang.String getFormated_goods_price() -> getFormated_goods_price
+    788:788:java.lang.String getFormated_subtotal() -> getFormated_subtotal
+    612:612:java.lang.String getGoods_attr() -> getGoods_attr
+    660:660:java.lang.String getGoods_attr_id() -> getGoods_attr_id
+    548:548:java.lang.String getGoods_id() -> getGoods_id
+    556:556:java.lang.String getGoods_name() -> getGoods_name
+    580:580:java.lang.String getGoods_number() -> getGoods_number
+    596:596:java.lang.String getGoods_price() -> getGoods_price
+    564:564:java.lang.String getGoods_sn() -> getGoods_sn
+    780:780:java.lang.String getGoods_thumb() -> getGoods_thumb
+    692:692:java.lang.String getIs_back() -> getIs_back
+    652:652:java.lang.String getIs_gift() -> getIs_gift
+    628:628:java.lang.String getIs_real() -> getIs_real
+    588:588:java.lang.String getMarket_price() -> getMarket_price
+    540:540:java.lang.String getOrder_id() -> getOrder_id
+    684:684:java.lang.String getPackage_attr_id() -> getPackage_attr_id
+    644:644:java.lang.String getParent_id() -> getParent_id
+    572:572:java.lang.String getProduct_id() -> getProduct_id
+    764:764:java.lang.String getProduct_sn() -> getProduct_sn
+    708:708:java.lang.String getPromote_price() -> getPromote_price
+    532:532:java.lang.String getRec_id() -> getRec_id
+    620:620:java.lang.String getSend_number() -> getSend_number
+    732:732:java.lang.String getSend_store_id() -> getSend_store_id
+    724:724:java.lang.String getSend_store_number() -> getSend_store_number
+    676:676:java.lang.String getShaidan_state() -> getShaidan_state
+    604:604:java.lang.String getSplit_money() -> getSplit_money
+    740:740:java.lang.String getStorage() -> getStorage
+    748:748:java.lang.String getSuppliers_id() -> getSuppliers_id
+    804:804:java.lang.String getUrl() -> getUrl
+    776:777:void setAttr_value(java.lang.String) -> setAttr_value
+    816:817:void setBack_can(java.lang.String) -> setBack_can
+    832:833:void setBack_can_no(java.lang.String) -> setBack_can_no
+    824:825:void setBack_id(java.lang.Object) -> setBack_id
+    760:761:void setBrand_name(java.lang.String) -> setBrand_name
+    672:673:void setComment_state(java.lang.String) -> setComment_state
+    704:705:void setCost_price(java.lang.String) -> setCost_price
+    720:721:void setExclusive(java.lang.String) -> setExclusive
+    640:641:void setExtension_code(java.lang.String) -> setExtension_code
+    800:801:void setFormated_goods_price(java.lang.String) -> setFormated_goods_price
+    792:793:void setFormated_subtotal(java.lang.String) -> setFormated_subtotal
+    616:617:void setGoods_attr(java.lang.String) -> setGoods_attr
+    664:665:void setGoods_attr_id(java.lang.String) -> setGoods_attr_id
+    552:553:void setGoods_id(java.lang.String) -> setGoods_id
+    560:561:void setGoods_name(java.lang.String) -> setGoods_name
+    584:585:void setGoods_number(java.lang.String) -> setGoods_number
+    600:601:void setGoods_price(java.lang.String) -> setGoods_price
+    568:569:void setGoods_sn(java.lang.String) -> setGoods_sn
+    784:785:void setGoods_thumb(java.lang.String) -> setGoods_thumb
+    696:697:void setIs_back(java.lang.String) -> setIs_back
+    656:657:void setIs_gift(java.lang.String) -> setIs_gift
+    632:633:void setIs_real(java.lang.String) -> setIs_real
+    592:593:void setMarket_price(java.lang.String) -> setMarket_price
+    544:545:void setOrder_id(java.lang.String) -> setOrder_id
+    688:689:void setPackage_attr_id(java.lang.String) -> setPackage_attr_id
+    648:649:void setParent_id(java.lang.String) -> setParent_id
+    576:577:void setProduct_id(java.lang.String) -> setProduct_id
+    768:769:void setProduct_sn(java.lang.String) -> setProduct_sn
+    712:713:void setPromote_price(java.lang.String) -> setPromote_price
+    536:537:void setRec_id(java.lang.String) -> setRec_id
+    624:625:void setSend_number(java.lang.String) -> setSend_number
+    736:737:void setSend_store_id(java.lang.String) -> setSend_store_id
+    728:729:void setSend_store_number(java.lang.String) -> setSend_store_number
+    680:681:void setShaidan_state(java.lang.String) -> setShaidan_state
+    608:609:void setSplit_money(java.lang.String) -> setSplit_money
+    744:745:void setStorage(java.lang.String) -> setStorage
+    752:753:void setSuppliers_id(java.lang.String) -> setSuppliers_id
+    808:809:void setUrl(java.lang.String) -> setUrl
 cn.weiben.buildingshopping.model.ShopBean -> cn.weiben.buildingshopping.model.ShopBean:
     5:5:void <init>() -> <init>
     25:25:java.util.List getSupplier_list() -> getSupplier_list
@@ -23714,345 +23720,346 @@ cn.weiben.buildingshopping.model.ShopBean$SupplierListBean -> cn.weiben.building
     760:761:void setWx_longitude(java.lang.Object) -> setWx_longitude
     400:401:void setZhizhao(java.lang.String) -> setZhizhao
 cn.weiben.buildingshopping.model.ShopDetailsBean -> cn.weiben.buildingshopping.model.ShopDetailsBean:
-    7:7:void <init>() -> <init>
-    165:165:java.util.List getBest_goods() -> getBest_goods
-    149:149:cn.weiben.buildingshopping.model.ShopDetailsBean$CatRecBean getCat_rec() -> getCat_rec
-    157:157:java.util.List getCategories() -> getCategories
-    189:189:java.util.List getCategory_goods() -> getCategory_goods
-    101:101:java.lang.String getComment_rand() -> getComment_rand
-    197:197:java.util.List getCustomers() -> getCustomers
-    85:85:java.lang.String getData_dir() -> getData_dir
-    93:93:java.lang.String getGoods_number() -> getGoods_number
-    61:61:java.lang.String getGuanzhu_num() -> getGuanzhu_num
-    181:181:java.util.List getHot_goods() -> getHot_goods
-    173:173:java.util.List getNew_goods() -> getNew_goods
-    69:69:java.lang.String getPage_title() -> getPage_title
-    117:117:int getPingfen() -> getPingfen
-    205:205:java.util.List getPlayerdb() -> getPlayerdb
-    109:109:java.lang.String getServer() -> getServer
-    125:125:java.lang.String getShipping() -> getShipping
-    53:53:java.lang.String getShop_logo() -> getShop_logo
-    133:133:cn.weiben.buildingshopping.model.ShopDetailsBean$SuppinfoBean getSuppinfo() -> getSuppinfo
-    141:141:java.lang.String getSupplier_bond() -> getSupplier_bond
-    77:77:boolean isIs_guanzhu() -> isIs_guanzhu
-    169:170:void setBest_goods(java.util.List) -> setBest_goods
-    153:154:void setCat_rec(cn.weiben.buildingshopping.model.ShopDetailsBean$CatRecBean) -> setCat_rec
-    161:162:void setCategories(java.util.List) -> setCategories
-    193:194:void setCategory_goods(java.util.List) -> setCategory_goods
-    105:106:void setComment_rand(java.lang.String) -> setComment_rand
-    201:202:void setCustomers(java.util.List) -> setCustomers
-    89:90:void setData_dir(java.lang.String) -> setData_dir
-    97:98:void setGoods_number(java.lang.String) -> setGoods_number
-    65:66:void setGuanzhu_num(java.lang.String) -> setGuanzhu_num
-    185:186:void setHot_goods(java.util.List) -> setHot_goods
-    81:82:void setIs_guanzhu(boolean) -> setIs_guanzhu
-    177:178:void setNew_goods(java.util.List) -> setNew_goods
-    73:74:void setPage_title(java.lang.String) -> setPage_title
-    121:122:void setPingfen(int) -> setPingfen
-    209:210:void setPlayerdb(java.util.List) -> setPlayerdb
-    113:114:void setServer(java.lang.String) -> setServer
-    129:130:void setShipping(java.lang.String) -> setShipping
-    57:58:void setShop_logo(java.lang.String) -> setShop_logo
-    137:138:void setSuppinfo(cn.weiben.buildingshopping.model.ShopDetailsBean$SuppinfoBean) -> setSuppinfo
-    145:146:void setSupplier_bond(java.lang.String) -> setSupplier_bond
+    10:10:void <init>() -> <init>
+    168:168:java.util.List getBest_goods() -> getBest_goods
+    152:152:cn.weiben.buildingshopping.model.ShopDetailsBean$CatRecBean getCat_rec() -> getCat_rec
+    160:160:java.util.List getCategories() -> getCategories
+    192:192:java.util.List getCategory_goods() -> getCategory_goods
+    104:104:java.lang.String getComment_rand() -> getComment_rand
+    200:200:java.util.List getCustomers() -> getCustomers
+    88:88:java.lang.String getData_dir() -> getData_dir
+    96:96:java.lang.String getGoods_number() -> getGoods_number
+    64:64:java.lang.String getGuanzhu_num() -> getGuanzhu_num
+    184:184:java.util.List getHot_goods() -> getHot_goods
+    176:176:java.util.List getNew_goods() -> getNew_goods
+    72:72:java.lang.String getPage_title() -> getPage_title
+    120:120:int getPingfen() -> getPingfen
+    208:208:java.util.List getPlayerdb() -> getPlayerdb
+    112:112:java.lang.String getServer() -> getServer
+    128:128:java.lang.String getShipping() -> getShipping
+    56:56:java.lang.String getShop_logo() -> getShop_logo
+    136:136:cn.weiben.buildingshopping.model.ShopDetailsBean$SuppinfoBean getSuppinfo() -> getSuppinfo
+    144:144:java.lang.String getSupplier_bond() -> getSupplier_bond
+    80:80:boolean isIs_guanzhu() -> isIs_guanzhu
+    172:173:void setBest_goods(java.util.List) -> setBest_goods
+    156:157:void setCat_rec(cn.weiben.buildingshopping.model.ShopDetailsBean$CatRecBean) -> setCat_rec
+    164:165:void setCategories(java.util.List) -> setCategories
+    196:197:void setCategory_goods(java.util.List) -> setCategory_goods
+    108:109:void setComment_rand(java.lang.String) -> setComment_rand
+    204:205:void setCustomers(java.util.List) -> setCustomers
+    92:93:void setData_dir(java.lang.String) -> setData_dir
+    100:101:void setGoods_number(java.lang.String) -> setGoods_number
+    68:69:void setGuanzhu_num(java.lang.String) -> setGuanzhu_num
+    188:189:void setHot_goods(java.util.List) -> setHot_goods
+    84:85:void setIs_guanzhu(boolean) -> setIs_guanzhu
+    180:181:void setNew_goods(java.util.List) -> setNew_goods
+    76:77:void setPage_title(java.lang.String) -> setPage_title
+    124:125:void setPingfen(int) -> setPingfen
+    212:213:void setPlayerdb(java.util.List) -> setPlayerdb
+    116:117:void setServer(java.lang.String) -> setServer
+    132:133:void setShipping(java.lang.String) -> setShipping
+    60:61:void setShop_logo(java.lang.String) -> setShop_logo
+    140:141:void setSuppinfo(cn.weiben.buildingshopping.model.ShopDetailsBean$SuppinfoBean) -> setSuppinfo
+    148:149:void setSupplier_bond(java.lang.String) -> setSupplier_bond
 cn.weiben.buildingshopping.model.ShopDetailsBean$BestGoodsBean -> cn.weiben.buildingshopping.model.ShopDetailsBean$BestGoodsBean:
-    961:961:void <init>() -> <init>
-    1045:1045:java.lang.String getBrand_name() -> getBrand_name
-    1037:1037:java.lang.String getBrief() -> getBrief
-    1005:1005:java.lang.String getFinal_price() -> getFinal_price
-    1101:1101:java.lang.String getGoods_img() -> getGoods_img
-    1053:1053:java.lang.String getGoods_style_name() -> getGoods_style_name
-    1021:1021:java.lang.String getId() -> getId
-    1077:1077:java.lang.String getMarket_price() -> getMarket_price
-    1029:1029:java.lang.String getName() -> getName
-    997:997:java.lang.String getPromote_price() -> getPromote_price
-    1085:1085:java.lang.String getShop_price() -> getShop_price
-    1061:1061:java.lang.String getShort_name() -> getShort_name
-    1069:1069:java.lang.String getShort_style_name() -> getShort_style_name
-    1093:1093:java.lang.String getThumb() -> getThumb
-    1109:1109:java.lang.String getUrl() -> getUrl
-    1013:1013:boolean isIs_exclusive() -> isIs_exclusive
-    1049:1050:void setBrand_name(java.lang.String) -> setBrand_name
-    1041:1042:void setBrief(java.lang.String) -> setBrief
-    1009:1010:void setFinal_price(java.lang.String) -> setFinal_price
-    1105:1106:void setGoods_img(java.lang.String) -> setGoods_img
-    1057:1058:void setGoods_style_name(java.lang.String) -> setGoods_style_name
-    1025:1026:void setId(java.lang.String) -> setId
-    1017:1018:void setIs_exclusive(boolean) -> setIs_exclusive
-    1081:1082:void setMarket_price(java.lang.String) -> setMarket_price
-    1033:1034:void setName(java.lang.String) -> setName
-    1001:1002:void setPromote_price(java.lang.String) -> setPromote_price
-    1089:1090:void setShop_price(java.lang.String) -> setShop_price
-    1065:1066:void setShort_name(java.lang.String) -> setShort_name
-    1073:1074:void setShort_style_name(java.lang.String) -> setShort_style_name
-    1097:1098:void setThumb(java.lang.String) -> setThumb
-    1113:1114:void setUrl(java.lang.String) -> setUrl
+    964:964:void <init>() -> <init>
+    1048:1048:java.lang.String getBrand_name() -> getBrand_name
+    1040:1040:java.lang.String getBrief() -> getBrief
+    1008:1008:java.lang.String getFinal_price() -> getFinal_price
+    1104:1104:java.lang.String getGoods_img() -> getGoods_img
+    1056:1056:java.lang.String getGoods_style_name() -> getGoods_style_name
+    1024:1024:java.lang.String getId() -> getId
+    1080:1080:java.lang.String getMarket_price() -> getMarket_price
+    1032:1032:java.lang.String getName() -> getName
+    1000:1000:java.lang.String getPromote_price() -> getPromote_price
+    1088:1088:java.lang.String getShop_price() -> getShop_price
+    1064:1064:java.lang.String getShort_name() -> getShort_name
+    1072:1072:java.lang.String getShort_style_name() -> getShort_style_name
+    1096:1096:java.lang.String getThumb() -> getThumb
+    1112:1112:java.lang.String getUrl() -> getUrl
+    1016:1016:boolean isIs_exclusive() -> isIs_exclusive
+    1052:1053:void setBrand_name(java.lang.String) -> setBrand_name
+    1044:1045:void setBrief(java.lang.String) -> setBrief
+    1012:1013:void setFinal_price(java.lang.String) -> setFinal_price
+    1108:1109:void setGoods_img(java.lang.String) -> setGoods_img
+    1060:1061:void setGoods_style_name(java.lang.String) -> setGoods_style_name
+    1028:1029:void setId(java.lang.String) -> setId
+    1020:1021:void setIs_exclusive(boolean) -> setIs_exclusive
+    1084:1085:void setMarket_price(java.lang.String) -> setMarket_price
+    1036:1037:void setName(java.lang.String) -> setName
+    1004:1005:void setPromote_price(java.lang.String) -> setPromote_price
+    1092:1093:void setShop_price(java.lang.String) -> setShop_price
+    1068:1069:void setShort_name(java.lang.String) -> setShort_name
+    1076:1077:void setShort_style_name(java.lang.String) -> setShort_style_name
+    1100:1101:void setThumb(java.lang.String) -> setThumb
+    1116:1117:void setUrl(java.lang.String) -> setUrl
 cn.weiben.buildingshopping.model.ShopDetailsBean$CatRecBean -> cn.weiben.buildingshopping.model.ShopDetailsBean$CatRecBean:
-    848:848:void <init>() -> <init>
-    865:865:java.util.List get_$1() -> get_$1
-    873:873:java.util.List get_$2() -> get_$2
-    857:857:java.util.List get_$3() -> get_$3
-    869:870:void set_$1(java.util.List) -> set_$1
-    877:878:void set_$2(java.util.List) -> set_$2
-    861:862:void set_$3(java.util.List) -> set_$3
+    851:851:void <init>() -> <init>
+    868:868:java.util.List get_$1() -> get_$1
+    876:876:java.util.List get_$2() -> get_$2
+    860:860:java.util.List get_$3() -> get_$3
+    872:873:void set_$1(java.util.List) -> set_$1
+    880:881:void set_$2(java.util.List) -> set_$2
+    864:865:void set_$3(java.util.List) -> set_$3
 cn.weiben.buildingshopping.model.ShopDetailsBean$CatRecBean$_$1Bean -> cn.weiben.buildingshopping.model.ShopDetailsBean$CatRecBean$_$1Bean:
-    906:906:void <init>() -> <init>
-    916:916:java.lang.String getCat_id() -> getCat_id
-    924:924:java.lang.String getCat_name() -> getCat_name
-    920:921:void setCat_id(java.lang.String) -> setCat_id
-    928:929:void setCat_name(java.lang.String) -> setCat_name
+    909:909:void <init>() -> <init>
+    919:919:java.lang.String getCat_id() -> getCat_id
+    927:927:java.lang.String getCat_name() -> getCat_name
+    923:924:void setCat_id(java.lang.String) -> setCat_id
+    931:932:void setCat_name(java.lang.String) -> setCat_name
 cn.weiben.buildingshopping.model.ShopDetailsBean$CatRecBean$_$2Bean -> cn.weiben.buildingshopping.model.ShopDetailsBean$CatRecBean$_$2Bean:
-    932:932:void <init>() -> <init>
-    942:942:java.lang.String getCat_id() -> getCat_id
-    950:950:java.lang.String getCat_name() -> getCat_name
-    946:947:void setCat_id(java.lang.String) -> setCat_id
-    954:955:void setCat_name(java.lang.String) -> setCat_name
+    935:935:void <init>() -> <init>
+    945:945:java.lang.String getCat_id() -> getCat_id
+    953:953:java.lang.String getCat_name() -> getCat_name
+    949:950:void setCat_id(java.lang.String) -> setCat_id
+    957:958:void setCat_name(java.lang.String) -> setCat_name
 cn.weiben.buildingshopping.model.ShopDetailsBean$CatRecBean$_$3Bean -> cn.weiben.buildingshopping.model.ShopDetailsBean$CatRecBean$_$3Bean:
-    880:880:void <init>() -> <init>
-    890:890:java.lang.String getCat_id() -> getCat_id
-    898:898:java.lang.String getCat_name() -> getCat_name
-    894:895:void setCat_id(java.lang.String) -> setCat_id
-    902:903:void setCat_name(java.lang.String) -> setCat_name
+    883:883:void <init>() -> <init>
+    893:893:java.lang.String getCat_id() -> getCat_id
+    901:901:java.lang.String getCat_name() -> getCat_name
+    897:898:void setCat_id(java.lang.String) -> setCat_id
+    905:906:void setCat_name(java.lang.String) -> setCat_name
 cn.weiben.buildingshopping.model.ShopDetailsBean$CategoryGoodsBean -> cn.weiben.buildingshopping.model.ShopDetailsBean$CategoryGoodsBean:
-    1429:1429:void <init>() -> <init>
-    1479:1479:java.lang.String getCat_goods_limit() -> getCat_goods_limit
-    1447:1447:java.lang.String getCat_id() -> getCat_id
-    1455:1455:java.lang.String getCat_name() -> getCat_name
-    1463:1463:java.lang.String getCat_pic() -> getCat_pic
-    1471:1471:java.lang.String getCat_pic_url() -> getCat_pic_url
-    1487:1487:java.util.List getGoods() -> getGoods
-    1483:1484:void setCat_goods_limit(java.lang.String) -> setCat_goods_limit
-    1451:1452:void setCat_id(java.lang.String) -> setCat_id
-    1459:1460:void setCat_name(java.lang.String) -> setCat_name
-    1467:1468:void setCat_pic(java.lang.String) -> setCat_pic
-    1475:1476:void setCat_pic_url(java.lang.String) -> setCat_pic_url
-    1491:1492:void setGoods(java.util.List) -> setGoods
+    1432:1432:void <init>() -> <init>
+    1482:1482:java.lang.String getCat_goods_limit() -> getCat_goods_limit
+    1450:1450:java.lang.String getCat_id() -> getCat_id
+    1458:1458:java.lang.String getCat_name() -> getCat_name
+    1466:1466:java.lang.String getCat_pic() -> getCat_pic
+    1474:1474:java.lang.String getCat_pic_url() -> getCat_pic_url
+    1490:1490:java.util.List getGoods() -> getGoods
+    1486:1487:void setCat_goods_limit(java.lang.String) -> setCat_goods_limit
+    1454:1455:void setCat_id(java.lang.String) -> setCat_id
+    1462:1463:void setCat_name(java.lang.String) -> setCat_name
+    1470:1471:void setCat_pic(java.lang.String) -> setCat_pic
+    1478:1479:void setCat_pic_url(java.lang.String) -> setCat_pic_url
+    1494:1495:void setGoods(java.util.List) -> setGoods
 cn.weiben.buildingshopping.model.ShopDetailsBean$CategoryGoodsBean$GoodsBean -> cn.weiben.buildingshopping.model.ShopDetailsBean$CategoryGoodsBean$GoodsBean:
-    1494:1494:void <init>() -> <init>
-    1572:1572:java.lang.String getBrand_name() -> getBrand_name
-    1564:1564:java.lang.String getBrief() -> getBrief
-    1652:1652:int getCount() -> getCount
-    1628:1628:java.lang.String getGoods_img() -> getGoods_img
-    1580:1580:java.lang.String getGoods_style_name() -> getGoods_style_name
-    1548:1548:java.lang.String getId() -> getId
-    1604:1604:java.lang.String getMarket_price() -> getMarket_price
-    1556:1556:java.lang.String getName() -> getName
-    1540:1540:java.lang.String getNum() -> getNum
-    1636:1636:java.lang.String getOriginal_img() -> getOriginal_img
-    1532:1532:java.lang.String getPromote_price() -> getPromote_price
-    1612:1612:java.lang.String getShop_price() -> getShop_price
-    1588:1588:java.lang.String getShort_name() -> getShort_name
-    1596:1596:java.lang.String getShort_style_name() -> getShort_style_name
-    1620:1620:java.lang.String getThumb() -> getThumb
-    1644:1644:java.lang.String getUrl() -> getUrl
-    1576:1577:void setBrand_name(java.lang.String) -> setBrand_name
-    1568:1569:void setBrief(java.lang.String) -> setBrief
-    1656:1657:void setCount(int) -> setCount
-    1632:1633:void setGoods_img(java.lang.String) -> setGoods_img
-    1584:1585:void setGoods_style_name(java.lang.String) -> setGoods_style_name
-    1552:1553:void setId(java.lang.String) -> setId
-    1608:1609:void setMarket_price(java.lang.String) -> setMarket_price
-    1560:1561:void setName(java.lang.String) -> setName
-    1544:1545:void setNum(java.lang.String) -> setNum
-    1640:1641:void setOriginal_img(java.lang.String) -> setOriginal_img
-    1536:1537:void setPromote_price(java.lang.String) -> setPromote_price
-    1616:1617:void setShop_price(java.lang.String) -> setShop_price
-    1592:1593:void setShort_name(java.lang.String) -> setShort_name
-    1600:1601:void setShort_style_name(java.lang.String) -> setShort_style_name
-    1624:1625:void setThumb(java.lang.String) -> setThumb
-    1648:1649:void setUrl(java.lang.String) -> setUrl
+    1497:1497:void <init>() -> <init>
+    1575:1575:java.lang.String getBrand_name() -> getBrand_name
+    1567:1567:java.lang.String getBrief() -> getBrief
+    1655:1655:int getCount() -> getCount
+    1631:1631:java.lang.String getGoods_img() -> getGoods_img
+    1583:1583:java.lang.String getGoods_style_name() -> getGoods_style_name
+    1551:1551:java.lang.String getId() -> getId
+    1664:1664:int getItemType() -> getItemType
+    1607:1607:java.lang.String getMarket_price() -> getMarket_price
+    1559:1559:java.lang.String getName() -> getName
+    1543:1543:java.lang.String getNum() -> getNum
+    1639:1639:java.lang.String getOriginal_img() -> getOriginal_img
+    1535:1535:java.lang.String getPromote_price() -> getPromote_price
+    1615:1615:java.lang.String getShop_price() -> getShop_price
+    1591:1591:java.lang.String getShort_name() -> getShort_name
+    1599:1599:java.lang.String getShort_style_name() -> getShort_style_name
+    1623:1623:java.lang.String getThumb() -> getThumb
+    1647:1647:java.lang.String getUrl() -> getUrl
+    1579:1580:void setBrand_name(java.lang.String) -> setBrand_name
+    1571:1572:void setBrief(java.lang.String) -> setBrief
+    1659:1660:void setCount(int) -> setCount
+    1635:1636:void setGoods_img(java.lang.String) -> setGoods_img
+    1587:1588:void setGoods_style_name(java.lang.String) -> setGoods_style_name
+    1555:1556:void setId(java.lang.String) -> setId
+    1611:1612:void setMarket_price(java.lang.String) -> setMarket_price
+    1563:1564:void setName(java.lang.String) -> setName
+    1547:1548:void setNum(java.lang.String) -> setNum
+    1643:1644:void setOriginal_img(java.lang.String) -> setOriginal_img
+    1539:1540:void setPromote_price(java.lang.String) -> setPromote_price
+    1619:1620:void setShop_price(java.lang.String) -> setShop_price
+    1595:1596:void setShort_name(java.lang.String) -> setShort_name
+    1603:1604:void setShort_style_name(java.lang.String) -> setShort_style_name
+    1627:1628:void setThumb(java.lang.String) -> setThumb
+    1651:1652:void setUrl(java.lang.String) -> setUrl
 cn.weiben.buildingshopping.model.ShopDetailsBean$HotGoodsBean -> cn.weiben.buildingshopping.model.ShopDetailsBean$HotGoodsBean:
-    1273:1273:void <init>() -> <init>
-    1357:1357:java.lang.String getBrand_name() -> getBrand_name
-    1349:1349:java.lang.String getBrief() -> getBrief
-    1317:1317:java.lang.String getFinal_price() -> getFinal_price
-    1413:1413:java.lang.String getGoods_img() -> getGoods_img
-    1365:1365:java.lang.String getGoods_style_name() -> getGoods_style_name
-    1333:1333:java.lang.String getId() -> getId
-    1389:1389:java.lang.String getMarket_price() -> getMarket_price
-    1341:1341:java.lang.String getName() -> getName
-    1309:1309:java.lang.String getPromote_price() -> getPromote_price
-    1397:1397:java.lang.String getShop_price() -> getShop_price
-    1373:1373:java.lang.String getShort_name() -> getShort_name
-    1381:1381:java.lang.String getShort_style_name() -> getShort_style_name
-    1405:1405:java.lang.String getThumb() -> getThumb
-    1421:1421:java.lang.String getUrl() -> getUrl
-    1325:1325:boolean isIs_exclusive() -> isIs_exclusive
-    1361:1362:void setBrand_name(java.lang.String) -> setBrand_name
-    1353:1354:void setBrief(java.lang.String) -> setBrief
-    1321:1322:void setFinal_price(java.lang.String) -> setFinal_price
-    1417:1418:void setGoods_img(java.lang.String) -> setGoods_img
-    1369:1370:void setGoods_style_name(java.lang.String) -> setGoods_style_name
-    1337:1338:void setId(java.lang.String) -> setId
-    1329:1330:void setIs_exclusive(boolean) -> setIs_exclusive
-    1393:1394:void setMarket_price(java.lang.String) -> setMarket_price
-    1345:1346:void setName(java.lang.String) -> setName
-    1313:1314:void setPromote_price(java.lang.String) -> setPromote_price
-    1401:1402:void setShop_price(java.lang.String) -> setShop_price
-    1377:1378:void setShort_name(java.lang.String) -> setShort_name
-    1385:1386:void setShort_style_name(java.lang.String) -> setShort_style_name
-    1409:1410:void setThumb(java.lang.String) -> setThumb
-    1425:1426:void setUrl(java.lang.String) -> setUrl
+    1276:1276:void <init>() -> <init>
+    1360:1360:java.lang.String getBrand_name() -> getBrand_name
+    1352:1352:java.lang.String getBrief() -> getBrief
+    1320:1320:java.lang.String getFinal_price() -> getFinal_price
+    1416:1416:java.lang.String getGoods_img() -> getGoods_img
+    1368:1368:java.lang.String getGoods_style_name() -> getGoods_style_name
+    1336:1336:java.lang.String getId() -> getId
+    1392:1392:java.lang.String getMarket_price() -> getMarket_price
+    1344:1344:java.lang.String getName() -> getName
+    1312:1312:java.lang.String getPromote_price() -> getPromote_price
+    1400:1400:java.lang.String getShop_price() -> getShop_price
+    1376:1376:java.lang.String getShort_name() -> getShort_name
+    1384:1384:java.lang.String getShort_style_name() -> getShort_style_name
+    1408:1408:java.lang.String getThumb() -> getThumb
+    1424:1424:java.lang.String getUrl() -> getUrl
+    1328:1328:boolean isIs_exclusive() -> isIs_exclusive
+    1364:1365:void setBrand_name(java.lang.String) -> setBrand_name
+    1356:1357:void setBrief(java.lang.String) -> setBrief
+    1324:1325:void setFinal_price(java.lang.String) -> setFinal_price
+    1420:1421:void setGoods_img(java.lang.String) -> setGoods_img
+    1372:1373:void setGoods_style_name(java.lang.String) -> setGoods_style_name
+    1340:1341:void setId(java.lang.String) -> setId
+    1332:1333:void setIs_exclusive(boolean) -> setIs_exclusive
+    1396:1397:void setMarket_price(java.lang.String) -> setMarket_price
+    1348:1349:void setName(java.lang.String) -> setName
+    1316:1317:void setPromote_price(java.lang.String) -> setPromote_price
+    1404:1405:void setShop_price(java.lang.String) -> setShop_price
+    1380:1381:void setShort_name(java.lang.String) -> setShort_name
+    1388:1389:void setShort_style_name(java.lang.String) -> setShort_style_name
+    1412:1413:void setThumb(java.lang.String) -> setThumb
+    1428:1429:void setUrl(java.lang.String) -> setUrl
 cn.weiben.buildingshopping.model.ShopDetailsBean$NewGoodsBean -> cn.weiben.buildingshopping.model.ShopDetailsBean$NewGoodsBean:
-    1117:1117:void <init>() -> <init>
-    1201:1201:java.lang.String getBrand_name() -> getBrand_name
-    1193:1193:java.lang.String getBrief() -> getBrief
-    1161:1161:java.lang.String getFinal_price() -> getFinal_price
-    1257:1257:java.lang.String getGoods_img() -> getGoods_img
-    1209:1209:java.lang.String getGoods_style_name() -> getGoods_style_name
-    1177:1177:java.lang.String getId() -> getId
-    1233:1233:java.lang.String getMarket_price() -> getMarket_price
-    1185:1185:java.lang.String getName() -> getName
-    1153:1153:java.lang.String getPromote_price() -> getPromote_price
-    1241:1241:java.lang.String getShop_price() -> getShop_price
-    1217:1217:java.lang.String getShort_name() -> getShort_name
-    1225:1225:java.lang.String getShort_style_name() -> getShort_style_name
-    1249:1249:java.lang.String getThumb() -> getThumb
-    1265:1265:java.lang.String getUrl() -> getUrl
-    1169:1169:boolean isIs_exclusive() -> isIs_exclusive
-    1205:1206:void setBrand_name(java.lang.String) -> setBrand_name
-    1197:1198:void setBrief(java.lang.String) -> setBrief
-    1165:1166:void setFinal_price(java.lang.String) -> setFinal_price
-    1261:1262:void setGoods_img(java.lang.String) -> setGoods_img
-    1213:1214:void setGoods_style_name(java.lang.String) -> setGoods_style_name
-    1181:1182:void setId(java.lang.String) -> setId
-    1173:1174:void setIs_exclusive(boolean) -> setIs_exclusive
-    1237:1238:void setMarket_price(java.lang.String) -> setMarket_price
-    1189:1190:void setName(java.lang.String) -> setName
-    1157:1158:void setPromote_price(java.lang.String) -> setPromote_price
-    1245:1246:void setShop_price(java.lang.String) -> setShop_price
-    1221:1222:void setShort_name(java.lang.String) -> setShort_name
-    1229:1230:void setShort_style_name(java.lang.String) -> setShort_style_name
-    1253:1254:void setThumb(java.lang.String) -> setThumb
-    1269:1270:void setUrl(java.lang.String) -> setUrl
+    1120:1120:void <init>() -> <init>
+    1204:1204:java.lang.String getBrand_name() -> getBrand_name
+    1196:1196:java.lang.String getBrief() -> getBrief
+    1164:1164:java.lang.String getFinal_price() -> getFinal_price
+    1260:1260:java.lang.String getGoods_img() -> getGoods_img
+    1212:1212:java.lang.String getGoods_style_name() -> getGoods_style_name
+    1180:1180:java.lang.String getId() -> getId
+    1236:1236:java.lang.String getMarket_price() -> getMarket_price
+    1188:1188:java.lang.String getName() -> getName
+    1156:1156:java.lang.String getPromote_price() -> getPromote_price
+    1244:1244:java.lang.String getShop_price() -> getShop_price
+    1220:1220:java.lang.String getShort_name() -> getShort_name
+    1228:1228:java.lang.String getShort_style_name() -> getShort_style_name
+    1252:1252:java.lang.String getThumb() -> getThumb
+    1268:1268:java.lang.String getUrl() -> getUrl
+    1172:1172:boolean isIs_exclusive() -> isIs_exclusive
+    1208:1209:void setBrand_name(java.lang.String) -> setBrand_name
+    1200:1201:void setBrief(java.lang.String) -> setBrief
+    1168:1169:void setFinal_price(java.lang.String) -> setFinal_price
+    1264:1265:void setGoods_img(java.lang.String) -> setGoods_img
+    1216:1217:void setGoods_style_name(java.lang.String) -> setGoods_style_name
+    1184:1185:void setId(java.lang.String) -> setId
+    1176:1177:void setIs_exclusive(boolean) -> setIs_exclusive
+    1240:1241:void setMarket_price(java.lang.String) -> setMarket_price
+    1192:1193:void setName(java.lang.String) -> setName
+    1160:1161:void setPromote_price(java.lang.String) -> setPromote_price
+    1248:1249:void setShop_price(java.lang.String) -> setShop_price
+    1224:1225:void setShort_name(java.lang.String) -> setShort_name
+    1232:1233:void setShort_style_name(java.lang.String) -> setShort_style_name
+    1256:1257:void setThumb(java.lang.String) -> setThumb
+    1272:1273:void setUrl(java.lang.String) -> setUrl
 cn.weiben.buildingshopping.model.ShopDetailsBean$SuppinfoBean -> cn.weiben.buildingshopping.model.ShopDetailsBean$SuppinfoBean:
-    212:212:void <init>() -> <init>
-    600:600:java.lang.String getAdd_time() -> getAdd_time
-    424:424:java.lang.String getAddress() -> getAddress
-    608:608:java.lang.String getApplynum() -> getApplynum
-    464:464:java.lang.String getBank() -> getBank
-    672:672:java.lang.String getBank_account_name() -> getBank_account_name
-    680:680:java.lang.String getBank_account_number() -> getBank_account_number
-    696:696:java.lang.String getBank_code() -> getBank_code
-    752:752:java.lang.String getBank_licence_electronic() -> getBank_licence_electronic
-    688:688:java.lang.String getBank_name() -> getBank_name
-    632:632:java.lang.String getBusiness_licence_number() -> getBusiness_licence_number
-    640:640:java.lang.String getBusiness_sphere() -> getBusiness_sphere
-    408:408:java.lang.String getCity() -> getCity
-    384:384:java.lang.String getCompany_name() -> getCompany_name
-    456:456:java.lang.String getCompany_type() -> getCompany_type
-    480:480:java.lang.String getContact() -> getContact
-    496:496:java.lang.String getContact_back() -> getContact_back
-    528:528:java.lang.String getContact_caiwu() -> getContact_caiwu
-    536:536:java.lang.String getContact_jishu() -> getContact_jishu
-    504:504:java.lang.String getContact_shop() -> getContact_shop
-    520:520:java.lang.String getContact_shouhou() -> getContact_shouhou
-    512:512:java.lang.String getContact_yunying() -> getContact_yunying
-    616:616:java.lang.String getContacts_name() -> getContacts_name
-    624:624:java.lang.String getContacts_phone() -> getContacts_phone
-    392:392:java.lang.String getCountry() -> getCountry
-    416:416:java.lang.String getDistrict() -> getDistrict
-    440:440:java.lang.String getEmail() -> getEmail
-    664:664:java.lang.String getGeneral_taxpayer() -> getGeneral_taxpayer
-    448:448:java.lang.String getGuimo() -> getGuimo
-    776:776:java.lang.String getHandheld_idcard() -> getHandheld_idcard
-    488:488:java.lang.String getId_card() -> getId_card
-    800:800:java.lang.String getId_card_no() -> getId_card_no
-    784:784:java.lang.String getIdcard_front() -> getIdcard_front
-    792:792:java.lang.String getIdcard_reverse() -> getIdcard_reverse
-    808:808:java.lang.String getLatitude() -> getLatitude
-    816:816:java.lang.String getLongitude() -> getLongitude
-    584:584:java.lang.String getNav_list() -> getNav_list
-    648:648:java.lang.String getOrganization_code() -> getOrganization_code
-    656:656:java.lang.String getOrganization_code_electronic() -> getOrganization_code_electronic
-    400:400:java.lang.String getProvince() -> getProvince
-    368:368:java.lang.String getRank_id() -> getRank_id
-    840:840:java.lang.String getRank_name() -> getRank_name
-    704:704:java.lang.String getSettlement_bank_account_name() -> getSettlement_bank_account_name
-    712:712:java.lang.String getSettlement_bank_account_number() -> getSettlement_bank_account_number
-    728:728:java.lang.String getSettlement_bank_code() -> getSettlement_bank_code
-    720:720:java.lang.String getSettlement_bank_name() -> getSettlement_bank_name
-    592:592:java.lang.String getStatus() -> getStatus
-    552:552:java.lang.String getSupplier_bond() -> getSupplier_bond
-    344:344:java.lang.String getSupplier_id() -> getSupplier_id
-    768:768:java.lang.String getSupplier_money() -> getSupplier_money
-    360:360:java.lang.String getSupplier_name() -> getSupplier_name
-    560:560:java.lang.String getSupplier_rebate() -> getSupplier_rebate
-    568:568:java.lang.String getSupplier_rebate_paytime() -> getSupplier_rebate_paytime
-    576:576:java.lang.String getSupplier_remark() -> getSupplier_remark
-    544:544:java.lang.String getSystem_fee() -> getSystem_fee
-    736:736:java.lang.String getTax_registration_certificate() -> getTax_registration_certificate
-    760:760:java.lang.String getTax_registration_certificate_electronic() -> getTax_registration_certificate_electronic
-    744:744:java.lang.String getTaxpayer_id() -> getTaxpayer_id
-    432:432:java.lang.String getTel() -> getTel
-    376:376:java.lang.String getType_id() -> getType_id
-    352:352:java.lang.String getUser_id() -> getUser_id
-    824:824:java.lang.Object getWx_latitude() -> getWx_latitude
-    832:832:java.lang.Object getWx_longitude() -> getWx_longitude
-    472:472:java.lang.String getZhizhao() -> getZhizhao
-    604:605:void setAdd_time(java.lang.String) -> setAdd_time
-    428:429:void setAddress(java.lang.String) -> setAddress
-    612:613:void setApplynum(java.lang.String) -> setApplynum
-    468:469:void setBank(java.lang.String) -> setBank
-    676:677:void setBank_account_name(java.lang.String) -> setBank_account_name
-    684:685:void setBank_account_number(java.lang.String) -> setBank_account_number
-    700:701:void setBank_code(java.lang.String) -> setBank_code
-    756:757:void setBank_licence_electronic(java.lang.String) -> setBank_licence_electronic
-    692:693:void setBank_name(java.lang.String) -> setBank_name
-    636:637:void setBusiness_licence_number(java.lang.String) -> setBusiness_licence_number
-    644:645:void setBusiness_sphere(java.lang.String) -> setBusiness_sphere
-    412:413:void setCity(java.lang.String) -> setCity
-    388:389:void setCompany_name(java.lang.String) -> setCompany_name
-    460:461:void setCompany_type(java.lang.String) -> setCompany_type
-    484:485:void setContact(java.lang.String) -> setContact
-    500:501:void setContact_back(java.lang.String) -> setContact_back
-    532:533:void setContact_caiwu(java.lang.String) -> setContact_caiwu
-    540:541:void setContact_jishu(java.lang.String) -> setContact_jishu
-    508:509:void setContact_shop(java.lang.String) -> setContact_shop
-    524:525:void setContact_shouhou(java.lang.String) -> setContact_shouhou
-    516:517:void setContact_yunying(java.lang.String) -> setContact_yunying
-    620:621:void setContacts_name(java.lang.String) -> setContacts_name
-    628:629:void setContacts_phone(java.lang.String) -> setContacts_phone
-    396:397:void setCountry(java.lang.String) -> setCountry
-    420:421:void setDistrict(java.lang.String) -> setDistrict
-    444:445:void setEmail(java.lang.String) -> setEmail
-    668:669:void setGeneral_taxpayer(java.lang.String) -> setGeneral_taxpayer
-    452:453:void setGuimo(java.lang.String) -> setGuimo
-    780:781:void setHandheld_idcard(java.lang.String) -> setHandheld_idcard
-    492:493:void setId_card(java.lang.String) -> setId_card
-    804:805:void setId_card_no(java.lang.String) -> setId_card_no
-    788:789:void setIdcard_front(java.lang.String) -> setIdcard_front
-    796:797:void setIdcard_reverse(java.lang.String) -> setIdcard_reverse
-    812:813:void setLatitude(java.lang.String) -> setLatitude
-    820:821:void setLongitude(java.lang.String) -> setLongitude
-    588:589:void setNav_list(java.lang.String) -> setNav_list
-    652:653:void setOrganization_code(java.lang.String) -> setOrganization_code
-    660:661:void setOrganization_code_electronic(java.lang.String) -> setOrganization_code_electronic
-    404:405:void setProvince(java.lang.String) -> setProvince
-    372:373:void setRank_id(java.lang.String) -> setRank_id
-    844:845:void setRank_name(java.lang.String) -> setRank_name
-    708:709:void setSettlement_bank_account_name(java.lang.String) -> setSettlement_bank_account_name
-    716:717:void setSettlement_bank_account_number(java.lang.String) -> setSettlement_bank_account_number
-    732:733:void setSettlement_bank_code(java.lang.String) -> setSettlement_bank_code
-    724:725:void setSettlement_bank_name(java.lang.String) -> setSettlement_bank_name
-    596:597:void setStatus(java.lang.String) -> setStatus
-    556:557:void setSupplier_bond(java.lang.String) -> setSupplier_bond
-    348:349:void setSupplier_id(java.lang.String) -> setSupplier_id
-    772:773:void setSupplier_money(java.lang.String) -> setSupplier_money
-    364:365:void setSupplier_name(java.lang.String) -> setSupplier_name
-    564:565:void setSupplier_rebate(java.lang.String) -> setSupplier_rebate
-    572:573:void setSupplier_rebate_paytime(java.lang.String) -> setSupplier_rebate_paytime
-    580:581:void setSupplier_remark(java.lang.String) -> setSupplier_remark
-    548:549:void setSystem_fee(java.lang.String) -> setSystem_fee
-    740:741:void setTax_registration_certificate(java.lang.String) -> setTax_registration_certificate
-    764:765:void setTax_registration_certificate_electronic(java.lang.String) -> setTax_registration_certificate_electronic
-    748:749:void setTaxpayer_id(java.lang.String) -> setTaxpayer_id
-    436:437:void setTel(java.lang.String) -> setTel
-    380:381:void setType_id(java.lang.String) -> setType_id
-    356:357:void setUser_id(java.lang.String) -> setUser_id
-    828:829:void setWx_latitude(java.lang.Object) -> setWx_latitude
-    836:837:void setWx_longitude(java.lang.Object) -> setWx_longitude
-    476:477:void setZhizhao(java.lang.String) -> setZhizhao
+    215:215:void <init>() -> <init>
+    603:603:java.lang.String getAdd_time() -> getAdd_time
+    427:427:java.lang.String getAddress() -> getAddress
+    611:611:java.lang.String getApplynum() -> getApplynum
+    467:467:java.lang.String getBank() -> getBank
+    675:675:java.lang.String getBank_account_name() -> getBank_account_name
+    683:683:java.lang.String getBank_account_number() -> getBank_account_number
+    699:699:java.lang.String getBank_code() -> getBank_code
+    755:755:java.lang.String getBank_licence_electronic() -> getBank_licence_electronic
+    691:691:java.lang.String getBank_name() -> getBank_name
+    635:635:java.lang.String getBusiness_licence_number() -> getBusiness_licence_number
+    643:643:java.lang.String getBusiness_sphere() -> getBusiness_sphere
+    411:411:java.lang.String getCity() -> getCity
+    387:387:java.lang.String getCompany_name() -> getCompany_name
+    459:459:java.lang.String getCompany_type() -> getCompany_type
+    483:483:java.lang.String getContact() -> getContact
+    499:499:java.lang.String getContact_back() -> getContact_back
+    531:531:java.lang.String getContact_caiwu() -> getContact_caiwu
+    539:539:java.lang.String getContact_jishu() -> getContact_jishu
+    507:507:java.lang.String getContact_shop() -> getContact_shop
+    523:523:java.lang.String getContact_shouhou() -> getContact_shouhou
+    515:515:java.lang.String getContact_yunying() -> getContact_yunying
+    619:619:java.lang.String getContacts_name() -> getContacts_name
+    627:627:java.lang.String getContacts_phone() -> getContacts_phone
+    395:395:java.lang.String getCountry() -> getCountry
+    419:419:java.lang.String getDistrict() -> getDistrict
+    443:443:java.lang.String getEmail() -> getEmail
+    667:667:java.lang.String getGeneral_taxpayer() -> getGeneral_taxpayer
+    451:451:java.lang.String getGuimo() -> getGuimo
+    779:779:java.lang.String getHandheld_idcard() -> getHandheld_idcard
+    491:491:java.lang.String getId_card() -> getId_card
+    803:803:java.lang.String getId_card_no() -> getId_card_no
+    787:787:java.lang.String getIdcard_front() -> getIdcard_front
+    795:795:java.lang.String getIdcard_reverse() -> getIdcard_reverse
+    811:811:java.lang.String getLatitude() -> getLatitude
+    819:819:java.lang.String getLongitude() -> getLongitude
+    587:587:java.lang.String getNav_list() -> getNav_list
+    651:651:java.lang.String getOrganization_code() -> getOrganization_code
+    659:659:java.lang.String getOrganization_code_electronic() -> getOrganization_code_electronic
+    403:403:java.lang.String getProvince() -> getProvince
+    371:371:java.lang.String getRank_id() -> getRank_id
+    843:843:java.lang.String getRank_name() -> getRank_name
+    707:707:java.lang.String getSettlement_bank_account_name() -> getSettlement_bank_account_name
+    715:715:java.lang.String getSettlement_bank_account_number() -> getSettlement_bank_account_number
+    731:731:java.lang.String getSettlement_bank_code() -> getSettlement_bank_code
+    723:723:java.lang.String getSettlement_bank_name() -> getSettlement_bank_name
+    595:595:java.lang.String getStatus() -> getStatus
+    555:555:java.lang.String getSupplier_bond() -> getSupplier_bond
+    347:347:java.lang.String getSupplier_id() -> getSupplier_id
+    771:771:java.lang.String getSupplier_money() -> getSupplier_money
+    363:363:java.lang.String getSupplier_name() -> getSupplier_name
+    563:563:java.lang.String getSupplier_rebate() -> getSupplier_rebate
+    571:571:java.lang.String getSupplier_rebate_paytime() -> getSupplier_rebate_paytime
+    579:579:java.lang.String getSupplier_remark() -> getSupplier_remark
+    547:547:java.lang.String getSystem_fee() -> getSystem_fee
+    739:739:java.lang.String getTax_registration_certificate() -> getTax_registration_certificate
+    763:763:java.lang.String getTax_registration_certificate_electronic() -> getTax_registration_certificate_electronic
+    747:747:java.lang.String getTaxpayer_id() -> getTaxpayer_id
+    435:435:java.lang.String getTel() -> getTel
+    379:379:java.lang.String getType_id() -> getType_id
+    355:355:java.lang.String getUser_id() -> getUser_id
+    827:827:java.lang.Object getWx_latitude() -> getWx_latitude
+    835:835:java.lang.Object getWx_longitude() -> getWx_longitude
+    475:475:java.lang.String getZhizhao() -> getZhizhao
+    607:608:void setAdd_time(java.lang.String) -> setAdd_time
+    431:432:void setAddress(java.lang.String) -> setAddress
+    615:616:void setApplynum(java.lang.String) -> setApplynum
+    471:472:void setBank(java.lang.String) -> setBank
+    679:680:void setBank_account_name(java.lang.String) -> setBank_account_name
+    687:688:void setBank_account_number(java.lang.String) -> setBank_account_number
+    703:704:void setBank_code(java.lang.String) -> setBank_code
+    759:760:void setBank_licence_electronic(java.lang.String) -> setBank_licence_electronic
+    695:696:void setBank_name(java.lang.String) -> setBank_name
+    639:640:void setBusiness_licence_number(java.lang.String) -> setBusiness_licence_number
+    647:648:void setBusiness_sphere(java.lang.String) -> setBusiness_sphere
+    415:416:void setCity(java.lang.String) -> setCity
+    391:392:void setCompany_name(java.lang.String) -> setCompany_name
+    463:464:void setCompany_type(java.lang.String) -> setCompany_type
+    487:488:void setContact(java.lang.String) -> setContact
+    503:504:void setContact_back(java.lang.String) -> setContact_back
+    535:536:void setContact_caiwu(java.lang.String) -> setContact_caiwu
+    543:544:void setContact_jishu(java.lang.String) -> setContact_jishu
+    511:512:void setContact_shop(java.lang.String) -> setContact_shop
+    527:528:void setContact_shouhou(java.lang.String) -> setContact_shouhou
+    519:520:void setContact_yunying(java.lang.String) -> setContact_yunying
+    623:624:void setContacts_name(java.lang.String) -> setContacts_name
+    631:632:void setContacts_phone(java.lang.String) -> setContacts_phone
+    399:400:void setCountry(java.lang.String) -> setCountry
+    423:424:void setDistrict(java.lang.String) -> setDistrict
+    447:448:void setEmail(java.lang.String) -> setEmail
+    671:672:void setGeneral_taxpayer(java.lang.String) -> setGeneral_taxpayer
+    455:456:void setGuimo(java.lang.String) -> setGuimo
+    783:784:void setHandheld_idcard(java.lang.String) -> setHandheld_idcard
+    495:496:void setId_card(java.lang.String) -> setId_card
+    807:808:void setId_card_no(java.lang.String) -> setId_card_no
+    791:792:void setIdcard_front(java.lang.String) -> setIdcard_front
+    799:800:void setIdcard_reverse(java.lang.String) -> setIdcard_reverse
+    815:816:void setLatitude(java.lang.String) -> setLatitude
+    823:824:void setLongitude(java.lang.String) -> setLongitude
+    591:592:void setNav_list(java.lang.String) -> setNav_list
+    655:656:void setOrganization_code(java.lang.String) -> setOrganization_code
+    663:664:void setOrganization_code_electronic(java.lang.String) -> setOrganization_code_electronic
+    407:408:void setProvince(java.lang.String) -> setProvince
+    375:376:void setRank_id(java.lang.String) -> setRank_id
+    847:848:void setRank_name(java.lang.String) -> setRank_name
+    711:712:void setSettlement_bank_account_name(java.lang.String) -> setSettlement_bank_account_name
+    719:720:void setSettlement_bank_account_number(java.lang.String) -> setSettlement_bank_account_number
+    735:736:void setSettlement_bank_code(java.lang.String) -> setSettlement_bank_code
+    727:728:void setSettlement_bank_name(java.lang.String) -> setSettlement_bank_name
+    599:600:void setStatus(java.lang.String) -> setStatus
+    559:560:void setSupplier_bond(java.lang.String) -> setSupplier_bond
+    351:352:void setSupplier_id(java.lang.String) -> setSupplier_id
+    775:776:void setSupplier_money(java.lang.String) -> setSupplier_money
+    367:368:void setSupplier_name(java.lang.String) -> setSupplier_name
+    567:568:void setSupplier_rebate(java.lang.String) -> setSupplier_rebate
+    575:576:void setSupplier_rebate_paytime(java.lang.String) -> setSupplier_rebate_paytime
+    583:584:void setSupplier_remark(java.lang.String) -> setSupplier_remark
+    551:552:void setSystem_fee(java.lang.String) -> setSystem_fee
+    743:744:void setTax_registration_certificate(java.lang.String) -> setTax_registration_certificate
+    767:768:void setTax_registration_certificate_electronic(java.lang.String) -> setTax_registration_certificate_electronic
+    751:752:void setTaxpayer_id(java.lang.String) -> setTaxpayer_id
+    439:440:void setTel(java.lang.String) -> setTel
+    383:384:void setType_id(java.lang.String) -> setType_id
+    359:360:void setUser_id(java.lang.String) -> setUser_id
+    831:832:void setWx_latitude(java.lang.Object) -> setWx_latitude
+    839:840:void setWx_longitude(java.lang.Object) -> setWx_longitude
+    479:480:void setZhizhao(java.lang.String) -> setZhizhao
 cn.weiben.buildingshopping.model.Test -> cn.weiben.buildingshopping.model.Test:
     5:5:void <init>() -> <init>
     103:103:int getAdmin_id() -> getAdmin_id
@@ -24619,22 +24626,23 @@ cn.weiben.buildingshopping.ui.adapter.ExpandableItemAdapter$2 -> cn.weiben.build
     58:58:void <init>(cn.weiben.buildingshopping.ui.adapter.ExpandableItemAdapter,cn.weiben.buildingshopping.model.CategoriesBean) -> <init>
     61:64:void onClick(android.view.View) -> onClick
 cn.weiben.buildingshopping.ui.adapter.ExpandableShopGoodsItemAdapter -> cn.weiben.buildingshopping.ui.adapter.ExpandableShopGoodsItemAdapter:
-    17:17:android.content.Context access$000(cn.weiben.buildingshopping.ui.adapter.ExpandableShopGoodsItemAdapter) -> a
-    31:67:void convert(com.chad.library.adapter.base.BaseViewHolder,com.chad.library.adapter.base.entity.MultiItemEntity) -> a
-    17:17:android.content.Context access$100(cn.weiben.buildingshopping.ui.adapter.ExpandableShopGoodsItemAdapter) -> b
-    17:17:android.content.Context access$200(cn.weiben.buildingshopping.ui.adapter.ExpandableShopGoodsItemAdapter) -> c
-    17:17:void convert(com.chad.library.adapter.base.BaseViewHolder,java.lang.Object) -> convert
-    17:17:android.content.Context access$300(cn.weiben.buildingshopping.ui.adapter.ExpandableShopGoodsItemAdapter) -> d
+    30:33:void <init>(java.util.List) -> <init>
+    23:23:android.content.Context access$000(cn.weiben.buildingshopping.ui.adapter.ExpandableShopGoodsItemAdapter) -> a
+    37:80:void convert(com.chad.library.adapter.base.BaseViewHolder,com.chad.library.adapter.base.entity.MultiItemEntity) -> a
+    23:23:android.content.Context access$100(cn.weiben.buildingshopping.ui.adapter.ExpandableShopGoodsItemAdapter) -> b
+    23:23:android.content.Context access$200(cn.weiben.buildingshopping.ui.adapter.ExpandableShopGoodsItemAdapter) -> c
+    23:23:void convert(com.chad.library.adapter.base.BaseViewHolder,java.lang.Object) -> convert
+    23:23:android.content.Context access$300(cn.weiben.buildingshopping.ui.adapter.ExpandableShopGoodsItemAdapter) -> d
 cn.weiben.buildingshopping.ui.adapter.ExpandableShopGoodsItemAdapter$1 -> cn.weiben.buildingshopping.ui.adapter.g:
-    cn.weiben.buildingshopping.model.Level1Item val$lv0 -> a
+    cn.weiben.buildingshopping.model.GoodsLevelItem val$lv0 -> a
     cn.weiben.buildingshopping.ui.adapter.ExpandableShopGoodsItemAdapter this$0 -> b
-    36:36:void <init>(cn.weiben.buildingshopping.ui.adapter.ExpandableShopGoodsItemAdapter,cn.weiben.buildingshopping.model.Level1Item) -> <init>
-    46:50:void onClick(android.view.View) -> onClick
+    42:42:void <init>(cn.weiben.buildingshopping.ui.adapter.ExpandableShopGoodsItemAdapter,cn.weiben.buildingshopping.model.GoodsLevelItem) -> <init>
+    52:56:void onClick(android.view.View) -> onClick
 cn.weiben.buildingshopping.ui.adapter.ExpandableShopGoodsItemAdapter$2 -> cn.weiben.buildingshopping.ui.adapter.h:
-    cn.weiben.buildingshopping.model.CategoriesBean val$bean -> a
+    cn.weiben.buildingshopping.model.ShopDetailsBean$CategoryGoodsBean$GoodsBean val$bean -> a
     cn.weiben.buildingshopping.ui.adapter.ExpandableShopGoodsItemAdapter this$0 -> b
-    57:57:void <init>(cn.weiben.buildingshopping.ui.adapter.ExpandableShopGoodsItemAdapter,cn.weiben.buildingshopping.model.CategoriesBean) -> <init>
-    60:63:void onClick(android.view.View) -> onClick
+    70:70:void <init>(cn.weiben.buildingshopping.ui.adapter.ExpandableShopGoodsItemAdapter,cn.weiben.buildingshopping.model.ShopDetailsBean$CategoryGoodsBean$GoodsBean) -> <init>
+    73:76:void onClick(android.view.View) -> onClick
 cn.weiben.buildingshopping.ui.adapter.GoodsDetailAdapter -> cn.weiben.buildingshopping.ui.adapter.GoodsDetailAdapter:
     23:24:void <init>(java.util.List) -> <init>
     31:31:void convert(com.chad.library.adapter.base.BaseViewHolder,java.lang.String) -> a
@@ -24684,15 +24692,15 @@ cn.weiben.buildingshopping.ui.adapter.OrderChildGoodsRvAdapter -> cn.weiben.buil
 cn.weiben.buildingshopping.ui.adapter.OrderHttpRecyclerAdapter -> cn.weiben.buildingshopping.ui.adapter.OrderHttpRecyclerAdapter:
     26:27:void <init>(java.util.List) -> <init>
     22:22:android.content.Context access$000(cn.weiben.buildingshopping.ui.adapter.OrderHttpRecyclerAdapter) -> a
-    31:118:void convert(com.chad.library.adapter.base.BaseViewHolder,cn.weiben.buildingshopping.model.OrderResultBean$OrderListBean) -> a
+    31:116:void convert(com.chad.library.adapter.base.BaseViewHolder,cn.weiben.buildingshopping.model.OrderResultBean$OrderListBean) -> a
     22:22:void convert(com.chad.library.adapter.base.BaseViewHolder,java.lang.Object) -> convert
 cn.weiben.buildingshopping.ui.adapter.OrderHttpRecyclerAdapter$1 -> cn.weiben.buildingshopping.ui.adapter.j:
     cn.weiben.buildingshopping.model.OrderResultBean$OrderListBean val$bean -> a
     cn.weiben.buildingshopping.ui.adapter.OrderHttpRecyclerAdapter this$0 -> b
-    68:68:void <init>(cn.weiben.buildingshopping.ui.adapter.OrderHttpRecyclerAdapter,cn.weiben.buildingshopping.model.OrderResultBean$OrderListBean) -> <init>
-    90:91:void lambda$onClick$0(android.content.DialogInterface,int) -> a
-    93:94:void lambda$onClick$1(android.content.DialogInterface,int) -> b
-    71:96:void onClick(android.view.View) -> onClick
+    67:67:void <init>(cn.weiben.buildingshopping.ui.adapter.OrderHttpRecyclerAdapter,cn.weiben.buildingshopping.model.OrderResultBean$OrderListBean) -> <init>
+    81:82:void lambda$onClick$0(android.content.DialogInterface,int) -> a
+    84:85:void lambda$onClick$1(android.content.DialogInterface,int) -> b
+    71:87:void onClick(android.view.View) -> onClick
 cn.weiben.buildingshopping.ui.adapter.OrderPayGoodsRvAdapter -> cn.weiben.buildingshopping.ui.adapter.OrderPayGoodsRvAdapter:
     20:21:void <init>(java.util.List) -> <init>
     25:31:void convert(com.chad.library.adapter.base.BaseViewHolder,cn.weiben.buildingshopping.model.CartPayBean$CartGoodsBean) -> a
@@ -25074,100 +25082,100 @@ cn.weiben.buildingshopping.ui.home.HomeFragment -> cn.weiben.buildingshopping.d.
     36:36:void access$initBanner(cn.weiben.buildingshopping.ui.home.HomeFragment,android.view.View,java.util.List) -> a
     36:36:void access$initHomeAdView(cn.weiben.buildingshopping.ui.home.HomeFragment,android.view.View,cn.weiben.buildingshopping.model.HomeBean) -> a
     77:84:void setHomePage(cn.weiben.buildingshopping.model.HomeBean) -> a
-    117:207:void initHomeAdView(android.view.View,cn.weiben.buildingshopping.model.HomeBean) -> a
-    344:382:void initBanner(android.view.View,java.util.List) -> a
+    117:211:void initHomeAdView(android.view.View,cn.weiben.buildingshopping.model.HomeBean) -> a
+    348:386:void initBanner(android.view.View,java.util.List) -> a
     36:36:android.view.View access$getHeaderView$p(cn.weiben.buildingshopping.ui.home.HomeFragment) -> b
     36:36:void access$initHotGoodsRecyclerView(cn.weiben.buildingshopping.ui.home.HomeFragment,android.view.View,java.util.List) -> b
-    219:230:void initHotGoodsRecyclerView(android.view.View,java.util.List) -> b
+    223:234:void initHotGoodsRecyclerView(android.view.View,java.util.List) -> b
     36:36:cn.weiben.buildingshopping.model.HomeBean access$getHomeBean$p(cn.weiben.buildingshopping.ui.home.HomeFragment) -> c
     36:36:void access$initMenuRecyclerView(cn.weiben.buildingshopping.ui.home.HomeFragment,android.view.View,java.util.List) -> c
-    262:318:void initMenuRecyclerView(android.view.View,java.util.List) -> c
+    266:322:void initMenuRecyclerView(android.view.View,java.util.List) -> c
     36:36:cn.weiben.buildingshopping.base.activity.BaseActivity access$getMActivity$p(cn.weiben.buildingshopping.ui.home.HomeFragment) -> d
     36:36:void access$initNewGoodsRecyclerView(cn.weiben.buildingshopping.ui.home.HomeFragment,android.view.View,java.util.List) -> d
-    233:244:void initNewGoodsRecyclerView(android.view.View,java.util.List) -> d
+    237:248:void initNewGoodsRecyclerView(android.view.View,java.util.List) -> d
     36:36:void access$initPromotionRecyclerView(cn.weiben.buildingshopping.ui.home.HomeFragment,android.view.View,java.util.List) -> e
     73:74:void getListAsync(int) -> e
     87:114:void setList(java.util.List) -> e
-    210:215:void setHomeGoodsList(int,java.util.List) -> e
-    247:258:void initPromotionRecyclerView(android.view.View,java.util.List) -> e
+    214:219:void setHomeGoodsList(int,java.util.List) -> e
+    251:262:void initPromotionRecyclerView(android.view.View,java.util.List) -> e
     36:36:void access$initViewFilp(cn.weiben.buildingshopping.ui.home.HomeFragment,android.view.View,java.util.List) -> f
-    322:340:void initViewFilp(android.view.View,java.util.List) -> f
+    326:344:void initViewFilp(android.view.View,java.util.List) -> f
     android.view.View _$_findCachedViewById(int) -> h
     void onDestroyView() -> ha
-    385:397:void onItemClick(com.chad.library.adapter.base.BaseQuickAdapter,android.view.View,int) -> onItemClick
+    389:401:void onItemClick(com.chad.library.adapter.base.BaseQuickAdapter,android.view.View,int) -> onItemClick
     48:48:void lazyData() -> r
 cn.weiben.buildingshopping.ui.home.HomeFragment$initBanner$2 -> cn.weiben.buildingshopping.d.c.g:
     java.util.List $wapIndexAd -> b
     cn.weiben.buildingshopping.ui.home.HomeFragment this$0 -> a
-    371:371:void <init>(cn.weiben.buildingshopping.ui.home.HomeFragment,java.util.List) -> <init>
-    373:376:void OnBannerClick(int) -> a
+    375:375:void <init>(cn.weiben.buildingshopping.ui.home.HomeFragment,java.util.List) -> <init>
+    377:380:void OnBannerClick(int) -> a
 cn.weiben.buildingshopping.ui.home.HomeFragment$initHomeAdView$1 -> cn.weiben.buildingshopping.d.c.j:
     cn.weiben.buildingshopping.ui.home.HomeFragment this$0 -> a
     cn.weiben.buildingshopping.model.HomeBean $homeBean -> b
-    142:145:void onClick(android.view.View) -> onClick
+    144:147:void onClick(android.view.View) -> onClick
 cn.weiben.buildingshopping.ui.home.HomeFragment$initHomeAdView$10 -> cn.weiben.buildingshopping.d.c.h:
     cn.weiben.buildingshopping.ui.home.HomeFragment this$0 -> a
     cn.weiben.buildingshopping.model.HomeBean $homeBean -> b
-    195:198:void onClick(android.view.View) -> onClick
+    197:200:void onClick(android.view.View) -> onClick
 cn.weiben.buildingshopping.ui.home.HomeFragment$initHomeAdView$11 -> cn.weiben.buildingshopping.d.c.i:
     cn.weiben.buildingshopping.ui.home.HomeFragment this$0 -> a
     cn.weiben.buildingshopping.model.HomeBean $homeBean -> b
-    201:204:void onClick(android.view.View) -> onClick
+    204:207:void onClick(android.view.View) -> onClick
 cn.weiben.buildingshopping.ui.home.HomeFragment$initHomeAdView$2 -> cn.weiben.buildingshopping.d.c.k:
     cn.weiben.buildingshopping.ui.home.HomeFragment this$0 -> a
     cn.weiben.buildingshopping.model.HomeBean $homeBean -> b
-    148:151:void onClick(android.view.View) -> onClick
+    150:153:void onClick(android.view.View) -> onClick
 cn.weiben.buildingshopping.ui.home.HomeFragment$initHomeAdView$3 -> cn.weiben.buildingshopping.d.c.l:
     cn.weiben.buildingshopping.ui.home.HomeFragment this$0 -> a
     cn.weiben.buildingshopping.model.HomeBean $homeBean -> b
-    154:157:void onClick(android.view.View) -> onClick
+    156:159:void onClick(android.view.View) -> onClick
 cn.weiben.buildingshopping.ui.home.HomeFragment$initHomeAdView$4 -> cn.weiben.buildingshopping.d.c.m:
     cn.weiben.buildingshopping.ui.home.HomeFragment this$0 -> a
     cn.weiben.buildingshopping.model.HomeBean $homeBean -> b
-    160:163:void onClick(android.view.View) -> onClick
+    162:165:void onClick(android.view.View) -> onClick
 cn.weiben.buildingshopping.ui.home.HomeFragment$initHomeAdView$5 -> cn.weiben.buildingshopping.d.c.n:
     cn.weiben.buildingshopping.ui.home.HomeFragment this$0 -> a
     cn.weiben.buildingshopping.model.HomeBean $homeBean -> b
-    166:169:void onClick(android.view.View) -> onClick
+    168:171:void onClick(android.view.View) -> onClick
 cn.weiben.buildingshopping.ui.home.HomeFragment$initHomeAdView$6 -> cn.weiben.buildingshopping.d.c.o:
     cn.weiben.buildingshopping.ui.home.HomeFragment this$0 -> a
     cn.weiben.buildingshopping.model.HomeBean $homeBean -> b
-    171:174:void onClick(android.view.View) -> onClick
+    173:176:void onClick(android.view.View) -> onClick
 cn.weiben.buildingshopping.ui.home.HomeFragment$initHomeAdView$7 -> cn.weiben.buildingshopping.d.c.p:
     cn.weiben.buildingshopping.ui.home.HomeFragment this$0 -> a
     cn.weiben.buildingshopping.model.HomeBean $homeBean -> b
-    177:180:void onClick(android.view.View) -> onClick
+    179:182:void onClick(android.view.View) -> onClick
 cn.weiben.buildingshopping.ui.home.HomeFragment$initHomeAdView$8 -> cn.weiben.buildingshopping.d.c.q:
     cn.weiben.buildingshopping.ui.home.HomeFragment this$0 -> a
     cn.weiben.buildingshopping.model.HomeBean $homeBean -> b
-    183:186:void onClick(android.view.View) -> onClick
+    185:188:void onClick(android.view.View) -> onClick
 cn.weiben.buildingshopping.ui.home.HomeFragment$initHomeAdView$9 -> cn.weiben.buildingshopping.d.c.r:
     cn.weiben.buildingshopping.ui.home.HomeFragment this$0 -> a
     cn.weiben.buildingshopping.model.HomeBean $homeBean -> b
-    189:192:void onClick(android.view.View) -> onClick
+    191:194:void onClick(android.view.View) -> onClick
 cn.weiben.buildingshopping.ui.home.HomeFragment$initHotGoodsRecyclerView$1 -> cn.weiben.buildingshopping.d.c.s:
     cn.weiben.buildingshopping.ui.home.HomeFragment this$0 -> a
-    225:225:void onItemClick(com.chad.library.adapter.base.BaseQuickAdapter,android.view.View,int) -> onItemClick
+    229:229:void onItemClick(com.chad.library.adapter.base.BaseQuickAdapter,android.view.View,int) -> onItemClick
 cn.weiben.buildingshopping.ui.home.HomeFragment$initMenuRecyclerView$1 -> cn.weiben.buildingshopping.d.c.t:
     cn.weiben.buildingshopping.ui.home.HomeFragment this$0 -> a
-    268:316:void onItemClick(com.chad.library.adapter.base.BaseQuickAdapter,android.view.View,int) -> onItemClick
+    272:320:void onItemClick(com.chad.library.adapter.base.BaseQuickAdapter,android.view.View,int) -> onItemClick
 cn.weiben.buildingshopping.ui.home.HomeFragment$initNewGoodsRecyclerView$1 -> cn.weiben.buildingshopping.d.c.u:
     cn.weiben.buildingshopping.ui.home.HomeFragment this$0 -> a
-    239:239:void onItemClick(com.chad.library.adapter.base.BaseQuickAdapter,android.view.View,int) -> onItemClick
+    243:243:void onItemClick(com.chad.library.adapter.base.BaseQuickAdapter,android.view.View,int) -> onItemClick
 cn.weiben.buildingshopping.ui.home.HomeFragment$initPromotionRecyclerView$1 -> cn.weiben.buildingshopping.d.c.v:
     cn.weiben.buildingshopping.ui.home.HomeFragment this$0 -> a
-    253:253:void onItemClick(com.chad.library.adapter.base.BaseQuickAdapter,android.view.View,int) -> onItemClick
+    257:257:void onItemClick(com.chad.library.adapter.base.BaseQuickAdapter,android.view.View,int) -> onItemClick
 cn.weiben.buildingshopping.ui.home.HomeFragment$initView$1 -> cn.weiben.buildingshopping.d.c.w:
     cn.weiben.buildingshopping.ui.home.HomeFragment this$0 -> a
     55:56:void onClicked(android.view.View,int,java.lang.String) -> a
 cn.weiben.buildingshopping.ui.home.HomeFragment$initViewFilp$2 -> cn.weiben.buildingshopping.d.c.x:
     java.util.List $newArticles -> b
     cn.weiben.buildingshopping.ui.home.HomeFragment this$0 -> a
-    333:333:void <init>(cn.weiben.buildingshopping.ui.home.HomeFragment,java.util.List) -> <init>
-    335:338:void itemClick(int) -> a
+    337:337:void <init>(cn.weiben.buildingshopping.ui.home.HomeFragment,java.util.List) -> <init>
+    339:342:void itemClick(int) -> a
 cn.weiben.buildingshopping.ui.home.HomeFragment$onItemClick$1 -> cn.weiben.buildingshopping.d.c.y:
     cn.weiben.buildingshopping.ui.home.HomeFragment this$0 -> a
-    391:391:void onItemClick(com.chad.library.adapter.base.BaseQuickAdapter,android.view.View,int) -> onItemClick
+    395:395:void onItemClick(com.chad.library.adapter.base.BaseQuickAdapter,android.view.View,int) -> onItemClick
 cn.weiben.buildingshopping.ui.home.HomeFragment$setList$1 -> cn.weiben.buildingshopping.d.c.z:
     java.util.List $list -> b
     cn.weiben.buildingshopping.ui.home.HomeFragment this$0 -> a
@@ -26289,52 +26297,57 @@ cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsActivity -> cn.weiben
     java.util.HashMap _$_findViewCache -> H
     java.util.List categoryList -> E
     cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsActivity$Companion Companion -> F
-    28:28:void <clinit>() -> <clinit>
-    25:25:void <init>() -> <init>
-    32:32:int getActivityLayoutID() -> C
-    180:181:void onRetry() -> K
-    25:25:cn.weiben.buildingshopping.base.BaseContract$BasePresenter initPresenter() -> N
-    42:42:cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsPresenter initPresenter() -> N
-    25:25:java.util.List access$getCategoryList$cp() -> O
-    25:25:android.app.Activity access$getMContext$p(cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsActivity) -> a
-    37:38:void initView(android.os.Bundle) -> a
-    47:177:void setShopDetails(cn.weiben.buildingshopping.model.ShopDetailsBean) -> a
-    25:25:cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsPresenter access$getMPresenter$p(cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsActivity) -> b
-    25:25:java.lang.String access$getSuppId$p(cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsActivity) -> c
+    29:29:void <clinit>() -> <clinit>
+    26:26:void <init>() -> <init>
+    33:33:int getActivityLayoutID() -> C
+    181:182:void onRetry() -> K
+    26:26:cn.weiben.buildingshopping.base.BaseContract$BasePresenter initPresenter() -> N
+    43:43:cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsPresenter initPresenter() -> N
+    26:26:java.util.List access$getCategoryList$cp() -> O
+    26:26:android.app.Activity access$getMContext$p(cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsActivity) -> a
+    38:39:void initView(android.os.Bundle) -> a
+    48:178:void setShopDetails(cn.weiben.buildingshopping.model.ShopDetailsBean) -> a
+    26:26:cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsPresenter access$getMPresenter$p(cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsActivity) -> b
+    26:26:java.lang.String access$getSuppId$p(cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsActivity) -> c
     android.view.View _$_findCachedViewById(int) -> f
 cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsActivity$Companion -> cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsActivity$a:
-    27:27:void <init>() -> <init>
-    27:27:void <init>(kotlin.jvm.internal.DefaultConstructorMarker) -> <init>
-    28:28:java.util.List getCategoryList() -> a
+    28:28:void <init>() -> <init>
+    28:28:void <init>(kotlin.jvm.internal.DefaultConstructorMarker) -> <init>
+    29:29:java.util.List getCategoryList() -> a
 cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsActivity$setShopDetails$1 -> cn.weiben.buildingshopping.ui.shop.shop_details.e:
     cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsActivity this$0 -> a
-    54:54:void onItemClick(com.chad.library.adapter.base.BaseQuickAdapter,android.view.View,int) -> onItemClick
+    55:55:void onItemClick(com.chad.library.adapter.base.BaseQuickAdapter,android.view.View,int) -> onItemClick
 cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsActivity$setShopDetails$2 -> cn.weiben.buildingshopping.ui.shop.shop_details.f:
     cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsActivity this$0 -> a
-    66:66:void onItemClick(com.chad.library.adapter.base.BaseQuickAdapter,android.view.View,int) -> onItemClick
-cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsActivity$setShopDetails$3 -> cn.weiben.buildingshopping.ui.shop.shop_details.g:
+    67:67:void onItemClick(com.chad.library.adapter.base.BaseQuickAdapter,android.view.View,int) -> onItemClick
+cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsActivity$setShopDetails$4 -> cn.weiben.buildingshopping.ui.shop.shop_details.g:
+    cn.weiben.buildingshopping.ui.adapter.ExpandableShopGoodsItemAdapter $expand_adapter -> a
+    androidx.recyclerview.widget.GridLayoutManager $manager -> b
+    85:85:void <init>(cn.weiben.buildingshopping.ui.adapter.ExpandableShopGoodsItemAdapter,androidx.recyclerview.widget.GridLayoutManager) -> <init>
+    87:87:int getSpanSize(int) -> getSpanSize
+cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsActivity$setShopDetails$5 -> cn.weiben.buildingshopping.ui.shop.shop_details.h:
     cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsActivity this$0 -> a
     cn.weiben.buildingshopping.model.ShopDetailsBean $data -> b
-    94:98:void onClick(android.view.View) -> onClick
-cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsActivity$setShopDetails$4 -> cn.weiben.buildingshopping.ui.shop.shop_details.h:
+    95:99:void onClick(android.view.View) -> onClick
+cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsActivity$setShopDetails$6 -> cn.weiben.buildingshopping.ui.shop.shop_details.i:
     cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsActivity this$0 -> a
     cn.weiben.buildingshopping.model.ShopDetailsBean $data -> b
-    101:105:void onClick(android.view.View) -> onClick
-cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsActivity$setShopDetails$5 -> cn.weiben.buildingshopping.ui.shop.shop_details.i:
+    102:106:void onClick(android.view.View) -> onClick
+cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsActivity$setShopDetails$7 -> cn.weiben.buildingshopping.ui.shop.shop_details.j:
     cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsActivity this$0 -> a
-    108:109:void onClick(android.view.View) -> onClick
-cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsActivity$setShopDetails$6 -> cn.weiben.buildingshopping.ui.shop.shop_details.j:
+    109:110:void onClick(android.view.View) -> onClick
+cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsActivity$setShopDetails$8 -> cn.weiben.buildingshopping.ui.shop.shop_details.k:
     cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsActivity this$0 -> a
-    120:121:void onClick(android.view.View) -> onClick
-cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsActivity$setShopDetails$7 -> cn.weiben.buildingshopping.ui.shop.shop_details.k:
+    121:122:void onClick(android.view.View) -> onClick
+cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsActivity$setShopDetails$9 -> cn.weiben.buildingshopping.ui.shop.shop_details.l:
     cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsActivity this$0 -> a
     java.util.ArrayList $paramsList -> b
     cn.weiben.buildingshopping.model.ShopDetailsBean $data -> c
-    171:174:void onClick(android.view.View) -> onClick
-cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsContract$Presenter -> cn.weiben.buildingshopping.ui.shop.shop_details.l:
-cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsContract$View -> cn.weiben.buildingshopping.ui.shop.shop_details.m:
+    172:175:void onClick(android.view.View) -> onClick
+cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsContract$Presenter -> cn.weiben.buildingshopping.ui.shop.shop_details.m:
+cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsContract$View -> cn.weiben.buildingshopping.ui.shop.shop_details.n:
     void setShopDetails(cn.weiben.buildingshopping.model.ShopDetailsBean) -> a
-cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsPresenter -> cn.weiben.buildingshopping.ui.shop.shop_details.n:
+cn.weiben.buildingshopping.ui.shop.shop_details.ShopDetailsPresenter -> cn.weiben.buildingshopping.ui.shop.shop_details.o:
     11:11:void <init>() -> <init>
     33:42:void collectShop(java.lang.String) -> a
     38:39:void lambda$collectShop$2(cn.weiben.buildingshopping.api.model.BaseResult) -> a

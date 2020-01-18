@@ -1,8 +1,11 @@
 package cn.weiben.buildingshopping.model;
 
+import com.chad.library.adapter.base.entity.MultiItemEntity;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
+
+import cn.weiben.buildingshopping.ui.adapter.ExpandableShopGoodsItemAdapter;
 
 public class ShopDetailsBean {
 
@@ -1491,7 +1494,7 @@ public class ShopDetailsBean {
             this.goods = goods;
         }
 
-        public static class GoodsBean {
+        public static class GoodsBean implements MultiItemEntity {
             /**
              * promote_price :
              * num :
@@ -1654,6 +1657,11 @@ public class ShopDetailsBean {
 
             public void setCount(int count) {
                 this.count = count;
+            }
+
+            @Override
+            public int getItemType() {
+                return ExpandableShopGoodsItemAdapter.TYPE_PERSON;
             }
         }
     }

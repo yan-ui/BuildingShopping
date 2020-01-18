@@ -136,7 +136,9 @@ class HomeFragment : BaseHttpRecyclerMVPFragment<HomePresenter, GoodsBean, BaseV
         GlideManager.loadImgAuto(homeBean.ad8.ad_code, iv8)
         GlideManager.loadImgAuto(homeBean.ad9.ad_code, iv9)
         GlideManager.loadImgAuto(homeBean.ad10.ad_code, iv10)
-        GlideManager.loadImgAuto(homeBean.ad11.ad_code, iv11)
+        if(homeBean.ad11 != null){
+            GlideManager.loadImgAuto(homeBean.ad11.ad_code, iv11)
+        }
 
         iv1.setOnClickListener {
             val intent = Intent(mActivity, CommonWebviewActivity::class.java)
@@ -197,10 +199,12 @@ class HomeFragment : BaseHttpRecyclerMVPFragment<HomePresenter, GoodsBean, BaseV
             startActivity(intent)
         }
 
-        iv11.setOnClickListener {
-            val intent = Intent(mActivity, CommonWebviewActivity::class.java)
-            intent.putExtra("url", homeBean.ad11.ad_link)
-            startActivity(intent)
+        if(homeBean.ad11 != null){
+            iv11.setOnClickListener {
+                val intent = Intent(mActivity, CommonWebviewActivity::class.java)
+                intent.putExtra("url", homeBean.ad11.ad_link)
+                startActivity(intent)
+            }
         }
 
 

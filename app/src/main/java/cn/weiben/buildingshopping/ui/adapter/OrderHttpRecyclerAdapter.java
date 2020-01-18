@@ -48,12 +48,11 @@ public class OrderHttpRecyclerAdapter extends BaseQuickAdapter<OrderResultBean.O
                 helper.setGone(R.id.btnComment, false);
                 helper.setGone(R.id.btnFinish, false);
 
-                //todo:缺少对应字段
-//                if(bean.is_send_buy == "0"){
-//                    helper.setText(R.id.btnPayOrder,"立即付款");
-//                }else {
-//                    helper.setText(R.id.btnPayOrder,"货到付款");
-//                }
+                if(!bean.isIs_send_buy()){
+                    helper.setText(R.id.btnPayOrder,"立即付款");
+                }else {
+                    helper.setText(R.id.btnPayOrder,"货到付款");
+                }
                 break;
 
             case "1":
@@ -68,17 +67,9 @@ public class OrderHttpRecyclerAdapter extends BaseQuickAdapter<OrderResultBean.O
                 helper.getView(R.id.btnConfirmGoods).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        boolean isBack = false;
-                        for (int i = 0; i < bean.getGoods_list().size(); i++) {
-                            String backStr = bean.getGoods_list().get(i).getIs_back();
-                            if (backStr.equals("1")) {
-                                isBack = true;
-                                break;
-                            }
-                        }
 
                         String tips = "";
-                        if (isBack) {
+                        if (bean.isIs_back()) {
                             tips = "此单存在正在退货商品，确认收货退款申请将取消。";
                         } else {
                             tips = "您确认已经收到货物了吗？确认收货后不可在申请退货，请确认收到的货物没有问题";
@@ -105,13 +96,20 @@ public class OrderHttpRecyclerAdapter extends BaseQuickAdapter<OrderResultBean.O
                 helper.setGone(R.id.btnFinish, false);
                 break;
             default:
-                //todo:状态未知，待修改
-                helper.setGone(R.id.btnPayOrder, false);
+
                 helper.setGone(R.id.btnCancelOrder, false);
                 helper.setGone(R.id.btnSeeLogistic, false);
                 helper.setGone(R.id.btnConfirmGoods, false);
                 helper.setGone(R.id.btnComment, false);
-                helper.setGone(R.id.btnFinish, false);
+                if(bean.isNeed_buy()){
+                    helper.setGone(R.id.btnPayOrder, true);
+                    helper.setGone(R.id.btnFinish, false);
+                }else {
+                    helper.setGone(R.id.btnPayOrder, false);
+                    helper.setGone(R.id.btnFinish, true);
+                    helper.setText(R.id.btnFinish,"查看订单");
+                }
+
                 break;
         }
 

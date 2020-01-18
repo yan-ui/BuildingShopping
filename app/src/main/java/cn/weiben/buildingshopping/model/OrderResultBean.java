@@ -176,6 +176,9 @@ public class OrderResultBean {
          * count : 1
          */
 
+        private boolean is_send_buy;
+        private boolean need_buy;
+        private boolean is_back;
         private String order_id;
         private String order_sn;
         private String shopname;
@@ -203,6 +206,30 @@ public class OrderResultBean {
         private int count;
         private List<GoodsListBean> goods_list;
         private List<?> customers;
+
+        public boolean isIs_send_buy() {
+            return is_send_buy;
+        }
+
+        public void setIs_send_buy(boolean is_send_buy) {
+            this.is_send_buy = is_send_buy;
+        }
+
+        public boolean isNeed_buy() {
+            return need_buy;
+        }
+
+        public void setNeed_buy(boolean need_buy) {
+            this.need_buy = need_buy;
+        }
+
+        public boolean isIs_back() {
+            return is_back;
+        }
+
+        public void setIs_back(boolean is_back) {
+            this.is_back = is_back;
+        }
 
         public String getOrder_id() {
             return order_id;

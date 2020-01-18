@@ -20,7 +20,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Base">
-        <activity android:name=".ui.shop.category.ShopCategoryRvActivity"></activity>
+        <activity android:name=".ui.mine.order_details.OrderdetailsActivity"></activity>
+        <activity android:name=".ui.shop.category.ShopCategoryRvActivity" />
         <activity android:name=".ui.order.OrderPayActivity" />
         <activity android:name=".ui.mine.application_list.ApplyListActivity" />
         <activity android:name=".ui.mine.account_detail.AccountDetailActivity" />

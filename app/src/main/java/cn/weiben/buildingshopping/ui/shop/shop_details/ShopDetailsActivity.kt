@@ -12,6 +12,7 @@ import cn.weiben.buildingshopping.base.activity.BaseMVPActivity
 import cn.weiben.buildingshopping.manager.GlideManager
 import cn.weiben.buildingshopping.model.*
 import cn.weiben.buildingshopping.ui.adapter.ExpandableItemAdapter
+import cn.weiben.buildingshopping.ui.adapter.ExpandableShopGoodsItemAdapter
 import cn.weiben.buildingshopping.ui.adapter.HomeCommonGoodsRvAdapter
 import cn.weiben.buildingshopping.ui.home.goods_detail.GoodsDetailActivity
 import cn.weiben.buildingshopping.ui.main.CommonWebviewActivity
@@ -70,24 +71,24 @@ class ShopDetailsActivity : BaseMVPActivity<ShopDetailsPresenter>(), ShopDetails
         }
 
 
-//        val goods_data = ArrayList<MultiItemEntity>()
-//        data.category_goods.forEach {
-//            val bean = GoodsLevelItem(it.cat_name, it.cat_pic_url)
-//            bean.subItems = it.goods
-//            datas.add(bean)
-//        }
-//
-//        val expand_adapter = ExpandableItemAdapter(datas)
-//        val manager = GridLayoutManager(this, 2)
-//        mGoodsRecyclerView.layoutManager = manager
-//        mGoodsRecyclerView.adapter = expand_adapter
-//        manager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
-//            override fun getSpanSize(position: Int): Int {
-//                return if (expand_adapter.getItemViewType(position) == ExpandableItemAdapter.TYPE_PERSON) 1 else manager.spanCount
-//            }
-//        }
-//
-//        expand_adapter.expandAll()
+        val goods_data = ArrayList<MultiItemEntity>()
+        data.category_goods.forEach {
+            val bean = GoodsLevelItem(it.cat_name, it.cat_pic_url)
+            bean.subItems = it.goods
+            goods_data.add(bean)
+        }
+
+        val expand_adapter = ExpandableShopGoodsItemAdapter(goods_data)
+        val manager = GridLayoutManager(this, 2)
+        mGoodsRecyclerView.layoutManager = manager
+        mGoodsRecyclerView.adapter = expand_adapter
+        manager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+            override fun getSpanSize(position: Int): Int {
+                return if (expand_adapter.getItemViewType(position) == ExpandableShopGoodsItemAdapter.TYPE_PERSON) 1 else manager.spanCount
+            }
+        }
+
+        expand_adapter.expandAll()
 
 
         btnAllGoods.setOnClickListener {
